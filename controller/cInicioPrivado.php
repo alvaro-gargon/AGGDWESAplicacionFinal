@@ -33,7 +33,12 @@
         header('Location: indexLoginLogoff.php');
         exit;
     }
-    
+    if(isset($_REQUEST['REST'])){
+        $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='WIP';
+        header('Location: indexLoginLogoff.php');
+        exit;
+    }
     $avInicioPrivado=[
         'descUsuario' => $_SESSION['usuarioMiAplicacion']->getDescUsuario(),
         'numConexiones' => $_SESSION['usuarioMiAplicacion']->getNumAccesos(),

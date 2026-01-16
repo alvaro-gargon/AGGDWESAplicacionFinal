@@ -20,7 +20,8 @@ $controller=[
     'detalle'=>'controller/cDetalle.php',
     'registro'=>'controller/cRegistro.php',
     'error'=>'controller/cError.php',
-    'WIP'=>'controller/cWIP.php'
+    'WIP'=>'controller/cWIP.php',
+    'REST'=>'controller/cREST.php'
 ];
 
 //array para cargar los archivos de la vista
@@ -32,6 +33,7 @@ $view=[
     'detalle'=>'view/vDetalle.php',
     'registro'=>'view/vRegistro.php',
     'error'=>'view/vError.php',
-    'WIP'=>'view/vWIP.php'
+    'WIP'=>'view/vWIP.php',
+    'REST'=>'view/vREST.php'
 ];
 ?>
