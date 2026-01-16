@@ -34,3 +34,6 @@
 <form method="post">
     <button class="detalle" name="ERROR">Error</button>
 </form>
+<form method="post">
+    <button class="detalle" name="REST">RESt</button>
+</form>

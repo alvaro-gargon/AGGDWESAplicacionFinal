@@ -8,6 +8,6 @@
  */
 
 -- borra la base de datos y todas sus tablas e informacion
-drop database if exists DBAGGDWESProyectoLoginLogoff;
+drop database if exists DBAGGDWESAplicacionFinal;
 --Elimino el usuario
-drop user if exists userAGGDWESProyectoLoginLogoff;
+drop user if exists userAGGDWESAplicacionFinal;
