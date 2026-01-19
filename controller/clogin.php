@@ -4,12 +4,12 @@
 *   Uso:  controlador del login*/ 
     if(isset($_REQUEST['CANCELAR'])){
         $_SESSION['paginaEnCurso']='inicioPublico';
-        header('Location: indexLoginLogoff.php');
+        header('Location: index.php');
         exit;
     }
     if(isset($_REQUEST['REGISTRARSE'])){
         $_SESSION['paginaEnCurso']='registro';
-        header('Location: indexLoginLogoff.php');
+        header('Location: index.php');
         exit;
     }
     $entradaOK=true; //boolean para comprobar si el formulario esta correcto o no
@@ -39,7 +39,7 @@
         UsuarioPDO::actualizarUltimaConexion($oUsuarioActivo);
         $_SESSION['usuarioMiAplicacion']=$oUsuarioActivo;
         $_SESSION['paginaEnCurso']='inicioPrivado';
-        header('Location: indexLoginLogoff.php');
+        header('Location: index.php');
         exit;
     }
     require_once $view['layout'];

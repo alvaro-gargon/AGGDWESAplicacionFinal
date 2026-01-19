@@ -4,7 +4,7 @@
 *   Uso:  controlador del inicoPublico*/ 
     if(isset($_REQUEST['LOGIN'])){
         $_SESSION['paginaEnCurso']='login';
-        header('Location: indexLoginLogoff.php');
+        header('Location: index.php');
         exit;
     }
     require_once $view['layout'];

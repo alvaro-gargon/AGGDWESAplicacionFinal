@@ -22,7 +22,7 @@
     
     if(isset($_REQUEST['VOLVER'])){
         $_SESSION['paginaEnCurso']=$_SESSION['paginaAnterior'];
-        header('Location: indexLoginLogoff.php');
+        header('Location: index.php');
         exit;
     }
 
