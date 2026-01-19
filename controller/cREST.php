@@ -22,17 +22,23 @@
         header('Location: index.php');
         exit;
     }
+    if(isset($_REQUEST['ENVIARNASA'])){
+        $fechaNasa=$_REQUEST['fechaNasa'];
+        $oFotoNasa=REST::apiNasa($fechaNasa);
+    }else{
+        //fecha que usaremos para mostrar la foto del dia  de la nasa
+        $fechaActual= new DateTime();
+        $fechaActualFormateada=$fechaActual->format('Y-m-d');
+        $oFotoNasa=REST::apiNasa($fechaActualFormateada);
+    }
     
+    $fechaActual= new DateTime();
+    $fechaActualFormateada=$fechaActual->format('Y-m-d');
     //array para cargar los errores
     $aErrores=[
         'fechaNasa'=>'',
     ];
-    
-    //fecha que usaremos para mostrar la foto del dia de hoy de la nasa
-    $fechaActual= new DateTime();
-    $fechaActualFormateada=$fechaActual->format('Y-m-d');
-    $oFotoNasa=REST::apiNasa($fechaActualFormateada);
-    
+
     //cargamos el array que usara la vista para mostrar la inforamcion
     $avREST=[
         'fotoNasa'=>$oFotoNasa

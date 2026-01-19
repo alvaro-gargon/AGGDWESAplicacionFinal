@@ -5,7 +5,8 @@
 <form method="post" id="fotoNasa">
     <p>
         <label>Fecha de la foto de la nasa</label><br>
-        <input type="date" name="fechaNasa"  value="">
+        <button name="ENVIARNASA">Enviar</button>
+        <input type="date" name="fechaNasa"  min="2000-01-01" max="<?php echo ($fechaActualFormateada); ?>">
         <p class="error"><?php echo($aErrores['fechaNasa'])?></p>
         <img src="<?php echo ($avREST['fotoNasa']->getUrl()); ?>" alt="Foto de la Nasa"
     </p>
