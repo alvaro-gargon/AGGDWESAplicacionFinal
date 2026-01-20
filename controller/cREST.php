@@ -22,8 +22,10 @@
         header('Location: index.php');
         exit;
     }
+    //si el usuario le da al boton enviar con una fecha distinta a la actual
     if(isset($_REQUEST['ENVIARNASA'])){
-        $fechaNasa=$_REQUEST['fechaNasa'];
+        $fechaNasaRecibida=$_REQUEST['fechaNasa'];
+        $fechaNasa=new DateTime($fechaNasaRecibida);
         $oFotoNasa=REST::apiNasa($fechaNasa);
     }else{
         //fecha que usaremos para mostrar la foto del dia  de la nasa
