@@ -35,7 +35,7 @@ create table if not exists T01_Usuario(
 )engine=innodb;
 
 --creo el usuario con todos los privilegios sobre la base de datos
-create user if not exists'userAGGDWESAplicacionFinal'@'%' identified by 'paso';
+create user if not exists 'userAGGDWESAplicacionFinal'@'%' identified by 'paso';
 grant all on DBAGGDWESAplicacionFinal.* to 'userAGGDWESAplicacionFinal'@'%' with grant option;
 --refrescamos los privilegios para asegurarnos que se ha actualizado
 flush privileges;
