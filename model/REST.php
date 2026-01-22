@@ -10,11 +10,12 @@ class REST{
 
     public static function apiNasa($fecha){
             // accedemos a la url de la nasa
-            $resultado = file_get_contents($url = "https://api.nasa.gov/planetary/apod?api_key=" . self::API_KEY_NASA);
+            //muchas gracias a Alvaro Allen por aclaracion
+            $resultado = file_get_contents($url = "https://api.nasa.gov/planetary/apod?&date={$fecha}&api_key=" . self::API_KEY_NASA);
             $archivoApi=json_decode($resultado,true);
             //si el archivo se a descodificado correctamente, rotorna la foto
             if(isset($archivoApi)){
-                $fotoNasa= new FotoNasa($archivoApi['title'],$archivoApi['url'], $archivoApi['date']);
+                $fotoNasa= new FotoNasa($archivoApi['title'],$archivoApi['url'], $archivoApi['date'], $archivoApi['explanation'], $archivoApi['hdurl']);
                 return $fotoNasa;
             }
     }

@@ -8,11 +8,15 @@ class FotoNasa {
     private $titulo;
     private $url;
     private $fecha;
+    private $informacion;
+    private $hdurl;
 
-    public function __construct($titulo, $url, $fecha) {
+    public function __construct($titulo, $url, $fecha,$informacion,$hdurl) {
         $this->titulo = $titulo;
         $this->url = $url;
         $this->fecha = $fecha;
+        $this->informacion = $informacion;
+        $this->hdurl = $hdurl;
     }
     
     public function getTitulo() { 
@@ -23,6 +27,12 @@ class FotoNasa {
     }
     public function getfecha() { 
         return $this->fecha; 
+    }
+    public function getInformacion() { 
+        return $this->informacion; 
+    }
+    public function getHdurl() { 
+        return $this->hdurl; 
     }
 }
 

@@ -24,7 +24,8 @@ $controller=[
     'error'=>'controller/cError.php',
     'WIP'=>'controller/cWIP.php',
     'REST'=>'controller/cREST.php',
-    'miCuenta'=>'controller/cMiCuenta.php'
+    'miCuenta'=>'controller/cMiCuenta.php',
+    'detalleNasa'=>'controller/cDetallesNasa.php'
 ];
 
 //array para cargar los archivos de la vista
@@ -38,6 +39,7 @@ $view=[
     'error'=>'view/vError.php',
     'WIP'=>'view/vWIP.php',
     'REST'=>'view/vREST.php',
-    'miCuenta'=>'view/vMiCuenta.php'
+    'miCuenta'=>'view/vMiCuenta.php',
+    'detalleNasa'=>'view/vDetallesNasa.php'
 ];
 ?>

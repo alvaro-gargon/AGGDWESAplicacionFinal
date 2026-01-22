@@ -3,7 +3,7 @@
 /*  Nombre: Alvaro Garcia Gonzalez
 *   Fecha: 19/01/2026
 *   Uso:  controlador de la vista del REST*/ 
-
+//muchas gracias a Gonzalo Junquera por parte del código
     //este if se usa para que los usuarios no se salten el control de acceso
     if(empty($_SESSION['usuarioMiAplicacion'])){
         $_SESSION['paginaEnCurso']='inicioPublico';
@@ -22,6 +22,12 @@
         header('Location: index.php');
         exit;
     }
+    if(isset($_REQUEST['DETALLENASA'])){
+        $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='detalleNasa';
+        header('Location: index.php');
+        exit;
+    }
     
     $entradaOK=true;//variable para cuando todo va bien
     //array para cargar los errores
@@ -33,7 +39,8 @@
         'fechaNasa'=>'',
     ];
     //recogemos la fecha actual para que sea la de por defecto
-    $oFechaNasa = new DateTime(); 
+    $oFechaNasa = new DateTime();
+    
     if (isset($_SESSION["fechaNasa"])) {
     // cambiamos la fecha en la sesion, si es que esta existe
         $oFechaNasa = $_SESSION["fechaNasa"];
@@ -42,11 +49,11 @@
     $fechaActualFormateada=$oFechaNasa->format('Y-m-d');
     //llamamos a la api
     $oFotoNasa=REST::apiNasa($fechaActualFormateada);
-    
-    
+    //declaro una fecha máxima para usar en la validacion de fecha
+    $oFechaMaxima = new DateTime();
     //si el usuario le da al boton enviar con una fecha distinta a la actual
     if(isset($_REQUEST['ENVIARNASA'])){
-        $aErrores['fechaNasa']= validacionFormularios::validarFecha($_REQUEST['fechaNasa'],$fechaActualFormateada->format('m/d/Y'),$ofechaMinima->format('m/d/Y'));
+        $aErrores['fechaNasa']= validacionFormularios::validarFecha($_REQUEST['fechaNasa'],$oFechaMaxima->format('Y/m/d'));
     
         foreach($aErrores as $campo => $valor){
         if(!empty($valor)){ // Comprobar si el valor es válido
@@ -73,7 +80,7 @@
     }
     //si todo ha ido bien... recargamos la página con los la foto
     if ($entradaOK) {
-
+        $_SESSION['ofotoNasaEnCurso']=$oFotoNasa;
         $_SESSION['paginaEnCurso'] = 'REST';
         header('Location: index.php');
         exit;
@@ -86,7 +93,8 @@
 
     //cargamos el array que usara la vista para mostrar la inforamcion
     $avREST=[
-        'fotoNasa'=>$oFotoNasa,
+        'tituloFotoNasa'=>$oFotoNasa->getTitulo(),
+        'urlNasa'=>$oFotoNasa->getUrl(),
         'fechaNasa'=>$oFechaNasa->format('Y-m-d')
     ];
     

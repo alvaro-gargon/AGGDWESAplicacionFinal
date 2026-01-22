@@ -61,6 +61,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
             border: 2px solid black;
             border-radius: 5px;
         }
+        
         .botonGenerico{
             position: relative;
             left: 1%;
@@ -194,8 +195,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
         }
         .editar{
             position: relative;
-            
             text-align: left;
+        }
+        #formNasa{
+            position: relative;
+            width: 33%;
+            border: 3px solid #403f6f;
+            border-radius: 5px;
+            padding: 5px
+        }
+        .fotoNasa{
+            width: 100%;
+            & img{
+                width: 100%;
+            }
         }
         
         
