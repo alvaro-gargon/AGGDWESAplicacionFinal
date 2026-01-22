@@ -16,6 +16,14 @@
         <label>Introduce contraseña</label><br>
         <input class="obligatorio" type="password" name="contraseña">
     </p>
+    <p>
+        <label>Repite la contraseña</label><br>
+        <input class="obligatorio" type="password" name="contraseñaRepetida">
+    </p>
+    <p>
+        <label>Introduce la pregunta de seguridad</label><br>
+        <input class="obligatorio" type="text" name="preguntaSeguridad">
+    </p>
     <button class="botonGenericoFormulario" type="submit" name="ACEPTAR">ACEPTAR</button>
     <button class="botonGenericoFormulario" name="CANCELAR">CANCELAR</button>
 </form>

@@ -23,7 +23,8 @@ $controller=[
     'registro'=>'controller/cRegistro.php',
     'error'=>'controller/cError.php',
     'WIP'=>'controller/cWIP.php',
-    'REST'=>'controller/cREST.php'
+    'REST'=>'controller/cREST.php',
+    'miCuenta'=>'controller/cMiCuenta.php'
 ];
 
 //array para cargar los archivos de la vista
@@ -36,6 +37,7 @@ $view=[
     'registro'=>'view/vRegistro.php',
     'error'=>'view/vError.php',
     'WIP'=>'view/vWIP.php',
-    'REST'=>'view/vREST.php'
+    'REST'=>'view/vREST.php',
+    'miCuenta'=>'view/vMiCuenta.php'
 ];
 ?>

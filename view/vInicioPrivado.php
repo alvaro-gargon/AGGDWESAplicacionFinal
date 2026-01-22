@@ -1,5 +1,6 @@
 <form method="post">
     <p id="arribaDerecha"><button class="login" name="LOGOFF">LOGOFF</button></p>
+    <button class="login" name="miCuenta">MI CUENTA</button>
 </form>
 <h2 class="mensaje">Bienvenido/a al inicio privado de la aplicacion, <?php echo $avInicioPrivado['descUsuario']; ?></h2>
     <div class="mensaje">

@@ -87,6 +87,22 @@ class UsuarioPDO {
         }
         return $oUsuario;
     }
+    
+    public static function modificarUsuario($oUsuario,$descripcion) {
+        $consultaActualizar = <<<CONSULTA
+            UPDATE T01_Usuario
+            SET T01_DescUsuario
+            WHERE T01_CodUsuario= '{$oUsuario->getCodUsuario()}'
+            CONSULTA;
+        $resultado= DBPDO::ejecutaConsulta($consultaActualizar);
+        if ($resultado){
+            $oUsuario->setDesUsuario($descripcion);
+            return $oUsuario;
+        }else{
+            return null;
+        }
+        
+    }
 }
 
 ?>

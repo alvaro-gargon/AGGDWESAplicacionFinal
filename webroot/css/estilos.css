@@ -192,5 +192,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
             border-bottom-left-radius: 5px;
             background-color: lightblue;
         }
+        .editar{
+            position: relative;
+            
+            text-align: left;
+        }
         
         

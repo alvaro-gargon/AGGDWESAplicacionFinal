@@ -1,6 +1,6 @@
 <?php
     /*  Nombre: Alvaro Garcia Gonzalez
-    *   Fecha: 14/01/2026
+    *   Fecha: 22/01/2026
     *   Uso:  controlador del registro*/
 
     /**
@@ -25,13 +25,19 @@
     if(isset($_REQUEST['ACEPTAR'])){
         $aErrores['usuario']= validacionFormularios::comprobarAlfaNumerico($_REQUEST['usuario'],obligatorio:1);//validacion sintactica del campo usuario
         $aErrores['descripcion']= validacionFormularios::comprobarAlfabetico($_REQUEST['descripcion'],32,4,obligatorio:1);//validacion alfabtica del campo descripcion
+        if($_REQUEST['contraseña']!=$_REQUEST['contraseñaRepetida']){
+            $entradaOK=false;
+        }
+        if($_REQUEST['preguntaSeguridad']!='pimentel'){
+            $entradaOK=false;
+        }
         foreach ($aErrores as $clave => $valor){
             if($valor!=null){
                 $entradaOK=false;
             }
         }
-        $oUsuarioActivo= UsuarioPDO::altaUsuario($_REQUEST['usuario'], $_REQUEST['contraseña'],$_REQUEST['descripcion']);
-        if($oUsuarioActivo===null){
+        $oUsuarioActivo= UsuarioPDO::validarUsuario($_REQUEST['usuario'], $_REQUEST['contraseña']);
+        if($oUsuarioActivo!=null){
             $entradaOK=false;
             $aErrores['usuario']='Ya existe un usuario con ese nombre';
         }
@@ -41,6 +47,7 @@
     
     
     if($entradaOK){
+        $oUsuarioActivo= UsuarioPDO::altaUsuario($_REQUEST['usuario'], $_REQUEST['contraseña'], $_REQUEST['descripcion']);
         UsuarioPDO::actualizarUltimaConexion($oUsuarioActivo);
         $_SESSION['usuarioMiAplicacion']=$oUsuarioActivo;
         $_SESSION['paginaEnCurso']='inicioPrivado';

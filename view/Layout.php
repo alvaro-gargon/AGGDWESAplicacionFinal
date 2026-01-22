@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h2>LOGIN LOGOFF</h2>
+        <h2>APLICACION FINAL</h2>
     </header>
     <main>
         <?php require_once $view[$_SESSION['paginaEnCurso']];?>
@@ -17,7 +17,7 @@
     <footer>
         <p><a target="_blank" href="https://alvarogargon.ieslossauces.es/">Álvaro García González</a> <a target="_blank" href="https://github.com/alvaro-gargon/AGGDWESLoginLogoffTema6"><i class="fa fa-github fa-2x"></i></a></p>
         <section>
-            <h4>Documentacion con:</h3>
+            <h4>Documentacion con:</h4>
             <a target="_blank" href="doc/phpDocumentor/index.html">phpDocumentor</a>
             |
             <a target="_blank" href="doc/doxygen/html/index.html">Doxygen</a>

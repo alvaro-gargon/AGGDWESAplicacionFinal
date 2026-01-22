@@ -39,6 +39,12 @@
         header('Location: index.php');
         exit;
     }
+    if(isset($_REQUEST['miCuenta'])){
+        $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='miCuenta';
+        header('Location: index.php');
+        exit;
+    }
     $avInicioPrivado=[
         'descUsuario' => $_SESSION['usuarioMiAplicacion']->getDescUsuario(),
         'numConexiones' => $_SESSION['usuarioMiAplicacion']->getNumAccesos(),
