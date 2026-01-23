@@ -38,3 +38,6 @@
 <form method="post">
     <button class="detalle" name="REST">REST</button>
 </form>
+<form method="post">
+    <button class="detalle" name="DEPARTAMENTOS">Mto.DEPARAMENTOS</button>
+</form>

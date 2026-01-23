@@ -45,6 +45,12 @@
         header('Location: index.php');
         exit;
     }
+    if(isset($_REQUEST['DEPARTAMENTOS'])){
+        $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='WIP';
+        header('Location: index.php');
+        exit;
+    }
     $avInicioPrivado=[
         'descUsuario' => $_SESSION['usuarioMiAplicacion']->getDescUsuario(),
         'numConexiones' => $_SESSION['usuarioMiAplicacion']->getNumAccesos(),

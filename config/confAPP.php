@@ -13,6 +13,8 @@ require_once 'model/Usuario.php';
 require_once 'model/AppError.php';
 require_once 'model/REST.php';
 require_once 'model/FotoNasa.php';
+require_once 'model/Departamento.php';
+require_once 'model/DepartamentoPDO.php';
 
 //array para cargar los archivos del controlador
 $controller=[
@@ -25,7 +27,8 @@ $controller=[
     'WIP'=>'controller/cWIP.php',
     'REST'=>'controller/cREST.php',
     'miCuenta'=>'controller/cMiCuenta.php',
-    'detalleNasa'=>'controller/cDetallesNasa.php'
+    'detalleNasa'=>'controller/cDetallesNasa.php',
+    'departamento'=>'controller/cMtoDepartamento.php'
 ];
 
 //array para cargar los archivos de la vista
@@ -40,6 +43,7 @@ $view=[
     'WIP'=>'view/vWIP.php',
     'REST'=>'view/vREST.php',
     'miCuenta'=>'view/vMiCuenta.php',
-    'detalleNasa'=>'view/vDetallesNasa.php'
+    'detalleNasa'=>'view/vDetallesNasa.php',
+    'departamento'=>'view/vMtoDepartamento.php'
 ];
 ?>
