@@ -21,7 +21,7 @@
     $aErrores=[
         'descripcionBuscada'=>null
     ];
-    $aErrores=[
+    $aRespuestas=[
         'descripcionBuscada'=>null
     ];
     
@@ -44,12 +44,12 @@
     
     if($entradaOK){
         //guardamos en el array de respuesta la respuesta del usuario
-        $aRespuestas['DescDepartamentoBuscado'] = $_REQUEST['DescDepartamentoBuscado'] ?? ''; //el operador ?? sirve como or si lo primero no existe o esta vacio (Gracias a Gonzalo Junquera)
-        
-        
+        $aRespuestas['descripcionBuscada'] = $_REQUEST['DescDepartamentoBuscado'] ?? ''; //el operador ?? sirve como or si lo primero no existe o esta vacio (Gracias a Gonzalo Junquera)
+        //guardamos en la sesion la descripcion bucada para que recuerde
+        $_SESSION['descBuscadaEnUso']=$aRespuestas['descripcionBuscada'];
     }
     
-    $aDepartamentos= DepartamentoPDO::buscaDepartamentoPorDesc('% '.$_REQUEST['DescDepartamentoBuscado'].'%');
+    $aDepartamentos= DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST['descripcionBuscada']);
     $avDepartamento=[];
     
     

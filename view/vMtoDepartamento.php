@@ -2,9 +2,9 @@
     <button class="volver" name="VOLVER">VOLVER</button>
 </form>
 
-<form method="post">
-    <input type="text" placeholder="Descripcion departamento..." name="descripcionBuscada" value="<?php echo $_REQUEST['descripcionBuscada']??'' ?>">
-    <button class="volver" name="BUSCAR">BUSCAR</button>
+<form method="post" id="buscar">
+    <input type="text" placeholder="Descripcion departamento..." name="descripcionBuscada" value="<?php echo $_SESSION['descBuscadaEnUso']??'' ?>">
+    <button  name="BUSCAR">BUSCAR</button>
 </form>
 
 <div class="mtoDepartamentos">
@@ -13,13 +13,13 @@
             <th>Código</th><th>Descripcion</th><th>Fecha Creacion</th><th>Volumen Negocio</th><th>Fecha Baja</th><th>Opciones</th>
         </tr>
         <?php 
-            foreach ($avDepartamento as $oDepartamento){
+            foreach ($avDepartamento as $aDepartamento){
                 echo '<tr>';
-                    echo '<td>'. $avDepartamento['codDepartamento'] .'</td>';
-                    echo '<td>'. $avDepartamento['descDepartamento'] .'</td>';
-                    echo '<td>'. $avDepartamento['fechaCreacionDepartamento'] .'</td>';
-                    echo '<td>'. $avDepartamento['volumenDeNegocio'] .'</td>';
-                    echo '<td>'. $avDepartamento['fechaBajaDepartamento'] .'</td>';
+                    echo '<td>'. $aDepartamento['codDepartamento'] .'</td>';
+                    echo '<td>'. $aDepartamento['descDepartamento'] .'</td>';
+                    echo '<td>'. $aDepartamento['fechaCreacionDepartamento'] .'</td>';
+                    echo '<td>'. $aDepartamento['volumenDeNegocio'] .'</td>';
+                    echo '<td>'. $aDepartamento['fechaBajaDepartamento'] .'</td>';
                 echo '</tr>';
             }
         ?>

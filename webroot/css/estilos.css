@@ -35,6 +35,47 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
             width: 90%;
             text-align: right;
         }
+        #buscar{
+            text-align: center;
+            & button{
+                position: relative;
+                left: 1%;
+                color: white;
+                width: 7rem;height: 2rem;
+                background-color: lightcoral;
+                border: 2px solid black;
+                border-radius: 5px;
+            }
+            & input{
+                position: relative;
+                left: 1%;
+                color: black;
+                width: 14rem;height: 2rem;
+                background-color: lightgoldenrodyellow;
+                border: 2px solid black;
+                border-radius: 5px;
+            }
+        }
+        #botonesPrivado{
+            border: 2px solid black;
+            padding: 2%;
+            background-color: whitesmoke;
+            margin-top: 5%; 
+            display: flex;
+            justify-content: space-between;
+            & button{
+                position: relative;
+                display: flex;
+                color: white;
+                width: 10rem;height: 2rem;
+                justify-content: center;
+                align-items: center;
+                background-color: lightcoral;
+                border: 2px solid black;
+                border-radius: 5px;
+                text-align: center;
+            }
+        }
         .login{
             
             color: white;

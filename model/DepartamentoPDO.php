@@ -25,8 +25,8 @@ class DepartamentoPDO{
         //Sirve tanto para si el usuario no escribe nada como para si escribime palabras que se encuentras en medio
         //Ejemplo: "mate" -> Departamento de matematicas 
         $consultaDescripcion = <<<CONSULTA
-                "select * from T02_Departamento
-                where T02_DescDepartamento like {$descDepartamento}";
+                select * from T02_Departamento
+                where T02_DescDepartamento like '%{$descDepartamento}%'
                 
                 CONSULTA;
         $resultado= DBPDO::ejecutaConsulta($consultaDescripcion);

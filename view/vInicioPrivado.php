@@ -26,18 +26,14 @@
     }
 ?>
     </div>
-<form method="post">
-    <button class="detalle" name="DETALLE">DETALLE</button>
-</form>
-<form method="post">
-    <button class="detalle" name="WIP">WIP</button>
-</form>
-<form method="post">
-    <button class="detalle" name="ERROR">Error</button>
-</form>
-<form method="post">
-    <button class="detalle" name="REST">REST</button>
-</form>
-<form method="post">
-    <button class="detalle" name="DEPARTAMENTOS">Mto.DEPARAMENTOS</button>
+<form method="post" id="botonesPrivado">
+    <button  name="DETALLE">DETALLE</button>
+
+    <button  name="WIP">WIP</button>
+
+    <button  name="ERROR">Error</button>
+
+    <button  name="REST">REST</button>
+
+    <button  name="DEPARTAMENTOS">Mto.DEPARAMENTOS</button>
 </form>
