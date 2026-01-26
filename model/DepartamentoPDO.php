@@ -15,8 +15,15 @@ class DepartamentoPDO{
         
         
     }
-    
+    /**
+     * 
+     * @param string $descDepartamento , descripcon enviada por el usuario
+     * @return aDepartamento , devuelve un array con los departentos que concidan que el criterio de busquda
+     */
     public static function buscaDepartamentoPorDesc($descDepartamento){
+        //Usamos los porcentajes antes y despues de la descripcion para indicar que cualquier cosa puede ir antes o despues
+        //Sirve tanto para si el usuario no escribe nada como para si escribime palabras que se encuentras en medio
+        //Ejemplo: "mate" -> Departamento de matematicas 
         $descAConsultar='%'.$descDepartamento.'%';
         $consultaDescripcion = <<<CONSULTA
                 select * from T02_Departamento
@@ -25,12 +32,18 @@ class DepartamentoPDO{
                 CONSULTA;
         $resultado= DBPDO::ejecutaConsulta($consultaDescripcion);
         
-        if($resultado->rowCount()>0){
-            return $resultado;
-        }else{
-            return null;        
-            
+        $aDepartamentos=[];
+        //mientras que haya registros, crea un nuevo objeto departamento y lo mete en el array
+        while ($registro = $resultado->fetchObject()){
+            $aDepartamentos[]= new Departamento(
+                $registro->T02_CodDepartamento,
+                $registro->T02_DescDepartamento,
+                $registro->T02_FechaCreacionDepartamento,
+                $registro->T02_VolumenDeNegocio,
+                $registro->T02_FechaBajaDepartamento
+            ); 
         }
+        return $aDepartamentos;
     }
 }
 ?>
