@@ -18,16 +18,15 @@ class DepartamentoPDO{
     /**
      * 
      * @param string $descDepartamento , descripcon enviada por el usuario
-     * @return aDepartamento , devuelve un array con los departentos que concidan que el criterio de busquda
+     * @return aDepartamento , devuelve un array con los objetos departentos que concidan que el criterio de busquda
      */
     public static function buscaDepartamentoPorDesc($descDepartamento){
         //Usamos los porcentajes antes y despues de la descripcion para indicar que cualquier cosa puede ir antes o despues
         //Sirve tanto para si el usuario no escribe nada como para si escribime palabras que se encuentras en medio
         //Ejemplo: "mate" -> Departamento de matematicas 
-        $descAConsultar='%'.$descDepartamento.'%';
         $consultaDescripcion = <<<CONSULTA
-                select * from T02_Departamento
-                where T02_DescDepartamento like {$descAConsultar};
+                "select * from T02_Departamento
+                where T02_DescDepartamento like {$descDepartamento}";
                 
                 CONSULTA;
         $resultado= DBPDO::ejecutaConsulta($consultaDescripcion);

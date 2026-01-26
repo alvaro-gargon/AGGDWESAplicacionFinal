@@ -47,7 +47,7 @@
     }
     if(isset($_REQUEST['DEPARTAMENTOS'])){
         $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
-        $_SESSION['paginaEnCurso']='WIP';
+        $_SESSION['paginaEnCurso']='departamento';
         header('Location: index.php');
         exit;
     }
