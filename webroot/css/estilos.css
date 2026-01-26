@@ -1,0 +1,255 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 3 oct 2025, 10:14:58
+    Author     : alvaro.gargon.4
+*/
+
+*{margin: 0; padding: 0;box-sizing: border-box}
+        body{
+            display: flex;
+            flex-direction: column;
+            overflow-x: no-display;
+            width: 100%;height: 100%;
+            min-height: 100vh;
+            align-items: center;
+            background-color: beige;
+        }
+        
+        .botonIcono{
+            top: 5px;
+            position: absolute;
+            right: 10%;
+        }
+        #inicioSesion{
+            position: relative;
+            left: 40%;
+            width: 50%;
+        }
+        .obligatorio{
+            background-color: lightgoldenrodyellow;
+        }
+        #arribaDerecha{
+            width: 90%;
+            text-align: right;
+        }
+        #buscar{
+            text-align: center;
+            & button{
+                position: relative;
+                left: 1%;
+                color: white;
+                width: 7rem;height: 2rem;
+                background-color: lightcoral;
+                border: 2px solid black;
+                border-radius: 5px;
+            }
+            & input{
+                position: relative;
+                left: 1%;
+                color: black;
+                width: 14rem;height: 2rem;
+                background-color: lightgoldenrodyellow;
+                border: 2px solid black;
+                border-radius: 5px;
+            }
+        }
+        #botonesPrivado{
+            border: 2px solid black;
+            padding: 2%;
+            background-color: whitesmoke;
+            margin-top: 5%; 
+            display: flex;
+            justify-content: space-between;
+            & button{
+                position: relative;
+                display: flex;
+                color: white;
+                width: 10rem;height: 2rem;
+                justify-content: center;
+                align-items: center;
+                background-color: lightcoral;
+                border: 2px solid black;
+                border-radius: 5px;
+                text-align: center;
+            }
+        }
+        .login{
+            
+            color: white;
+            width: 6rem;height: 2rem;
+            background-color: lightcoral;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        .detalle{
+            position: relative;
+            left:50%;
+            color: white;
+            width: 6rem;height: 2rem;
+            background-color: lightcoral;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        .volver{
+            position: relative;
+            left:90%;
+            color: white;
+            width: 6rem;height: 2rem;
+            background-color: lightcoral;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        
+        .botonGenerico{
+            position: relative;
+            left: 1%;
+            color: white;
+            width: 6rem;height: 2rem;
+            background-color: lightcoral;
+            border: 2px solid black;
+            border-radius: 5px;
+            left: 40%;
+        }
+        .botonGenericoFormulario{
+            position: relative;
+            left: 1%;
+            color: white;
+            width: 7rem;height: 2rem;
+            background-color: lightcoral;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        .error{
+            color: red;
+        }
+        h1{
+            position: absolute;
+            left: 45%;
+        }
+        h2{
+            position: relative;
+            left: -40%;
+        }
+        .mensaje{
+            position: relative;
+            left: 40%;
+            width: 500px;
+            margin-bottom: 5px
+        }
+        h3{
+            margin-top: 20px;
+            position: relative;
+            width: 1000px;
+            left: 40%;
+        }
+        .centrarImagen{
+            position: relative;
+            left: 35%;
+            width: 625px;height: 446px;
+            margin-top: 20px;
+        }
+        .centrarImagenWip{
+            position: relative;
+            left: 28%;
+            width: 625px;height: 446px;
+            margin-top: 20px;
+        }
+        p{
+            padding: 10px
+        }
+        header{
+            position: relative;
+            width: 100%;
+            height: 5%;
+            padding: 20px;
+            background-color: #403F6F;
+            color: beige;
+            text-align: center;
+            margin-bottom: 10px; 
+        }
+        main{
+            flex: 1;
+            width: 90%;height: 90%;
+        }
+        footer{
+            position: relative;
+            background-color: #403F6F;
+            color: beige;
+            text-align: center;
+            bottom: 0%;
+            width: 100%;
+            height: 5%;
+        }
+        .contenedor{
+            margin-top: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        a{
+            color: lightcoral;
+            text-decoration: none;
+        }
+        
+        .principal {
+            position: relative;
+            left: 10%;
+            margin-bottom: 40px;
+            width: 70%;
+            border-collapse: separate;
+            border-spacing: 0;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .principal td {
+            padding: 10px;
+            border: 1px solid #3a3a3a;
+            vertical-align: middle;
+            text-align: left;
+            
+        }
+        .principal th {
+            padding: 10px;
+            border: 2px solid #3a3a3a;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            vertical-align: middle;
+            text-align: left;
+            background-color: lightblue;
+        }
+        .principal th:first-child{
+            border: 2px solid #3a3a3a;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background-color: lightblue;
+        }   
+        .principal td:first-child{
+            border: 2px solid #3a3a3a;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background-color: lightblue;
+        }
+        .editar{
+            position: relative;
+            text-align: left;
+        }
+        #formNasa{
+            position: relative;
+            width: 33%;
+            border: 3px solid #403f6f;
+            border-radius: 5px;
+            padding: 5px
+        }
+        .fotoNasa{
+            width: 100%;
+            & img{
+                width: 100%;
+            }
+        }
+        
+        
