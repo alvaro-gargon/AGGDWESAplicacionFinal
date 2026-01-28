@@ -251,5 +251,77 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
                 width: 100%;
             }
         }
+        /*estilos para el carrusel*/
+        .container{
+            position: relative;
+            width: 35%;
+            left: 40%;
+            background-color: #fae1c3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .caroussel{
+            position: relative;
+            width: 100%;height: 100%;
+        }
+        .photos{
+            display: flex;
+            width: 100%;height: 100%;
+            transition: all 0.5s ease-in-out;
+        }
+        input{
+            position: absolute;
+            bottom: 20px;
+            width: 40px;height: 40px;
+            background-color: pink;
+            z-index: 1;
+        }
+        input::after{
+            content: "";
+            position: absolute;
+            width: 40px;height: 40px;
+            left: 0;top: 0;
+            background-color: pink;
+            border-radius: 50%;
+        }
+        input:focus-within::after{
+            background-color: cyan;
+        }
+        #rd1{
+            left: 75px;
+        }
+        #rd2{
+            left: 175px;
+        }
+        #rd3{
+            left: 275px;
+        }
+        #rd4{
+            left: 375px;
+        }
+        #rd5{
+            left: 475px;
+        }
+
+        #rd1:focus-within{
+            transform: translateX(0px);
+        }
+        #rd2:focus-within ~ .photos{
+            transform: translateX(-600px);
+        }
+        #rd3:focus-within ~ .photos{
+            transform: translateX(-1200px);
+        }
+        #rd4:focus-within ~ .photos{
+            transform: translateX(-1800px);
+        }
+        #rd5:focus-within ~ .photos{
+            transform: translateX(-2400px);
+        }
+        #rd1:checked::after{
+            background-color: cyan;
+        }
         
         
