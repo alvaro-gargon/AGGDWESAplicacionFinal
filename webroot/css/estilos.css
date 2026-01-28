@@ -254,8 +254,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
         /*estilos para el carrusel*/
         .container{
             position: relative;
-            width: 35%;
-            left: 40%;
+            left: 20%;
+            width: 75%;
+            height: 70vh;
             background-color: #fae1c3;
             display: flex;
             justify-content: center;
@@ -263,65 +264,36 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
             overflow: hidden;
         }
         .caroussel{
-            position: relative;
             width: 100%;height: 100%;
-        }
-        .photos{
             display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        .photo{
+            flex: 0 0 600px;
             width: 100%;height: 100%;
-            transition: all 0.5s ease-in-out;
+            scroll-snap-align: center;
         }
-        input{
+        .btn{
             position: absolute;
-            bottom: 20px;
-            width: 40px;height: 40px;
-            background-color: pink;
-            z-index: 1;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            background: rgba(255,255,255,0.7);
+            border: none;
+            cursor: pointer;
+            padding: .5rem 1rem;
+            z-index: 10;
+        } /* Ambos botones alineados a la izquierda */
+        .prev{
+            left: calc(50% - 350px); /* borde izquierdo del carrusel */
         }
-        input::after{
-            content: "";
-            position: absolute;
-            width: 40px;height: 40px;
-            left: 0;top: 0;
-            background-color: pink;
-            border-radius: 50%;
+        .next{
+            left: calc(50% - 300px); /* un poco a la derecha del anterior */
         }
-        input:focus-within::after{
-            background-color: cyan;
-        }
-        #rd1{
-            left: 75px;
-        }
-        #rd2{
-            left: 175px;
-        }
-        #rd3{
-            left: 275px;
-        }
-        #rd4{
-            left: 375px;
-        }
-        #rd5{
-            left: 475px;
-        }
-
-        #rd1:focus-within{
-            transform: translateX(0px);
-        }
-        #rd2:focus-within ~ .photos{
-            transform: translateX(-600px);
-        }
-        #rd3:focus-within ~ .photos{
-            transform: translateX(-1200px);
-        }
-        #rd4:focus-within ~ .photos{
-            transform: translateX(-1800px);
-        }
-        #rd5:focus-within ~ .photos{
-            transform: translateX(-2400px);
-        }
-        #rd1:checked::after{
-            background-color: cyan;
+        .btn:hover{
+            background: rgba(255,255,255,1);
         }
         
         
