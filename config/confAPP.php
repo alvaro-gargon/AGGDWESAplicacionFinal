@@ -24,18 +24,16 @@ define('SEGURIDAD','pimentel');
 
 //array para el usuario normal (el valor de cada index sera el usado para el atributo del boton "name")
 $aFuncionalidadUsuario=[
-    'wip'=>'WIP',
-    'error'=>'ERROR',
-    'rest'=>'REST',
-    'departamentos'=>'DEPARTAMENTOS'
-];
-//array para el usuario administrador
-$aFuncionalidadAdmin=[
-    'wip'=>'WIP',
-    'error'=>'ERROR',
     'rest'=>'REST',
     'departamentos'=>'DEPARTAMENTOS',
     'detalle'=>'DETALLE'
+];
+//array para el usuario administrador
+$aFuncionalidadAdmin=[
+    'rest'=>'REST',
+    'departamentos'=>'DEPARTAMENTOS',
+    'detalle'=>'DETALLE',
+    'usuarios'=>'USUARIOS'
 ];
 
 //array para cargar los archivos del controlador

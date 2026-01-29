@@ -19,20 +19,6 @@
         header('Location: index.php');
         exit;
     }
-    if(isset($_REQUEST['WIP'])){
-        $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
-        $_SESSION['paginaEnCurso']='WIP';
-        header('Location: index.php');
-        exit;
-    }
-    if (isset($_REQUEST['ERROR'])) {
-        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-        $consultaError = "SELECT * FROM error_a_posta";
-        DBPDO::ejecutaConsulta($consultaError);
-        $_SESSION['paginaEnCurso'] = 'error';
-        header('Location: index.php');
-        exit;
-    }
     if(isset($_REQUEST['REST'])){
         $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso']='REST';
@@ -48,6 +34,12 @@
     if(isset($_REQUEST['DEPARTAMENTOS'])){
         $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso']='departamento';
+        header('Location: index.php');
+        exit;
+    }
+    if(isset($_REQUEST['USARIOS'])){
+        $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='WIP';
         header('Location: index.php');
         exit;
     }
