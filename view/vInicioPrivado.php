@@ -27,7 +27,14 @@
 ?>
     </div>
 <form method="post" id="botonesPrivado">
-    <button class="<?php echo $avInicioPrivado['claseBotonDetalle'];?>"  name="DETALLE" <?php echo $avInicioPrivado['botonDetalleActivo?']; ?>>DETALLE</button>
+    
+    <?php 
+        foreach ($aBotones as $boton=>$nombre){
+            echo '<button name='.$nombre.'>'.$boton.'</button>';
+        }
+    ?>
+    <!-- comment
+    <button  name="DETALLE"</button>
 
     <button  name="WIP">WIP</button>
 
@@ -36,4 +43,5 @@
     <button  name="REST">REST</button>
 
     <button  name="DEPARTAMENTOS">Mto.DEPARAMENTOS</button>
+     -->
 </form>

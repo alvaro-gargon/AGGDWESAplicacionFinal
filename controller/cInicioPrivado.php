@@ -51,25 +51,21 @@
         header('Location: index.php');
         exit;
     }
+    
+    //array donde decidiremos que botones mostrar dependiendo el perfil
+    $aBotones=[];
     //usamos este if para saber si el usuario es un administrador o un usario normal
     if($_SESSION['usuarioMiAplicacion']->getPerfil()==='administrador'){
-        $avInicioPrivado=[
-            'descUsuario' => $_SESSION['usuarioMiAplicacion']->getDescUsuario(),
-            'numConexiones' => $_SESSION['usuarioMiAplicacion']->getNumAccesos(),
-            'fechaHoraUltimaConexionAnterior' => $_SESSION['usuarioMiAplicacion']->getFechaHoraUltimaConexionAnterior(),
-            'botonDetalleActivo?'=> '',
-            'claseBotonDetalle'=>''
-        ];
-        
+        $aBotones=$aFuncionalidadAdmin;
     }else{
-        $avInicioPrivado=[
-            'descUsuario' => $_SESSION['usuarioMiAplicacion']->getDescUsuario(),
-            'numConexiones' => $_SESSION['usuarioMiAplicacion']->getNumAccesos(),
-            'fechaHoraUltimaConexionAnterior' => $_SESSION['usuarioMiAplicacion']->getFechaHoraUltimaConexionAnterior(),
-            'botonDetalleActivo?'=> 'disabled',
-            'claseBotonDetalle'=> 'desactivado'
-        ];
+        $aBotones=$aFuncionalidadUsuario;
     }
+    //array que le pasamos a la vista para que no acceda al modelo
+    $avInicioPrivado=[
+        'descUsuario' => $_SESSION['usuarioMiAplicacion']->getDescUsuario(),
+        'numConexiones' => $_SESSION['usuarioMiAplicacion']->getNumAccesos(),
+        'fechaHoraUltimaConexionAnterior' => $_SESSION['usuarioMiAplicacion']->getFechaHoraUltimaConexionAnterior()
+    ];
     
     require_once $view['layout'];
 ?>

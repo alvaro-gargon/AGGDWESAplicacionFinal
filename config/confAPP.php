@@ -19,6 +19,25 @@ require_once 'model/DepartamentoPDO.php';
 //definimos la respuesta de la pregunta de seguridad
 define('SEGURIDAD','pimentel');
 
+//Declaramos ambos array de funcionalidades para los diferentes perfiles. 
+//El perfil administrador tendrá todas las funcionalidades del usuario normal, y algunas extra
+
+//array para el usuario normal (el valor de cada index sera el usado para el atributo del boton "name")
+$aFuncionalidadUsuario=[
+    'wip'=>'WIP',
+    'error'=>'ERROR',
+    'rest'=>'REST',
+    'departamentos'=>'DEPARTAMENTOS'
+];
+//array para el usuario administrador
+$aFuncionalidadAdmin=[
+    'wip'=>'WIP',
+    'error'=>'ERROR',
+    'rest'=>'REST',
+    'departamentos'=>'DEPARTAMENTOS',
+    'detalle'=>'DETALLE'
+];
+
 //array para cargar los archivos del controlador
 $controller=[
     'inicioPublico' => 'controller/cInicioPublico.php',
