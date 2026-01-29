@@ -51,10 +51,25 @@
         header('Location: index.php');
         exit;
     }
-    $avInicioPrivado=[
-        'descUsuario' => $_SESSION['usuarioMiAplicacion']->getDescUsuario(),
-        'numConexiones' => $_SESSION['usuarioMiAplicacion']->getNumAccesos(),
-        'fechaHoraUltimaConexionAnterior' => $_SESSION['usuarioMiAplicacion']->getFechaHoraUltimaConexionAnterior()
-    ];
+    //usamos este if para saber si el usuario es un administrador o un usario normal
+    if($_SESSION['usuarioMiAplicacion']->getPerfil()==='administrador'){
+        $avInicioPrivado=[
+            'descUsuario' => $_SESSION['usuarioMiAplicacion']->getDescUsuario(),
+            'numConexiones' => $_SESSION['usuarioMiAplicacion']->getNumAccesos(),
+            'fechaHoraUltimaConexionAnterior' => $_SESSION['usuarioMiAplicacion']->getFechaHoraUltimaConexionAnterior(),
+            'botonDetalleActivo?'=> '',
+            'claseBotonDetalle'=>''
+        ];
+        
+    }else{
+        $avInicioPrivado=[
+            'descUsuario' => $_SESSION['usuarioMiAplicacion']->getDescUsuario(),
+            'numConexiones' => $_SESSION['usuarioMiAplicacion']->getNumAccesos(),
+            'fechaHoraUltimaConexionAnterior' => $_SESSION['usuarioMiAplicacion']->getFechaHoraUltimaConexionAnterior(),
+            'botonDetalleActivo?'=> 'disabled',
+            'claseBotonDetalle'=> 'desactivado'
+        ];
+    }
+    
     require_once $view['layout'];
 ?>

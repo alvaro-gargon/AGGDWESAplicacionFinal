@@ -27,7 +27,7 @@
 ?>
     </div>
 <form method="post" id="botonesPrivado">
-    <button  name="DETALLE">DETALLE</button>
+    <button class="<?php echo $avInicioPrivado['claseBotonDetalle'];?>"  name="DETALLE" <?php echo $avInicioPrivado['botonDetalleActivo?']; ?>>DETALLE</button>
 
     <button  name="WIP">WIP</button>
 

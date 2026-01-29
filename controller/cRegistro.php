@@ -28,7 +28,7 @@
         if($_REQUEST['contraseña']!=$_REQUEST['contraseñaRepetida']){
             $entradaOK=false;
         }
-        if($_REQUEST['preguntaSeguridad']!='pimentel'){
+        if($_REQUEST['preguntaSeguridad']!=SEGURIDAD){
             $entradaOK=false;
         }
         foreach ($aErrores as $clave => $valor){

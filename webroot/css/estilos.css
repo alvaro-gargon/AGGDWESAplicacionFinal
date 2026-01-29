@@ -75,6 +75,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
                 border-radius: 5px;
                 text-align: center;
             }
+            /*clase para los botones desactivados por no ser admin*/
+            & .desactivado{
+                background-color: gray;
+            }
         }
         .login{
             
@@ -84,6 +88,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
             border: 2px solid black;
             border-radius: 5px;
         }
+        
         .detalle{
             position: relative;
             left:50%;

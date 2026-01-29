@@ -16,6 +16,9 @@ require_once 'model/FotoNasa.php';
 require_once 'model/Departamento.php';
 require_once 'model/DepartamentoPDO.php';
 
+//definimos la respuesta de la pregunta de seguridad
+define('SEGURIDAD','pimentel');
+
 //array para cargar los archivos del controlador
 $controller=[
     'inicioPublico' => 'controller/cInicioPublico.php',
