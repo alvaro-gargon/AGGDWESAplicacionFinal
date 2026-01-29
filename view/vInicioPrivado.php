@@ -33,15 +33,4 @@
             echo '<button name='.$nombre.'>'.$boton.'</button>';
         }
     ?>
-    <!-- comment
-    <button  name="DETALLE"</button>
-
-    <button  name="WIP">WIP</button>
-
-    <button  name="ERROR">Error</button>
-
-    <button  name="REST">REST</button>
-
-    <button  name="DEPARTAMENTOS">Mto.DEPARAMENTOS</button>
-     -->
 </form>
