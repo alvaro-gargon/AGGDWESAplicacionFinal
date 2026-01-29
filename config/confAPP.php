@@ -50,6 +50,7 @@ $controller=[
     'REST'=>'controller/cREST.php',
     'miCuenta'=>'controller/cMiCuenta.php',
     'detalleNasa'=>'controller/cDetallesNasa.php',
+    'instruccionesNasa'=>'controller/cInstruccionesNasa.php',
     'departamento'=>'controller/cMtoDepartamento.php'
 ];
 
@@ -66,6 +67,7 @@ $view=[
     'REST'=>'view/vREST.php',
     'miCuenta'=>'view/vMiCuenta.php',
     'detalleNasa'=>'view/vDetallesNasa.php',
+    'instruccionesNasa'=>'view/vInstruccionesNasa.php',
     'departamento'=>'view/vMtoDepartamento.php'
 ];
 ?>

@@ -300,5 +300,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
         .btn:hover{
             background: rgba(255,255,255,1);
         }
-        
-        
+        /* código para el diseño de las fotos de las apis */
+        .fotoDetalleApi{
+            width: 90%;height: 90%;
+            margin: auto;
+            & img{
+                width: 100%;height: 100%;
+            }
+        }
+        .textoApi{
+            margin: auto;
+            margin-bottom: 10px;
+            width: 30%;
+            background-color: whitesmoke;
+            border: 2px solid black;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .infoApi{
+            margin: auto;
+            margin-top: 10%;
+            width: 70%;
+            background-color: whitesmoke;
+            border: 2px solid black;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            box-shadow: 17px 21px 41px 8px black;
+            line-height: 1.6;
+        }

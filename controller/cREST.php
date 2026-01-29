@@ -28,6 +28,12 @@
         header('Location: index.php');
         exit;
     }
+    if(isset($_REQUEST['INSTRUCCIONNASA'])){
+        $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='instruccionesNasa';
+        header('Location: index.php');
+        exit;
+    }
     
     $entradaOK=true;//variable para cuando todo va bien
     //array para cargar los errores
@@ -80,7 +86,6 @@
     }
     //si todo ha ido bien... recargamos la página con los la foto
     if ($entradaOK) {
-        $_SESSION['ofotoNasaEnCurso']=$oFotoNasa;
         $_SESSION['paginaEnCurso'] = 'REST';
         header('Location: index.php');
         exit;

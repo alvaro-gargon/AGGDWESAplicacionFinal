@@ -15,8 +15,9 @@ class REST{
             $archivoApi=json_decode($resultado,true);
             //si el archivo se a descodificado correctamente, rotorna la foto
             if(isset($archivoApi)){
-                $fotoNasa= new FotoNasa($archivoApi['title'],$archivoApi['url'], $archivoApi['date'], $archivoApi['explanation'], $archivoApi['hdurl']);
-                return $fotoNasa;
+                $oFotoNasa= new FotoNasa($archivoApi['title'],$archivoApi['url'], $archivoApi['date'], $archivoApi['explanation'], $archivoApi['hdurl']);
+                $_SESSION['ofotoNasaEnCurso']=$oFotoNasa;
+                return $oFotoNasa;
             }
     }
     
