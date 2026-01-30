@@ -1,6 +1,6 @@
 <?php
 /*  Nombre: Alvaro Garcia Gonzalez
-*   Fecha: 23/01/2026
+*   Fecha: 30/01/2026
 *   Uso:  controlador del mantenimiento de departamentos*/
 
     //este if se usa para que los usuarios no se salten el control de acceso
@@ -29,7 +29,7 @@
         //solo validamos la descripcion si hay algo escrito
         if(!empty($_REQUEST['descripcionBuscada'])){
             //validamos la descripcion usada
-            $aErrores= validacionFormularios::comprobarAlfabetico($_REQUEST['descripcionBuscada'], 255, 0, 1);
+            $aErrores['descripcionBuscada']= validacionFormularios::comprobarAlfabetico($_REQUEST['descripcionBuscada'], 255, 0, 1);
             
             //comprobamos todos los errores
             foreach($aErrores as $campo => $valor){
@@ -49,7 +49,7 @@
         $_SESSION['descBuscadaEnUso']=$aRespuestas['descripcionBuscada'];
     }
     
-    $aDepartamentos= DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST['descripcionBuscada']);
+    $aDepartamentos= DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST['descripcionBuscada'] ?? '');
     $avDepartamento=[];
     
     
@@ -62,13 +62,15 @@
             if($oDepartamento->getFechaBajaDepartamento()!=null){
                 $fechaBaja=new DateTime($oDepartamento->getFechaBajaDepartamento());
                 $fechaBajaFormateada=$fechaBaja->format('d/m/Y');
+            }else{
+                $fechaBajaFormateada='';
             }
             $avDepartamento[]=[
                 'codDepartamento'=>$oDepartamento->getCodDepartamento(),
                 'descDepartamento'=>$oDepartamento->getDescDepartamento(),
                 'fechaCreacionDepartamento'=>$fechaCreacionFormateada,
                 'volumenDeNegocio'=>$oDepartamento->getVolumenDeNegocio(),
-                'fechaBajaDepartameto'=>$fechaBajaFormateada
+                'fechaBajaDepartamento'=>$fechaBajaFormateada
             ];
         }
     }
