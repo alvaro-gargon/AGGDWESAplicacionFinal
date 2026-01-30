@@ -20,7 +20,7 @@
                     echo '<td>'. $aDepartamento['fechaCreacionDepartamento'] .'</td>';
                     echo '<td>'. $aDepartamento['volumenDeNegocio'] .'</td>';
                     echo '<td>'. $aDepartamento['fechaBajaDepartamento'] .'</td>';
-                    echo '<td><i class="fa-solid fa-pencil"></i></td>';
+                    echo '<td><a href="#">&#9998;</a></td>';
                 echo '</tr>';
             }
         ?>
