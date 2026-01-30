@@ -43,8 +43,9 @@
     }
     
     if($entradaOK){
+        //(Gracias a Gonzalo Junquera)
         //guardamos en el array de respuesta la respuesta del usuario
-        $aRespuestas['descripcionBuscada'] = $_REQUEST['DescDepartamentoBuscado'] ?? ''; //el operador ?? sirve como or si lo primero no existe o esta vacio (Gracias a Gonzalo Junquera)
+        $aRespuestas['descripcionBuscada'] = $_REQUEST['descripcionBuscada'] ?? ''; //el operador ?? sirve como or si lo primero no existe o esta vacio (Gracias a Gonzalo Junquera)
         //guardamos en la sesion la descripcion bucada para que recuerde
         $_SESSION['descBuscadaEnUso']=$aRespuestas['descripcionBuscada'];
     }
