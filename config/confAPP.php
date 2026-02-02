@@ -49,7 +49,8 @@ $controller=[
     'miCuenta'=>'controller/cMiCuenta.php',
     'detalleNasa'=>'controller/cDetallesNasa.php',
     'instruccionesNasa'=>'controller/cInstruccionesNasa.php',
-    'departamento'=>'controller/cMtoDepartamento.php'
+    'departamento'=>'controller/cMtoDepartamento.php',
+    'editarConsultarDepartamento'=>'controller/cEditarConsultarDepartamento.php'
 ];
 
 //array para cargar los archivos de la vista
@@ -66,6 +67,7 @@ $view=[
     'miCuenta'=>'view/vMiCuenta.php',
     'detalleNasa'=>'view/vDetallesNasa.php',
     'instruccionesNasa'=>'view/vInstruccionesNasa.php',
-    'departamento'=>'view/vMtoDepartamento.php'
+    'departamento'=>'view/vMtoDepartamento.php',
+    'editarConsultarDepartamento'=>'view/vEditarConsultarDepartamento.php'
 ];
 ?>

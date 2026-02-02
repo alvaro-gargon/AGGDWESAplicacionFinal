@@ -239,6 +239,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
             border-bottom-left-radius: 5px;
             background-color: lightblue;
         }
+        .icono{
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: lightsalmon;
+            font-size: 1.5rem;
+            padding: 5px;
+        }
         .editar{
             position: relative;
             text-align: left;

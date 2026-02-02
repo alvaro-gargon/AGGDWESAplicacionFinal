@@ -1,0 +1,24 @@
+<?php
+/*  Nombre: Alvaro Garcia Gonzalez
+*   Fecha: 02/02/2026
+*   Uso:  controlador del detalle*/
+    //este if se usa para que los usuarios no se salten el control de acceso
+    if(empty($_SESSION['usuarioMiAplicacion'])){
+        $_SESSION['paginaEnCurso']='inicioPublico';
+        header('Location: index.php');
+        exit;
+    }
+    
+    if(isset($_REQUEST['VOLVER'])){
+        $_SESSION['paginaEnCurso']=$_SESSION['paginaAnterior'];
+        header('Location: index.php');
+        exit;
+    }
+    
+    
+    
+    $avEditarConsultar=[
+        
+    ];
+    require_once $view['layout'];
+    ?>

@@ -9,9 +9,32 @@ require_once 'DBPDO.php';
 
 class DepartamentoPDO{
     
-    
+    /**
+     * 
+     * @param type $codDepartamento
+     * @return oDepartamento, devuelve un objeto departamento
+     */
     public static function buscaDepartamentoPorCod($codDepartamento){
+        //consulta sql para seleccionar todos los datos del departamento
+        $consultaDescripcion = <<<CONSULTA
+                select * from T02_Departamento
+                where T02_CodDepartamento='{$codDepartamento}'
+                
+                CONSULTA;
+        $resultado= DBPDO::ejecutaConsulta($consultaDescripcion);
         
+        $oDepartamento=null;
+        //si hay registro, crea el objeto departamento
+        while ($registro = $resultado->fetchObject()){
+            $oDepartamento= new Departamento(
+                $registro->T02_CodDepartamento,
+                $registro->T02_DescDepartamento,
+                $registro->T02_FechaCreacionDepartamento,
+                $registro->T02_VolumenDeNegocio,
+                $registro->T02_FechaBajaDepartamento
+            ); 
+        }
+        return $oDepartamento;
         
         
     }
