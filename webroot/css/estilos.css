@@ -248,8 +248,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
             padding: 5px;
         }
         .editar{
-            position: relative;
-            text-align: left;
+            width: 70%;
         }
         #formNasa{
             position: relative;

@@ -67,5 +67,31 @@ class DepartamentoPDO{
         }
         return $aDepartamentos;
     }
+    
+    public static function modificarDepartamento($oDepartamento,$descripcionDepartamento,$volumenNegocio) {
+        
+        if($volumenNegocio==''){
+            $volumenNegocio=$oDepartamento->getVolumenDeNegocio();
+        }
+        
+        //consulta preparada para actualizar en la base de datos con los datos necesarios
+        $consultaModificar = <<<CONSULTA
+                UPDATE T02_Departamento SET 
+                T02_DescDepartamento ={$descripcionDepartamento},
+                T02_VolumenDeNegocio ={$volumenNegocio}
+                WHERE T02_CodDepartamento ={$oDepartamento->getCodDepartamento()}
+                
+                CONSULTA;
+        $resultado= DBPDO::ejecutaConsulta($consultaModificar);
+        //si la consulta se ha ejecutado correctamente
+        if($resultado){
+            //actualizamos el objeto departamento
+            $oDepartamento->setDesDepartamento($descripcionDepartamento);
+            $oDepartamento->setVolumenDeNegocio($volumenNegocio);
+            return $oDepartamento;
+        }else{
+            return null;
+        }
+    }
 }
 ?>
