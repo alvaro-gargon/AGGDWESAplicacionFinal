@@ -1,14 +1,15 @@
 <?php
 
-/*  Nombre: Alvaro Garcia Gonzalez
-*   Fecha: 02/02/2026
-*   Uso:  clase DepartamentoPDO con sus metodos para hacer las operaciones pertinentes en el controlador*/
+/** 
+*   
+*   Uso:  clase DepartamentoPDO con sus metodos para hacer las operaciones pertinentes en el controlador
+*   @author: Alvaro Garcia Gonzalez
+*   @since: 02/02/2026
+*/
 
 require_once 'Departamento.php';
 require_once 'DBPDO.php';
-/**
- * Clase que usaremos para hacer operaciones con los objetos departamentos
- */
+
 class DepartamentoPDO{
     
     /**
@@ -153,6 +154,19 @@ class DepartamentoPDO{
             );
         }
         return $oDepartamento;
+    }
+    /**
+     * Funcion que se usara para borrar a un departamento con el codigo proporcionado
+     * @param String $codigoDepartamento , que se usará para borrar a este
+     * @return true si la consulta se ha ejecutado correctamente, false en caso contrario
+     */
+    public static function bajaFisicaDepartamento($codigoDepartamento) {
+        $consultaBorrar = <<<CONSULTA
+            DELETE FROM T02_Departamento WHERE T02_CodDepartamento ='{$codigoDepartamento}'
+            CONSULTA;
+        $resultado= DBPDO::ejecutaConsulta($consultaBorrar);
+        if($resultado->rowCount()>0){return true;} else{return false;}
+
     }
 }
 ?>

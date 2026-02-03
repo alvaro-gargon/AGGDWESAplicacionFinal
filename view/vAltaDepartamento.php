@@ -1,11 +1,11 @@
 <form method="post" id="inicioSesion">
     <p>
-        Alta departamento
+        <h4>Alta departamento</h4>
     </p>
     <p>
         <label>Introduce código departamento</label><br>
         <input class="obligatorio" type="text" name="codigo">
-        <p class="error"><?php echo($aErrores['usuario'])?></p>
+        <p class="error"><?php echo($aErrores['codigo'])?></p>
     </p>
     <p>
         <label>Introduce la descripcion del departamento</label><br>

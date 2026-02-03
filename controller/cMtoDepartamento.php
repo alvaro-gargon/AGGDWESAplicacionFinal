@@ -9,15 +9,22 @@
         header('Location: index.php');
         exit;
     }
+    
     //boton para volver a la página anterior si el usuario asi lo desea
     if(isset($_REQUEST['VOLVER'])){
-        $_SESSION['paginaEnCurso']=$_SESSION['paginaAnterior'];
+        $_SESSION['paginaEnCurso']='inicioPrivado';
         header('Location: index.php');
         exit;
     }
     //boton para ir a la página de dar de alta un departamento
-    if(isset($_REQUEST['ALTA'])){
+    if(isset($_REQUEST['AÑADIR'])){
         $_SESSION['paginaEnCurso']='altaDepartamento';
+        header('Location: index.php');
+        exit;
+    }
+    //boton para ir a la página de dar de borrar un departamento
+    if(isset($_REQUEST['BORRAR'])){
+        $_SESSION['paginaEnCurso']='borrarDepartamento';
         header('Location: index.php');
         exit;
     }

@@ -5,6 +5,7 @@
 <form method="post" id="buscar">
     <input type="text" placeholder="Descripcion departamento..." name="descripcionBuscada" value="<?php echo $_SESSION['descBuscadaEnUso']??'' ?>">
     <button  name="BUSCAR">BUSCAR</button>
+    <button  name="AÑADIR">AÑADIR</button>
 </form>
 
 <form method="post">
@@ -30,6 +31,6 @@
                 }
             ?>
         </table>
-        <button  name="AÑADIR">AÑADIR</button>
+        
     </div>
 </form>

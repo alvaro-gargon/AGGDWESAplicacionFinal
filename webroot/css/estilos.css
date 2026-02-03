@@ -37,6 +37,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
         }
         #buscar{
             text-align: center;
+            margin-bottom: 20px;
             & button{
                 position: relative;
                 left: 1%;

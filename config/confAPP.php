@@ -51,7 +51,8 @@ $controller=[
     'instruccionesNasa'=>'controller/cInstruccionesNasa.php',
     'departamento'=>'controller/cMtoDepartamento.php',
     'editarConsultarDepartamento'=>'controller/cEditarConsultarDepartamento.php',
-    'altaDepartamento'=>'controller/cAltaDepartamento.php'
+    'altaDepartamento'=>'controller/cAltaDepartamento.php',
+    'borrarDepartamento'=>'controller/cBorrarDepartamento.php'
 ];
 
 //array para cargar los archivos de la vista
@@ -70,6 +71,7 @@ $view=[
     'instruccionesNasa'=>'view/vInstruccionesNasa.php',
     'departamento'=>'view/vMtoDepartamento.php',
     'editarConsultarDepartamento'=>'view/vEditarConsultarDepartamento.php',
-    'altaDepartamento'=>'view/vAltaDepartamento.php'
+    'altaDepartamento'=>'view/vAltaDepartamento.php',
+    'borrarDepartamento'=>'view/vBorrarDepartamento.php'
 ];
 ?>
