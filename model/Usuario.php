@@ -3,6 +3,10 @@
 /*  Nombre: Alvaro Garcia Gonzalez
 *   Fecha: 18/12/2025
 *   Uso:  clase Usuario con su constructor y sus atributos*/
+
+/**
+ * Clase que usaremos para la creacion de usuarios y gestionar estos objetos
+ */
 class Usuario {
     private $codUsuario;
     private $password;

@@ -6,6 +6,10 @@
 
 //agradecimientos a Vero por la construcción de la clase
 
+/**
+ * Clase que usaremos para manejar los errores.
+ */
+
 class AppError{
     private $codError;
     private $descError;

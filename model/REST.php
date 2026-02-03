@@ -4,7 +4,9 @@
 *   Fecha: 19/01/2026
 *   Uso:  clase para gestionar el uso de las apis*/
 
-
+/**
+ * Clase que usaremos para gestionar el uso de las apis desde el controlador
+ */
 class REST{
     const API_KEY_NASA = 'rsuRpl7KQp36SjhRODAJe7lw7lgiyeWUMwoAh8hw';
 

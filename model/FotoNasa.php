@@ -3,7 +3,9 @@
 /*  Nombre: Alvaro Garcia Gonzalez
 *   Fecha: 19/01/2026
 *   Uso:  clase para gestionar el uso de la api de la nasa y la foto que usaremos*/
-
+/**
+ * Clase que usaremos para crear los objetos de las fotos de la nasa
+ */
 class FotoNasa {
     private $titulo;
     private $url;

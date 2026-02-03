@@ -1,18 +1,20 @@
 <?php
 
 /*  Nombre: Alvaro Garcia Gonzalez
-*   Fecha: 23/01/2026
+*   Fecha: 02/02/2026
 *   Uso:  clase DepartamentoPDO con sus metodos para hacer las operaciones pertinentes en el controlador*/
 
 require_once 'Departamento.php';
 require_once 'DBPDO.php';
-
+/**
+ * Clase que usaremos para hacer operaciones con los objetos departamentos
+ */
 class DepartamentoPDO{
     
     /**
-     * 
-     * @param type $codDepartamento
-     * @return oDepartamento, devuelve un objeto departamento
+     * Funcion que usara un codigo de departamento dado para busacar un departamento unico
+     * @param  $codDepartamento , codigo que usaremos para buscar el departamento
+     * @return $oDepartamento, devuelve un objeto departamento, ya sea con informacion o con valor null si ha habido algun error
      */
     public static function buscaDepartamentoPorCod($codDepartamento){
         //consulta sql para seleccionar todos los datos del departamento
@@ -39,9 +41,9 @@ class DepartamentoPDO{
         
     }
     /**
-     * 
-     * @param string $descDepartamento , descripcon enviada por el usuario
-     * @return aDepartamento , devuelve un array con los objetos departentos que concidan que el criterio de busquda
+     * Funcion que dada la descripcion busca uno o varios departamentos que
+     * @param $descDepartamento , descripcon enviada por el usuario
+     * @return $aDepartamento , devuelve un array con los objetos departentos que concidan que el criterio de busquda
      */
     public static function buscaDepartamentoPorDesc($descDepartamento){
         //Usamos los porcentajes antes y despues de la descripcion para indicar que cualquier cosa puede ir antes o despues
@@ -67,7 +69,13 @@ class DepartamentoPDO{
         }
         return $aDepartamentos;
     }
-    
+    /**
+     * Funcion usada para modificar los campos descripcion y volumen de negocio de un departamento dado
+     * @param $oDepartamento , objeto departamento que sera el que modificaremos
+     * @param $descripcionDepartamento , descripcion recibida para modificar el departamento
+     * @param $volumenNegocio , volumen de negocio dado para modificar el departamento, si este campo esta vacio, el volumen no cambia
+     * @return objeto departamento si la consulta sql se ha ejecutado correctamente o null sino
+     */
     public static function modificarDepartamento($oDepartamento,$descripcionDepartamento,$volumenNegocio) {
         
         if($volumenNegocio==''){

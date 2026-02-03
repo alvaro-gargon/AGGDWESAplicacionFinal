@@ -6,13 +6,16 @@
 
 require_once 'Usuario.php';
 require_once 'DBPDO.php';
+/**
+ * Clase que usaremos para hacer operaciones con los objetos usuarios
+ */
 class UsuarioPDO {
 
     /**
      * funcion que comprueba si el usuario existe mediante una consulta sql
      * @param string $codUsuario
      * @param string $password
-     * @return \Usuario
+     * @return \Usuario con la informacion si existe o null en caso contrario
      */
     public static function validarUsuario($codUsuario,$password) {
         $oUsuario=null;
@@ -64,9 +67,9 @@ class UsuarioPDO {
     }
     /**
      * funcion para dar de alta un usuario
-     * @param string $codUsuario
-     * @param string $password
-     * @return \Usuario
+     * @param string $codUsuario , codigo que se le asignara al usuario
+     * @param string $password , contraseña que se le asignara al usaurio
+     * @return \Usuario , ya sea el objeto usuario con la informacio como tal o con un valor null
      */
     public static function altaUsuario($codUsuario,$password,$descUsuario) {
         $oUsuario=null;
@@ -87,7 +90,12 @@ class UsuarioPDO {
         }
         return $oUsuario;
     }
-    
+    /**
+     * Funcion dado un usuario actualizamos su descripcion
+     * @param $oUsuario , objeto usuario que vamos a actualizar
+     * @param $descripcion , nueva descripcion que se le asignará al usuario
+     * @return $oUsuario si la consulta se ejecuta correctamente o null en caso contrario
+     */
     public static function modificarUsuario($oUsuario,$descripcion) {
         $consultaActualizar = <<<CONSULTA
             UPDATE T01_Usuario

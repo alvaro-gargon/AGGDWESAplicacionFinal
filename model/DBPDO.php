@@ -3,10 +3,18 @@
 *   Fecha: 18/12/2025
 *   Uso:  clase DBPDO con su metodo*/
 require_once 'config/confDBPDO.php';
-
+/**
+ * Clase que usaremos para manejar la base de datos
+ */
 class DBPDO {
 
-  public static function ejecutaConsulta($sentenciaSQL,$parametros=null) {
+    /**
+     * Esta funcion sirve para ejecutar una consulta dada.
+     * @param $sentenciaSQL , parametro que sera la sentencia sql a ejecutar
+     * @param $parametros , es un parametro opcional para si la sentencia los necesita
+     * @return Devuelve una consulta preparada si todo ha ido bien (tipo variable), o te envía a una página de error si hay algun fallo 
+     */
+    public static function ejecutaConsulta($sentenciaSQL,$parametros=null) {
     try{
         $miDB=new PDO(DNS,USERNAME,PASSWORD);
         $consultaPreparada=$miDB->prepare($sentenciaSQL);
