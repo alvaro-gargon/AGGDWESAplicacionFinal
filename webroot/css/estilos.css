@@ -1,0 +1,337 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 3 oct 2025, 10:14:58
+    Author     : alvaro.gargon.4
+*/
+
+*{margin: 0; padding: 0;box-sizing: border-box}
+        body{
+            display: flex;
+            flex-direction: column;
+            overflow-x: no-display;
+            width: 100%;height: 100%;
+            min-height: 100vh;
+            align-items: center;
+            background-color: beige;
+        }
+        
+        .botonIcono{
+            top: 5px;
+            position: absolute;
+            right: 10%;
+        }
+        #inicioSesion{
+            position: relative;
+            left: 40%;
+            width: 50%;
+        }
+        .obligatorio{
+            background-color: lightgoldenrodyellow;
+        }
+        #arribaDerecha{
+            width: 90%;
+            text-align: right;
+        }
+        #buscar{
+            text-align: center;
+            & button{
+                position: relative;
+                left: 1%;
+                color: white;
+                width: 7rem;height: 2rem;
+                background-color: lightcoral;
+                border: 2px solid black;
+                border-radius: 5px;
+            }
+            & input{
+                position: relative;
+                left: 1%;
+                color: black;
+                width: 14rem;height: 2rem;
+                background-color: lightgoldenrodyellow;
+                border: 2px solid black;
+                border-radius: 5px;
+            }
+        }
+        #botonesPrivado{
+            border: 2px solid black;
+            padding: 2%;
+            background-color: whitesmoke;
+            margin-top: 5%; 
+            display: flex;
+            justify-content: space-between;
+            & button{
+                position: relative;
+                display: flex;
+                color: white;
+                width: 10rem;height: 2rem;
+                justify-content: center;
+                align-items: center;
+                background-color: lightcoral;
+                border: 2px solid black;
+                border-radius: 5px;
+                text-align: center;
+            }
+            /*clase para los botones desactivados por no ser admin*/
+            & .desactivado{
+                background-color: gray;
+            }
+        }
+        .login{
+            
+            color: white;
+            width: 6rem;height: 2rem;
+            background-color: lightcoral;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        
+        .detalle{
+            position: relative;
+            left:50%;
+            color: white;
+            width: 6rem;height: 2rem;
+            background-color: lightcoral;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        .volver{
+            position: relative;
+            left:90%;
+            color: white;
+            width: 6rem;height: 2rem;
+            background-color: lightcoral;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        
+        .botonGenerico{
+            position: relative;
+            left: 1%;
+            color: white;
+            width: 6rem;height: 2rem;
+            background-color: lightcoral;
+            border: 2px solid black;
+            border-radius: 5px;
+            left: 40%;
+        }
+        .botonGenericoFormulario{
+            position: relative;
+            left: 1%;
+            color: white;
+            width: 7rem;height: 2rem;
+            background-color: lightcoral;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        .error{
+            color: red;
+        }
+        h1{
+            position: absolute;
+            left: 45%;
+        }
+        h2{
+            position: relative;
+            left: -40%;
+        }
+        .mensaje{
+            position: relative;
+            left: 40%;
+            width: 500px;
+            margin-bottom: 5px
+        }
+        h3{
+            margin-top: 20px;
+            position: relative;
+            width: 1000px;
+            left: 40%;
+        }
+        .centrarImagen{
+            position: relative;
+            left: 35%;
+            width: 625px;height: 446px;
+            margin-top: 20px;
+        }
+        .centrarImagenWip{
+            position: relative;
+            left: 28%;
+            width: 625px;height: 446px;
+            margin-top: 20px;
+        }
+        p{
+            padding: 10px
+        }
+        header{
+            position: relative;
+            width: 100%;
+            height: 5%;
+            padding: 20px;
+            background-color: #403F6F;
+            color: beige;
+            text-align: center;
+            margin-bottom: 10px; 
+        }
+        main{
+            flex: 1;
+            width: 90%;height: 90%;
+        }
+        footer{
+            position: relative;
+            background-color: #403F6F;
+            color: beige;
+            text-align: center;
+            bottom: 0%;
+            width: 100%;
+            height: 5%;
+        }
+        .contenedor{
+            margin-top: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        a{
+            color: lightcoral;
+            text-decoration: none;
+        }
+        
+        .principal {
+            position: relative;
+            left: 10%;
+            margin-bottom: 40px;
+            width: 70%;
+            border-collapse: separate;
+            border-spacing: 0;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .principal td {
+            padding: 10px;
+            border: 1px solid #3a3a3a;
+            vertical-align: middle;
+            text-align: left;
+            
+        }
+        .principal th {
+            padding: 10px;
+            border: 2px solid #3a3a3a;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            vertical-align: middle;
+            text-align: left;
+            background-color: lightblue;
+        }
+        .principal th:first-child{
+            border: 2px solid #3a3a3a;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background-color: lightblue;
+        }   
+        .principal td:first-child{
+            border: 2px solid #3a3a3a;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background-color: lightblue;
+        }
+        .icono{
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: lightsalmon;
+            font-size: 1.5rem;
+            padding: 5px;
+        }
+        .editar{
+            width: 70%;
+        }
+        #formNasa{
+            position: relative;
+            width: 33%;
+            border: 3px solid #403f6f;
+            border-radius: 5px;
+            padding: 5px
+        }
+        .fotoNasa{
+            width: 100%;
+            & img{
+                width: 100%;
+            }
+        }
+        /*estilos para el carrusel*/
+        .container{
+            position: relative;
+            left: 20%;
+            width: 75%;
+            height: 70vh;
+            background-color: #fae1c3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .caroussel{
+            width: 100%;height: 100%;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        .photo{
+            flex: 0 0 600px;
+            width: 100%;height: 100%;
+            scroll-snap-align: center;
+        }
+        .btn{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            background: rgba(255,255,255,0.7);
+            border: none;
+            cursor: pointer;
+            padding: .5rem 1rem;
+            z-index: 10;
+        } /* Ambos botones alineados a la izquierda */
+        .prev{
+            left: calc(50% - 350px); /* borde izquierdo del carrusel */
+        }
+        .next{
+            left: calc(50% - 300px); /* un poco a la derecha del anterior */
+        }
+        .btn:hover{
+            background: rgba(255,255,255,1);
+        }
+        /* código para el diseño de las fotos de las apis */
+        .fotoDetalleApi{
+            width: 90%;height: 90%;
+            margin: auto;
+            & img{
+                width: 100%;height: 100%;
+            }
+        }
+        .textoApi{
+            margin: auto;
+            margin-bottom: 10px;
+            width: 30%;
+            background-color: whitesmoke;
+            border: 2px solid black;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .infoApi{
+            margin: auto;
+            margin-top: 10%;
+            width: 70%;
+            background-color: whitesmoke;
+            border: 2px solid black;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            box-shadow: 17px 21px 41px 8px black;
+            line-height: 1.6;
+        }
