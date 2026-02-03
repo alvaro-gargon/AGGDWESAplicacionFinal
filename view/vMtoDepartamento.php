@@ -23,7 +23,7 @@
                         echo '<td>'. $aDepartamento['volumenDeNegocio'] .'</td>';
                         echo '<td>'. $aDepartamento['fechaBajaDepartamento'] .'</td>';
                         echo '<td>'
-                            . '<button class="icono" name="EDITAR" value="'.$aDepartamento['codDepartamento'].'">&#9998;</button>'
+                            . '<button  class="icono" name="EDITAR" value="'.$aDepartamento['codDepartamento'].'">&#9998;</button>'
                             . '<button class="icono" name="CONSULTAR" value="'.$aDepartamento['codDepartamento'].'">&#128065;</button>'
                             . '<button class="icono" name="BORRAR" value="'.$aDepartamento['codDepartamento'].'">&#128465;</button>'
                         . '</td>';

@@ -10,7 +10,7 @@
     }
     //boton que aparece en la vista de consultar y que te devuelve a la página anterior
     if(isset($_REQUEST['VOLVER'])){
-        $_SESSION['paginaEnCurso']=$_SESSION['paginaAnterior'];
+        $_SESSION['paginaEnCurso']='departamento';
         header('Location: index.php');
         exit;
     }

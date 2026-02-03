@@ -24,9 +24,13 @@
     }
     //boton para ir a la página de dar de borrar un departamento
     if(isset($_REQUEST['BORRAR'])){
-        $_SESSION['paginaEnCurso']='borrarDepartamento';
-        header('Location: index.php');
-        exit;
+        $departamentoEnUso=DepartamentoPDO::buscaDepartamentoPorCod($_REQUEST['BORRAR']);
+        if($departamentoEnUso!=null){
+            $_SESSION['departamentoEnUso']=$departamentoEnUso;
+            $_SESSION['paginaEnCurso']='borrarDepartamento';
+            header('Location: index.php');
+            exit;
+        }
     }
     //boton para acceder a la vista de edición de un departamento
     if(isset($_REQUEST['EDITAR'])){
