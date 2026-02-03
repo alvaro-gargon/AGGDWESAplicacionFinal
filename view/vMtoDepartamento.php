@@ -30,5 +30,6 @@
                 }
             ?>
         </table>
+        <button  name="AÑADIR">AÑADIR</button>
     </div>
 </form>

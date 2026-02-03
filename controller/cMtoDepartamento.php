@@ -15,6 +15,12 @@
         header('Location: index.php');
         exit;
     }
+    //boton para ir a la página de dar de alta un departamento
+    if(isset($_REQUEST['ALTA'])){
+        $_SESSION['paginaEnCurso']='altaDepartamento';
+        header('Location: index.php');
+        exit;
+    }
     //boton para acceder a la vista de edición de un departamento
     if(isset($_REQUEST['EDITAR'])){
         $departamentoEnUso=DepartamentoPDO::buscaDepartamentoPorCod($_REQUEST['EDITAR']);

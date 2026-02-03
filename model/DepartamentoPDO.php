@@ -101,5 +101,58 @@ class DepartamentoPDO{
             return null;
         }
     }
+    /**
+     * Funcion diseñada para dar de alta un nuevo departamento
+     * @param String $codigoDepartamento , codigo del nuevo departamento
+     * @param String $descripcionDepartamento , descripcion del nuevo departamento
+     * @param Float $volumenNegocio , volumen de negocio del nuevo apartamento
+     * @return Obejto departamento si se ha procedido exitosamente o null en caso contrario
+     */
+    public static function altaDepartamento($codigoDepartamento,$descripcionDepartamento,$volumenNegocio){
+        $oDepartamento=null;
+        
+        //situamos la zona horaria actual a la local para la creacion del departamento
+        date_default_timezone_set('Europe/Madrid');
+        
+        $consultaAlta = <<<CONSULTA
+        INSERT INTO T02_Departamento  
+        VALUES ('{$codigoDepartamento}', '{$descripcionDepartamento}', {$volumenNegocio}, NOW(),null)
+        CONSULTA;
+
+        DBPDO::ejecutaConsulta($consultaAlta);
+        $oDepartamento= self::validarCodigo($codigoDepartamento);
+        if($oDepartamento!=null){
+            return $oDepartamento;
+        }else{
+            return null;
+        }
+    } 
+    /**
+     * funcion que comprueba si el departamento existe mediante una consulta sql
+     * @param string $codDepartamento
+     * @return Obejct Departamento con la informacion si existe o null en caso contrario
+     */
+    public static function validarCodigo($codDepartamento) {
+        $oDepartamento=null;
+        $consultaValidar = <<<CONSULTA
+            SELECT *
+            FROM T02_Departamento
+            WHERE T02_CodDepartamento= '{$codDepartamento}'
+            CONSULTA;
+        
+        $resultado= DBPDO::ejecutaConsulta($consultaValidar);
+        
+        if($resultado->rowCount()>0){
+            $oResultado=$resultado->fetchObject();
+            $oDepartamento=new Departamento(
+                $oResultado->T02_CodDepartamento,
+                $oResultado->T02_DescDepartamento,
+                $oResultado->T02_VolumenDeNegocio,
+                $oResultado->T02_FechaCreacionDepartamento,
+                $oResultado->T02_FechaBajaDepartamento=null
+            );
+        }
+        return $oDepartamento;
+    }
 }
 ?>
