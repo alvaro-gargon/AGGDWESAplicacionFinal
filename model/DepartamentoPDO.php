@@ -85,9 +85,9 @@ class DepartamentoPDO{
         //consulta preparada para actualizar en la base de datos con los datos necesarios
         $consultaModificar = <<<CONSULTA
                 UPDATE T02_Departamento SET 
-                T02_DescDepartamento ={$descripcionDepartamento},
+                T02_DescDepartamento ='{$descripcionDepartamento}',
                 T02_VolumenDeNegocio ={$volumenNegocio}
-                WHERE T02_CodDepartamento ={$oDepartamento->getCodDepartamento()}
+                WHERE T02_CodDepartamento = '{$oDepartamento->getCodDepartamento()}'
                 
                 CONSULTA;
         $resultado= DBPDO::ejecutaConsulta($consultaModificar);

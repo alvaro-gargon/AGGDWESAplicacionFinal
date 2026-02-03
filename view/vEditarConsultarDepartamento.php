@@ -1,6 +1,6 @@
 <form method="post" id="inicioSesion">
     <p>
-        <h3 class="editar">Editar mi Cuenta</h3>
+        <h3 class="editar">Editar departamento</h3>
     </p>
     <p>
         <label>Código de departamento</label><br>

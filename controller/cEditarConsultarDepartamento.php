@@ -15,8 +15,8 @@
         exit;
     }
     //boton que aparece en la vista de editar y te devuelve a la página anterior sin provocar ningún cambio
-    if(isset($_REQUEST['VOLVER'])){
-        $_SESSION['paginaEnCurso']=$_SESSION['paginaAnterior'];
+    if(isset($_REQUEST['CANCELAR'])){
+        $_SESSION['paginaEnCurso']='departamento';
         header('Location: index.php');
         exit;
     }
@@ -51,7 +51,7 @@
         $oDepartamentoModificado= DepartamentoPDO::modificarDepartamento($_SESSION['departamentoEnUso'], $_REQUEST['descripcion'], $_REQUEST['volumen']);
         if($oDepartamentoModificado!=null){
             $_SESSION['departamentoEnUso']=$oDepartamentoModificado;
-            $_SESSION['paginaEnCurso']=$_SESSION['paginaAnterior'];
+            $_SESSION['paginaEnCurso']='departamento';
             header('Location: index.php');
             exit;
         }else{
