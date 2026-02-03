@@ -1,10 +1,11 @@
 <?php
 
-/*  Nombre: Alvaro Garcia Gonzalez
-*   Fecha: 19/01/2026
-*   Uso:  clase para gestionar el uso de la api de la nasa y la foto que usaremos*/
 /**
- * Clase que usaremos para crear los objetos de las fotos de la nasa
+ * Clase FotoNasa
+ * Uso:  clase para gestionar el uso de la api de la nasa y la foto que usaremos y para crear los objetos de las fotos de la nasa
+ * @author Alvaro Garcia Gonzalez
+ * @since 19/01/2026
+ * @package model
  */
 class FotoNasa {
     private $titulo;

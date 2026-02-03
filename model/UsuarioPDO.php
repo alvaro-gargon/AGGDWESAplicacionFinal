@@ -1,14 +1,16 @@
 <?php
 
-/*  Nombre: Alvaro Garcia Gonzalez
-*   Fecha: 18/12/2025
-*   Uso:  clase UsuarioPDO con sus metodos*/
+/**  
+ * Clase UsuarioPDO 
+ *   Uso:  clase que usaremos para hacer opreaciones con los usuarios
+ * @author Alvaro Garcia Gonzalez
+ * @since 18/12/2025
+ * @package model
+ */
 
 require_once 'Usuario.php';
 require_once 'DBPDO.php';
-/**
- * Clase que usaremos para hacer operaciones con los objetos usuarios
- */
+
 class UsuarioPDO {
 
     /**

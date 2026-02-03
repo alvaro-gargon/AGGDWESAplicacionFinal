@@ -1,11 +1,14 @@
 <?php
-/*  Nombre: Alvaro Garcia Gonzalez
-*   Fecha: 18/12/2025
-*   Uso:  clase DBPDO con su metodo*/
+/**  
+*   
+*   Clase DBPDO
+*  Uso:  clase DBPDO con su metodos que usaremos para manejar la base de datos
+*   @author Alvaro Garcia Gonzalez
+*   @since: 18/12/2025
+ * @package model
+*/
 require_once 'config/confDBPDO.php';
-/**
- * Clase que usaremos para manejar la base de datos
- */
+
 class DBPDO {
 
     /**

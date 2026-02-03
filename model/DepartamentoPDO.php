@@ -1,10 +1,11 @@
 <?php
 
 /** 
-*   
+*   Clase DepartamentoPDO 
 *   Uso:  clase DepartamentoPDO con sus metodos para hacer las operaciones pertinentes en el controlador
 *   @author: Alvaro Garcia Gonzalez
 *   @since: 02/02/2026
+* @package model
 */
 
 require_once 'Departamento.php';
