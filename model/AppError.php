@@ -1,14 +1,16 @@
 <?php
 
-/*  Nombre: Alvaro Garcia Gonzalez
-*   Fecha: 15/01/2026
-*   Uso:  clase AppError con sus metodos*/
+/** 
+*   Clase AppError
+*   Uso:  clase AppError con sus metodos que usaremos para manejar los errores.
+*   @author Alvaro Garcia Gonzalez
+*   @since 15/01/2026
+ * @package model
+*/
 
 //agradecimientos a Vero por la construcción de la clase
 
-/**
- * Clase que usaremos para manejar los errores.
- */
+
 
 class AppError{
     private $codError;

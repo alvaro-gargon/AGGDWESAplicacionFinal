@@ -1,11 +1,11 @@
 <?php
 
-/*  Nombre: Alvaro Garcia Gonzalez
-*   Fecha: 18/12/2025
-*   Uso:  clase Usuario con su constructor y sus atributos*/
-
 /**
- * Clase que usaremos para la creacion de usuarios y gestionar estos objetos
+ * Clase Usuario que usaremos para la creacion de usuarios y gestionar estos objetos
+ * Uso: clase Usuario con su constructor y sus atributos
+ * @author Alvaro Garcia Gonzalez
+ * @since 18/12/2025
+ * @package model
  */
 class Usuario {
     private $codUsuario;
