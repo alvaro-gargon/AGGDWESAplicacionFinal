@@ -27,13 +27,10 @@
 ?>
     </div>
 <form method="post" id="botonesPrivado">
-    <button  name="DETALLE">DETALLE</button>
-
-    <button  name="WIP">WIP</button>
-
-    <button  name="ERROR">Error</button>
-
-    <button  name="REST">REST</button>
-
-    <button  name="DEPARTAMENTOS">Mto.DEPARAMENTOS</button>
+    
+    <?php 
+        foreach ($aBotones as $boton=>$nombre){
+            echo '<button name='.$nombre.'>'.$boton.'</button>';
+        }
+    ?>
 </form>

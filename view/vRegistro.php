@@ -21,7 +21,7 @@
         <input class="obligatorio" type="password" name="contraseñaRepetida">
     </p>
     <p>
-        <label>Introduce la pregunta de seguridad</label><br>
+        <label>Introduce la pregunta de seguridad (todo en minuscula, por favor)</label><br>
         <input class="obligatorio" type="text" name="preguntaSeguridad">
     </p>
     <button class="botonGenericoFormulario" type="submit" name="ACEPTAR">ACEPTAR</button>

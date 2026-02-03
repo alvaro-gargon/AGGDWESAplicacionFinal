@@ -1,6 +1,6 @@
 <?php
 /*  Nombre: Alvaro Garcia Gonzalez
-*   Fecha: 22/01/2026
+*   Fecha: 29/01/2026
 *   Uso:  controlador para los detalles de la foto de la nasa*/ 
 
     //cuando el usuario le da a volver, vuelve a la página de las apis
@@ -15,7 +15,8 @@
     $avDetallesNasa=[
         'informacion'=>$oFotoNasa->getInformacion(),
         'titulo'=>$oFotoNasa->getTitulo(),
-        'hdurl'=>$oFotoNasa->getHdurl()
+        'hdurl'=>$oFotoNasa->getHdurl(),
+        'fechaFoto'=>$_SESSION['fechaNasa']
     ];
     
     require_once $view['layout'];

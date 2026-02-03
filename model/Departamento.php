@@ -3,6 +3,9 @@
 *   Fecha: 23/01/2026
 *   Uso:  clase Departamento con su constructor y sus atributos*/
 
+/**
+ * Clase Departamento usada para la construcción de los objetos departamentos 
+ */
 class Departamento {
     private $codDepartamento;
     private $descDepartamento;

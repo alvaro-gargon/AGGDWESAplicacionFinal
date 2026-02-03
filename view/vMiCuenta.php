@@ -1,4 +1,4 @@
-    <form method="post" id="inicioSesion">
+<form method="post" id="inicioSesion">
     <p>
         <h3 class="editar">Editar mi Cuenta</h3>
     </p>

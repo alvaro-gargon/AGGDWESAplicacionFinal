@@ -16,6 +16,26 @@ require_once 'model/FotoNasa.php';
 require_once 'model/Departamento.php';
 require_once 'model/DepartamentoPDO.php';
 
+//definimos la respuesta de la pregunta de seguridad
+define('SEGURIDAD','pimentel');
+
+//Declaramos ambos array de funcionalidades para los diferentes perfiles. 
+//El perfil administrador tendrá todas las funcionalidades del usuario normal, y algunas extra
+
+//array para el usuario normal (el valor de cada index sera el usado para el atributo del boton "name")
+$aFuncionalidadUsuario=[
+    'rest'=>'REST',
+    'departamentos'=>'DEPARTAMENTOS',
+    'detalle'=>'DETALLE'
+];
+//array para el usuario administrador
+$aFuncionalidadAdmin=[
+    'rest'=>'REST',
+    'departamentos'=>'DEPARTAMENTOS',
+    'detalle'=>'DETALLE',
+    'usuarios'=>'USUARIOS'
+];
+
 //array para cargar los archivos del controlador
 $controller=[
     'inicioPublico' => 'controller/cInicioPublico.php',
@@ -28,7 +48,11 @@ $controller=[
     'REST'=>'controller/cREST.php',
     'miCuenta'=>'controller/cMiCuenta.php',
     'detalleNasa'=>'controller/cDetallesNasa.php',
-    'departamento'=>'controller/cMtoDepartamento.php'
+    'instruccionesNasa'=>'controller/cInstruccionesNasa.php',
+    'departamento'=>'controller/cMtoDepartamento.php',
+    'editarConsultarDepartamento'=>'controller/cEditarConsultarDepartamento.php',
+    'altaDepartamento'=>'controller/cAltaDepartamento.php',
+    'borrarDepartamento'=>'controller/cBorrarDepartamento.php'
 ];
 
 //array para cargar los archivos de la vista
@@ -44,6 +68,10 @@ $view=[
     'REST'=>'view/vREST.php',
     'miCuenta'=>'view/vMiCuenta.php',
     'detalleNasa'=>'view/vDetallesNasa.php',
-    'departamento'=>'view/vMtoDepartamento.php'
+    'instruccionesNasa'=>'view/vInstruccionesNasa.php',
+    'departamento'=>'view/vMtoDepartamento.php',
+    'editarConsultarDepartamento'=>'view/vEditarConsultarDepartamento.php',
+    'altaDepartamento'=>'view/vAltaDepartamento.php',
+    'borrarDepartamento'=>'view/vBorrarDepartamento.php'
 ];
 ?>
