@@ -2,7 +2,7 @@
 
 /**  
  * Clase UsuarioPDO 
- *   Uso:  clase que usaremos para hacer opreaciones con los usuarios
+ *   Uso:  clase que usaremos para hacer opeeaciones con los usuarios
  * @author Alvaro Garcia Gonzalez
  * @since 18/12/2025
  * @package model
@@ -29,7 +29,6 @@ class UsuarioPDO {
             CONSULTA;
         
         $resultado= DBPDO::ejecutaConsulta($consultaValidar);
-        
         if($resultado->rowCount()>0){
             $oResultado=$resultado->fetchObject();
             $oUsuario=new Usuario(
@@ -46,7 +45,7 @@ class UsuarioPDO {
     }
     
     /**
-     * funcion que actualiza las fechas de las conexiones del usuario activo
+     * funcion que actualiza las fechas de las conexiones del usuario activo. Modifica el usuario recibido, no tiene return
      * @param Usuario $oUsuarioAActualizar
      */
     public static  function actualizarUltimaConexion($oUsuarioAActualizar){
@@ -71,7 +70,7 @@ class UsuarioPDO {
      * funcion para dar de alta un usuario
      * @param string $codUsuario , codigo que se le asignara al usuario
      * @param string $password , contraseña que se le asignara al usaurio
-     * @return \Usuario , ya sea el objeto usuario con la informacio como tal o con un valor null
+     * @return Object Usuario , ya sea el objeto usuario con la informacio como tal o con un valor null
      */
     public static function altaUsuario($codUsuario,$password,$descUsuario) {
         $oUsuario=null;
@@ -94,14 +93,14 @@ class UsuarioPDO {
     }
     /**
      * Funcion dado un usuario actualizamos su descripcion
-     * @param $oUsuario , objeto usuario que vamos a actualizar
-     * @param $descripcion , nueva descripcion que se le asignará al usuario
-     * @return $oUsuario si la consulta se ejecuta correctamente o null en caso contrario
+     * @param Usuario $oUsuario , objeto usuario que vamos a actualizar
+     * @param string $descripcion , nueva descripcion que se le asignará al usuario
+     * @return Usuario $oUsuario si la consulta se ejecuta correctamente o null en caso contrario
      */
     public static function modificarUsuario($oUsuario,$descripcion) {
         $consultaActualizar = <<<CONSULTA
             UPDATE T01_Usuario
-            SET T01_DescUsuario
+            SET T01_DescUsuario = '{$descripcion}'
             WHERE T01_CodUsuario= '{$oUsuario->getCodUsuario()}'
             CONSULTA;
         $resultado= DBPDO::ejecutaConsulta($consultaActualizar);

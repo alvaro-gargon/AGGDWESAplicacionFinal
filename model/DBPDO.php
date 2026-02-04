@@ -13,9 +13,9 @@ class DBPDO {
 
     /**
      * Esta funcion sirve para ejecutar una consulta dada.
-     * @param $sentenciaSQL , parametro que sera la sentencia sql a ejecutar
-     * @param $parametros , es un parametro opcional para si la sentencia los necesita
-     * @return Devuelve una consulta preparada si todo ha ido bien (tipo variable), o te envía a una página de error si hay algun fallo 
+     * @param string $sentenciaSQL , parametro que sera la sentencia sql a ejecutar
+     * @param string $parametros , es un parametro opcional para si la sentencia los necesita
+     * @return ? Devuelve una consulta preparada si todo ha ido bien (tipo variable), o te envía a una página de error si hay algun fallo 
      */
     public static function ejecutaConsulta($sentenciaSQL,$parametros=null) {
     try{
