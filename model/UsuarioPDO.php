@@ -110,7 +110,27 @@ class UsuarioPDO {
         }else{
             return null;
         }
+    }
+    /**
+     * Funcion que sirve para cambiar una contraseña dado por el usuario
+     * @param Usuario $oUsuario , usuario cuya contraseña va a cambiar
+     * @param string $password , la nueva contraseña
+     * @return Usuario $oUsuario si la consulta se ejecuta correctamente o null en caso contrario
+     */
+    public static function cambiarPassword($oUsuario,$password) {
+        $consultaCambiarPassword = <<<CONSULTA
+            UPDATE T01_Usuario
+            SET T01_Password = SHA2('{$oUsuario->getCodUsuario()}{$password}', 256)
+            WHERE T01_CodUsuario= '{$oUsuario->getCodUsuario()}'
+            CONSULTA;
         
+        $resultado=DBPDO::ejecutaConsulta($consultaCambiarPassword);
+        if ($resultado){
+            $oUsuario->setPassword($password);
+            return $oUsuario;
+        }else{
+            return null;
+        }
     }
 }
 
