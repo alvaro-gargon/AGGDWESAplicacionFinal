@@ -13,7 +13,7 @@
     </p>
     <p>
         <label>Cambiar la contraseña</label><br>
-        <button class="login" name="CONTRASEÑA">MI CUENTA</button>
+        <button class="botonGenericoFormulario botonLargo" name="CONTRASEÑA">CAMBIAR CONTRASEÑA</button>
     </p>
     <p>
         <label>Perfil</label><br>
@@ -24,7 +24,7 @@
         <input disabled type="text" name="conexiones" value="<?php echo $avMiCuenta['conexiones']; ?>">
     </p>
     <p>
-        <label>Fecha de la última conexion</label><br>
+        <label>Fecha y hora de la última conexion</label><br>
         <input disabled type="text" name="fechaUltimaConexion" value="<?php echo $avMiCuenta['fechaUltimaConexion']; ?>">
     </p>
     <button class="botonGenericoFormulario" type="submit" name="ACEPTAR">ACEPTAR</button>

@@ -12,7 +12,7 @@
         exit;
     }
     if(isset($_REQUEST['CONTRASEÑA'])){
-        $_SESSION['paginaEnCurso']='login';
+        $_SESSION['paginaEnCurso']='cambiarPassword';
         header('Location: index.php');
         exit;
     }

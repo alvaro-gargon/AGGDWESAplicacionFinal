@@ -52,7 +52,8 @@ $controller=[
     'departamento'=>'controller/cMtoDepartamento.php',
     'editarConsultarDepartamento'=>'controller/cEditarConsultarDepartamento.php',
     'altaDepartamento'=>'controller/cAltaDepartamento.php',
-    'borrarDepartamento'=>'controller/cBorrarDepartamento.php'
+    'borrarDepartamento'=>'controller/cBorrarDepartamento.php',
+    'cambiarPassword'=>'controller/cCambiarPassword.php'
 ];
 
 //array para cargar los archivos de la vista
@@ -72,6 +73,7 @@ $view=[
     'departamento'=>'view/vMtoDepartamento.php',
     'editarConsultarDepartamento'=>'view/vEditarConsultarDepartamento.php',
     'altaDepartamento'=>'view/vAltaDepartamento.php',
-    'borrarDepartamento'=>'view/vBorrarDepartamento.php'
+    'borrarDepartamento'=>'view/vBorrarDepartamento.php',
+    'cambiarPassword'=>'view/vCambiarPassword.php'
 ];
 ?>
