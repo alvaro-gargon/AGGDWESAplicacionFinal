@@ -15,8 +15,8 @@ class DepartamentoPDO{
     
     /**
      * Funcion que usara un codigo de departamento dado para busacar un departamento unico
-     * @param  $codDepartamento , codigo que usaremos para buscar el departamento
-     * @return $oDepartamento, devuelve un objeto departamento, ya sea con informacion o con valor null si ha habido algun error
+     * @param  string $codDepartamento , codigo que usaremos para buscar el departamento
+     * @return Departamento $oDepartamento, devuelve un objeto departamento, ya sea con informacion o con valor null si ha habido algun error
      */
     public static function buscaDepartamentoPorCod($codDepartamento){
         //consulta sql para seleccionar todos los datos del departamento
@@ -44,8 +44,8 @@ class DepartamentoPDO{
     }
     /**
      * Funcion que dada la descripcion busca uno o varios departamentos que
-     * @param $descDepartamento , descripcon enviada por el usuario
-     * @return $aDepartamento , devuelve un array con los objetos departentos que concidan que el criterio de busquda
+     * @param string $descDepartamento , descripcon enviada por el usuario
+     * @return array[Departamento] $aDepartamento , devuelve un array con los objetos departentos que concidan que el criterio de busquda
      */
     public static function buscaDepartamentoPorDesc($descDepartamento){
         //Usamos los porcentajes antes y despues de la descripcion para indicar que cualquier cosa puede ir antes o despues
@@ -73,10 +73,10 @@ class DepartamentoPDO{
     }
     /**
      * Funcion usada para modificar los campos descripcion y volumen de negocio de un departamento dado
-     * @param $oDepartamento , objeto departamento que sera el que modificaremos
-     * @param $descripcionDepartamento , descripcion recibida para modificar el departamento
-     * @param $volumenNegocio , volumen de negocio dado para modificar el departamento, si este campo esta vacio, el volumen no cambia
-     * @return objeto departamento si la consulta sql se ha ejecutado correctamente o null sino
+     * @param Departamento $oDepartamento , objeto departamento que sera el que modificaremos
+     * @param string $descripcionDepartamento , descripcion recibida para modificar el departamento
+     * @param float $volumenNegocio , volumen de negocio dado para modificar el departamento, si este campo esta vacio, el volumen no cambia
+     * @return Departamento departamento si la consulta sql se ha ejecutado correctamente o null sino
      */
     public static function modificarDepartamento($oDepartamento,$descripcionDepartamento,$volumenNegocio) {
         
@@ -108,7 +108,7 @@ class DepartamentoPDO{
      * @param String $codigoDepartamento , codigo del nuevo departamento
      * @param String $descripcionDepartamento , descripcion del nuevo departamento
      * @param Float $volumenNegocio , volumen de negocio del nuevo apartamento
-     * @return Obejto departamento si se ha procedido exitosamente o null en caso contrario
+     * @return Departamento departamento si se ha procedido exitosamente o null en caso contrario
      */
     public static function altaDepartamento($codigoDepartamento,$descripcionDepartamento,$volumenNegocio){
         $oDepartamento=null;
@@ -132,7 +132,7 @@ class DepartamentoPDO{
     /**
      * funcion que comprueba si el departamento existe mediante una consulta sql
      * @param string $codDepartamento
-     * @return Obejct Departamento con la informacion si existe o null en caso contrario
+     * @return Departamento departamento con la informacion si existe o null en caso contrario
      */
     public static function validarCodigo($codDepartamento) {
         $oDepartamento=null;
@@ -159,7 +159,7 @@ class DepartamentoPDO{
     /**
      * Funcion que se usara para borrar a un departamento con el codigo proporcionado
      * @param String $codigoDepartamento , que se usará para borrar a este
-     * @return true si la consulta se ha ejecutado correctamente, false en caso contrario
+     * @return true|false true si la consulta se ha ejecutado correctamente, false en caso contrario
      */
     public static function bajaFisicaDepartamento($codigoDepartamento) {
         $consultaBorrar = <<<CONSULTA

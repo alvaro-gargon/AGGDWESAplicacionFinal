@@ -2,7 +2,7 @@
 
 /**
  * Clase REST
- * Uso:  que usaremos para gestionar el uso de las apis desde el controlador
+ * Uso: clase que usaremos para gestionar el uso de las apis desde el controlador
  * @author Alvaro Garcia Gonzalez
  * @since 19/01/2026
  * @package model
