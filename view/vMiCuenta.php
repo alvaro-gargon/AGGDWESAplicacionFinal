@@ -4,11 +4,11 @@
     </p>
     <p>
         <label>Código de usuario</label><br>
-        <input disabled type="text" name="usuario">
+        <input disabled type="text" name="usuario" value="<?php echo $avMiCuenta['codigo']; ?>">
     </p>
     <p>
         <label>Introduce tu nombre completo</label><br>
-        <input class="obligatorio" type="text" name="descripcion">
+        <input class="obligatorio" type="text" name="descripcion" value="<?php echo $avMiCuenta['descripcion']; ?>">
         <p class="error"><?php echo($aErrores['descripcion'])?></p>
     </p>
     <p>
@@ -17,15 +17,15 @@
     </p>
     <p>
         <label>Perfil</label><br>
-        <input disabled type="text" name="perfil">
+        <input disabled type="text" name="perfil" value="<?php echo $avMiCuenta['perfil']; ?>">
     </p>
     <p>
         <label>Numero de conexiones</label><br>
-        <input disabled type="text" name="conexiones">
+        <input disabled type="text" name="conexiones" value="<?php echo $avMiCuenta['conexiones']; ?>">
     </p>
     <p>
         <label>Fecha de la última conexion</label><br>
-        <input disabled type="date" name="fechaUltimaConexion">
+        <input disabled type="text" name="fechaUltimaConexion" value="<?php echo $avMiCuenta['fechaUltimaConexion']; ?>">
     </p>
     <button class="botonGenericoFormulario" type="submit" name="ACEPTAR">ACEPTAR</button>
     <button class="botonGenericoFormulario" name="CANCELAR">CANCELAR</button>

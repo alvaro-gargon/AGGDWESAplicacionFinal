@@ -101,7 +101,7 @@ class UsuarioPDO {
     public static function modificarUsuario($oUsuario,$descripcion) {
         $consultaActualizar = <<<CONSULTA
             UPDATE T01_Usuario
-            SET T01_DescUsuario
+            SET T01_DescUsuario = '{$descripcion}'
             WHERE T01_CodUsuario= '{$oUsuario->getCodUsuario()}'
             CONSULTA;
         $resultado= DBPDO::ejecutaConsulta($consultaActualizar);

@@ -7,7 +7,7 @@
      * Boton cancelar que te devuelve al login si el usuario decide no registrarse
      */
     if(isset($_REQUEST['CANCELAR'])){
-        $_SESSION['paginaEnCurso']='login';
+        $_SESSION['paginaEnCurso']='inicioPrivado';
         header('Location: index.php');
         exit;
     }
@@ -30,9 +30,6 @@
      */
     if(isset($_REQUEST['ACEPTAR'])){
         $aErrores['descripcion']= validacionFormularios::comprobarAlfabetico($_REQUEST['descripcion'],32,4,obligatorio:1);//validacion alfabtica del campo descripcion
-        if($_REQUEST['preguntaSeguridad']!='pimentel'){
-            $entradaOK=false;
-        }
         foreach ($aErrores as $clave => $valor){
             if($valor!=null){
                 $entradaOK=false;
@@ -42,7 +39,7 @@
         $entradaOK=false;
     }
     
-    
+    $oUsuarioActivo=$_SESSION['usuarioMiAplicacion'];
     if($entradaOK){
         $oUsuarioActivo=UsuarioPDO::modificarUsuario($_SESSION['usuarioMiAplicacion'], $_REQUEST['descripcion']);
         $_SESSION['usuarioMiAplicacion']=$oUsuarioActivo;
@@ -50,10 +47,15 @@
         header('Location: index.php');
         exit;
     }
+    //variable fecha para mostrarla formateada
+    $fechaUltimaConexion=$oUsuarioActivo->getFechaHoraUltimaConexion();
+    //array que usaremos para mostrar los datos del usuario en la vista
     $avMiCuenta=[
         'codigo'=>$oUsuarioActivo->getCodUsuario(),
         'descripcion'=>$oUsuarioActivo->getDescUsuario(),
         'conexiones'=>$oUsuarioActivo->getNumAccesos(),
+        'perfil'=>$oUsuarioActivo->getPerfil(),
+        'fechaUltimaConexion'=>$fechaUltimaConexion->format('d-m-Y H:i:s')
     ];
     require_once $view['layout'];
 ?>
