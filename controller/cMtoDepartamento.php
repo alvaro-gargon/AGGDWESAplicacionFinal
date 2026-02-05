@@ -37,22 +37,26 @@
         $departamentoEnUso=DepartamentoPDO::buscaDepartamentoPorCod($_REQUEST['EDITAR']);
         if($departamentoEnUso!=null){
             $_SESSION['departamentoEnUso']=$departamentoEnUso;
-            $_SESSION['vistaEditarConsultarDepartamento']='editar';
             $_SESSION['paginaEnCurso']='editarConsultarDepartamento';
             header('Location: index.php');
             exit;
         }
     }
-    //boton para acceder a la vista de consulta de un departamento
-    if(isset($_REQUEST['CONSULTAR'])){
-        $departamentoEnUso=DepartamentoPDO::buscaDepartamentoPorCod($_REQUEST['CONSULTAR']);
+    //boton para ir a la página de dar de baja lógica un departamento
+    if(isset($_REQUEST['BAJA'])){
+        $departamentoEnUso=DepartamentoPDO::buscaDepartamentoPorCod($_REQUEST['BAJA']);
         if($departamentoEnUso!=null){
             $_SESSION['departamentoEnUso']=$departamentoEnUso;
-            $_SESSION['vistaEditarConsultarDepartamento']='consultar';
-            $_SESSION['paginaEnCurso']='editarConsultarDepartamento';
+            $_SESSION['paginaEnCurso']='bajaLogicaDepartamento';
             header('Location: index.php');
             exit;
         }
+    }
+    //boton para ir a la página de dar de alta lógica un departamento
+    if(isset($_REQUEST['REHABILITAR'])){
+        $_SESSION['paginaEnCurso']='altaDepartamento';
+        header('Location: index.php');
+        exit;
     }
     
     $entradaOK=true;//variable para comprobar que todo va bien en el formulario

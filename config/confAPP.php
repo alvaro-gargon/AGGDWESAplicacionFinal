@@ -31,7 +31,7 @@ $aFuncionalidadUsuario=[
 //array para el usuario administrador
 $aFuncionalidadAdmin=[
     'rest'=>'REST',
-    'departamentos'=>'DEPARTAMENTOS',
+    'Mto.Departamentos'=>'DEPARTAMENTOS',
     'detalle'=>'DETALLE',
     'usuarios'=>'USUARIOS'
 ];
@@ -54,7 +54,8 @@ $controller=[
     'altaDepartamento'=>'controller/cAltaDepartamento.php',
     'borrarDepartamento'=>'controller/cBorrarDepartamento.php',
     'cambiarPassword'=>'controller/cCambiarPassword.php',
-    'mtoUsuarios'=>'controller/cMtoUsuarios.php'
+    'mtoUsuarios'=>'controller/cMtoUsuarios.php',
+    'bajaLogicaDepartamento'=>'controller/cBajaLogicaDepartamento.php'
 ];
 
 //array para cargar los archivos de la vista
@@ -76,6 +77,7 @@ $view=[
     'altaDepartamento'=>'view/vAltaDepartamento.php',
     'borrarDepartamento'=>'view/vBorrarDepartamento.php',
     'cambiarPassword'=>'view/vCambiarPassword.php',
-    'mtoUsuarios'=>'view/vMtoUsuarios.php'
+    'mtoUsuarios'=>'view/vMtoUsuarios.php',
+    'bajaLogicaDepartamento'=>'view/vBajaLogicaDepartamento.php'
 ];
 ?>

@@ -1,7 +1,7 @@
 <?php
 /*  Nombre: Alvaro Garcia Gonzalez
-*   Fecha: 03/02/2026
-*   Uso:  controlador para borrar un departamento*/
+*   Fecha: 05/02/2026
+*   Uso:  controlador para dar de baja lógica un departamento*/
     //este if se usa para que los usuarios no se salten el control de acceso
     if(empty($_SESSION['usuarioMiAplicacion'])){
         $_SESSION['paginaEnCurso']='inicioPublico';
@@ -22,14 +22,14 @@
     if(isset($_REQUEST['ACEPTAR'])){
         //borramos el departamento
         //la variable solo puede valer true o false
-        $oDepartamentoBorrado= DepartamentoPDO::bajaFisicaDepartamento($_SESSION['departamentoEnUso']->getCodDepartamento());
-        if($oDepartamentoBorrado==true){
+        $oDepartamentoBaja= DepartamentoPDO::bajaLogicaDepartamento($_SESSION['departamentoEnUso']);
+        if($oDepartamentoBaja!=null){
             $_SESSION['paginaEnCurso']='departamento';
             header('Location: index.php');
             exit;
         }else{
             $aErrores=[
-                'codigo'=>'Ha ocurrido un error al borrar el departamento',
+                'codigo'=>'Ha ocurrido un error al dar de baja el departamento',
             ];
         }
     }
@@ -37,13 +37,14 @@
     //variable fecha que uso para darle formato
     $fechaCreacion= new DateTime($_SESSION['departamentoEnUso']->getFechaCreacionDepartamento());
     if($_SESSION['departamentoEnUso']->getFechaBajaDepartamento()!=null){
-                $fechaBaja=new DateTime($_SESSION['departamentoEnUso']->getFechaBajaDepartamento());
-                $fechaBajaFormateada=$fechaBaja->format('d/m/Y');
-            }else{
-                $fechaBajaFormateada='';
-            }
+        $fechaBaja=new DateTime($_SESSION['departamentoEnUso']->getFechaBajaDepartamento());
+        $fechaBajaFormateada=$fechaBaja->format('d/m/Y');
+    }else{
+        $fechaBajaFormateada='';
+    }
+            
     //array donde guardo los valores del objeto departamento para mostrarlos en la vista
-    $avBorrar=[
+    $avBajaLogica=[
         'codigo'=>$_SESSION['departamentoEnUso']->getCodDepartamento(),
         'descripcion'=>$_SESSION['departamentoEnUso']->getDescDepartamento(),
         'volumenNegocio'=>$_SESSION['departamentoEnUso']->getVolumenDeNegocio(),

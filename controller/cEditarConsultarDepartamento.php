@@ -60,14 +60,22 @@
         
     }
     
-    //variable fecha que uso para darle formato
+    //variables fecha que uso para darle formato
     $fechaCreacion= new DateTime($_SESSION['departamentoEnUso']->getFechaCreacionDepartamento());
+    if($_SESSION['departamentoEnUso']->getFechaBajaDepartamento()!=null){
+                $fechaBaja=new DateTime($_SESSION['departamentoEnUso']->getFechaBajaDepartamento());
+                $fechaBajaFormateada=$fechaBaja->format('d/m/Y');
+            }else{
+                $fechaBajaFormateada='';
+            }
     //array donde guardo los valores del objeto departamento para mostrarlos en la vista
     $avEditarConsultar=[
         'codigo'=>$_SESSION['departamentoEnUso']->getCodDepartamento(),
         'descripcion'=>$_SESSION['departamentoEnUso']->getDescDepartamento(),
         'volumenNegocio'=>$_SESSION['departamentoEnUso']->getVolumenDeNegocio(),
-        'fechaCreacion'=>$fechaCreacion->format('d-m-Y')
+        'fechaCreacion'=>$fechaCreacion->format('d-m-Y'),
+        'fechaBajaLogica'=>$fechaBajaFormateada
+        
     ];
     require_once $view['layout'];
     ?>

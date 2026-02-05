@@ -1,4 +1,6 @@
+
 <form method="post">
+    <section class="tituloPaginas"><h1>MANTENIMIENTO DE DEPARTAMENTOS</h1></section>
     <button class="volver" name="VOLVER">VOLVER</button>
 </form>
 
@@ -20,12 +22,13 @@
                         echo '<td>'. $aDepartamento['codDepartamento'] .'</td>';
                         echo '<td>'. $aDepartamento['descDepartamento'] .'</td>';
                         echo '<td>'. $aDepartamento['fechaCreacionDepartamento'] .'</td>';
-                        echo '<td>'. $aDepartamento['volumenDeNegocio'] .'</td>';
+                        echo '<td>'. $aDepartamento['volumenDeNegocio'] .'€</td>';
                         echo '<td>'. $aDepartamento['fechaBajaDepartamento'] .'</td>';
                         echo '<td>'
                             . '<button  class="icono" name="EDITAR" value="'.$aDepartamento['codDepartamento'].'">&#9998;</button>'
-                            . '<button class="icono" name="CONSULTAR" value="'.$aDepartamento['codDepartamento'].'">&#128065;</button>'
                             . '<button class="icono" name="BORRAR" value="'.$aDepartamento['codDepartamento'].'">&#128465;</button>'
+                            . '<button class="icono" name="BAJA" value="'.$aDepartamento['codDepartamento'].'"><i class="fas fa-calendar-times"></i></button>'
+                            . '<button class="icono" name="REHABILITAR" value="'.$aDepartamento['codDepartamento'].'"><i class="fa-solid fa-calendar-check"></i></button>'
                         . '</td>';
                     echo '</tr>';
                 }
