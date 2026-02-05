@@ -5,7 +5,6 @@
 
 <form method="post" id="buscar">
     <input type="text" placeholder="Descripcion usada..." name="descripcionUsuariosBuscada" value="<?php echo $_SESSION['descUsuariosBuscadaEnUso']??'' ?>">
-    <button disabled name="BUSCAR">BUSCAR</button>
 </form>
 
 <form method="post">
@@ -18,3 +17,9 @@
         
     </div>
 </form>
+
+<script>
+    var inputBuscar=document.getElementsByTagName("input");
+    
+    inputBuscar.addEventListener
+</script>
