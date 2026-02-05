@@ -31,9 +31,9 @@ $aFuncionalidadUsuario=[
 //array para el usuario administrador
 $aFuncionalidadAdmin=[
     'rest'=>'REST',
-    'Mto.Departamentos'=>'DEPARTAMENTOS',
+    'Mto. Departamentos'=>'DEPARTAMENTOS',
     'detalle'=>'DETALLE',
-    'usuarios'=>'USUARIOS'
+    'Mto. Usuarios'=>'USUARIOS'
 ];
 
 //array para cargar los archivos del controlador

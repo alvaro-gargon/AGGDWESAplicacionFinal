@@ -132,6 +132,37 @@ class UsuarioPDO {
             return null;
         }
     }
+    /**
+     * Funcion que dada la descripcion busca uno o varios usuarios 
+     * @param string $descUsuario , descripcion enviada por el usuario
+     * @return array[Usuario] $aDepartamento , devuelve un array con los objetos usuario que concidan que el criterio de busquda
+     */
+    public static function buscaUsuariosPorDesc($descUsuario){
+        //Usamos los porcentajes antes y despues de la descripcion para indicar que cualquier cosa puede ir antes o despues
+        //Sirve tanto para si el usuario no escribe nada como para si escribime palabras que se encuentras en medio
+        //Ejemplo: "mate" -> Departamento de matematicas 
+        $consultaDescripcion = <<<CONSULTA
+                select * from T01_Usuario
+                where T01_DescUsuario like '%{$descUsuario}%'
+                
+                CONSULTA;
+        $resultado= DBPDO::ejecutaConsulta($consultaDescripcion);
+        
+        $aUsuarios=[];
+        //mientras que haya registros, crea un nuevo objeto departamento y lo mete en el array
+        while ($registro = $resultado->fetchObject()){
+            $aUsuarios[]= new Usuario(
+                $registro->T01_CodUsuario,
+                $registro->T01_Password,
+                $registro->T01_DescUsuario,
+                $registro->T01_NumConexiones,
+                $registro->T01_FechaHoraUltimaConexion,
+                null,
+                $registro->T01_Perfil
+            ); 
+        }
+        return $aUsuarios;
+    }
 }
 
 ?>
