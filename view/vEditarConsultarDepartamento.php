@@ -8,19 +8,21 @@
     </p>
     <p>
         <label>Descripción de departamento</label><br>
-        <input <?php if($_SESSION['vistaEditarConsultarDepartamento']=='editar'){ ?>class="obligatorio" <?php }else{ echo 'disabled'; } ?> 
-            type="text" name="descripcion" placeholder="<?php echo $avEditarConsultar['descripcion'] ?>">
+        <input class="obligatorio" type="text" name="descripcion" placeholder="<?php echo $avEditarConsultar['descripcion'] ?>">
         <p class="error"><?php echo($aErrores['descripcion'])?></p>
     </p>
     <p>
         <label>Volumen de negocio</label><br>
-        <input <?php if($_SESSION['vistaEditarConsultarDepartamento']=='consultar'){echo 'disabled';} ?> type="text" name="volumen" 
-            value="<?php echo $avEditarConsultar['volumenNegocio'] ?>">
+        <input  type="text" name="volumen" value="<?php echo $avEditarConsultar['volumenNegocio'] ?>">
         <p class="error"><?php echo($aErrores['volumenNegocio'])?></p>
     </p>
     <p>
         <label>Fecha de creacion</label><br>
         <input disabled type="text" name="fechaCreacion" value="<?php echo $avEditarConsultar['fechaCreacion']?>">
+    </p>
+    <p>
+        <label>Fecha de baja logica</label><br>
+        <input disabled type="text" name="fechaCreacion" value="<?php echo $avEditarConsultar['fechaBajaLogica']?>">
     </p>
     <?php if($_SESSION['vistaEditarConsultarDepartamento']=='editar'){ ?>
     <button class="botonGenericoFormulario" type="submit" name="ACEPTAR">ACEPTAR</button>

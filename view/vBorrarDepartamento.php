@@ -21,6 +21,10 @@
         <label>Fecha de creacion</label><br>
         <input disabled type="text" name="fechaCreacion" value="<?php echo $avBorrar['fechaCreacion']?>">
     </p>
+    <p>
+        <label>Fecha de baja logica</label><br>
+        <input disabled type="text" name="fechaCreacion" value="<?php echo $avBorrar['fechaBajaLogica']?>">
+    </p>
     <h4>¿Estas seguro que quieres eliminar para siempre este departamento?</h4>
     <button class="botonGenericoFormulario" type="submit" name="ACEPTAR">ACEPTAR</button>
     <button class="botonGenericoFormulario" name="CANCELAR">CANCELAR</button>

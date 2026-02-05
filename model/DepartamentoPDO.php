@@ -10,7 +10,8 @@
 
 require_once 'Departamento.php';
 require_once 'DBPDO.php';
-
+    //situamos la zona horaria actual a la local para cuando creemos fechas actuales
+    date_default_timezone_set('Europe/Madrid');
 class DepartamentoPDO{
     
     /**
@@ -112,10 +113,6 @@ class DepartamentoPDO{
      */
     public static function altaDepartamento($codigoDepartamento,$descripcionDepartamento,$volumenNegocio){
         $oDepartamento=null;
-        
-        //situamos la zona horaria actual a la local para la creacion del departamento
-        date_default_timezone_set('Europe/Madrid');
-        
         $consultaAlta = <<<CONSULTA
         INSERT INTO T02_Departamento  
         VALUES ('{$codigoDepartamento}', '{$descripcionDepartamento}', {$volumenNegocio}, NOW(),null)
@@ -167,7 +164,31 @@ class DepartamentoPDO{
             CONSULTA;
         $resultado= DBPDO::ejecutaConsulta($consultaBorrar);
         if($resultado->rowCount()>0){return true;} else{return false;}
-
+    }
+    /**
+     * Funcion que se usara para dar de baja lógica a un departamento con el codigo proporcionado
+     * @param Departamento $oDepartamento , que se usará para borrar a este
+     * @return Departamento departamento con la informacion si existe o null en caso contrario
+     */
+    public static function bajaLogicaDepartamento($oDepartamento) {
+        //consulta preparada para actualizar en la base de datos con los datos necesarios
+        $consultaModificar = <<<CONSULTA
+                UPDATE T02_Departamento SET 
+                T02_FechaBajaDepartamento =NOW()
+                WHERE T02_CodDepartamento = '{$oDepartamento->getCodDepartamento()}'
+                
+                CONSULTA;
+        $resultado= DBPDO::ejecutaConsulta($consultaModificar);
+        //si la consulta se ha ejecutado correctamente
+        if($resultado){
+            //creamos una fecha con la fecha actual para guardarla
+            $fechaActual=new DateTime();
+            //actualizamos el objeto departamento
+            $oDepartamento->setFechaBajaDepartamento($fechaActual);
+            return $oDepartamento;
+        }else{
+            return null;
+        }
     }
 }
 ?>
