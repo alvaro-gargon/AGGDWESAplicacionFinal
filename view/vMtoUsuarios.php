@@ -19,7 +19,15 @@
 </form>
 
 <script>
-    var inputBuscar=document.getElementsByTagName("input");
-    
-    inputBuscar.addEventListener
+    //declaracion de variables de HTML sobre las que vamos a trabajar
+    var inputBuscar=document.getElementsByTagName("input")[0];
+    var tabla=document.getElementsByTagName("table")[0];
+    //evento que se ejecuta cuando los usuarios escriben los eventos
+    inputBuscar.addEventListener("input",(event)=>{
+        fetch('api/wsBuscaUsuariosPorDescripcion.php?descripcionUsuariosBuscada=<?php echo $_REQUEST['descripcionUsuariosBuscada'];?>');
+        then((response)=>responde.json())
+        .then((data)=>{
+            console.log(data);
+        })
+    })
 </script>

@@ -16,15 +16,14 @@
     ];
     
     //si la api recibe el parametro
+    
     if(isset($_REQUEST['descripcionUsuariosBuscada'])){
-        $aErrores['descripcionUsuariosBuscada']= validacionFormularios::comprobarAlfabetico($_REQUEST['descripcionUsuariosBuscada']);//validacion sintactica del campo descripcion
+        $aErrores['descripcionUsuariosBuscada']= validacionFormularios::comprobarAlfabetico($_REQUEST['descripcionUsuariosBuscada'],obligatorio:0);//validacion sintactica del campo descripcion
         foreach ($aErrores as $clave => $valor){
             if($valor!=null){
                 $entradaOK=false;
             }
         }
-    }else{
-        $entradaOK=false;
     }
     
     //si la validacion ha ido bien, proseguimos
@@ -43,7 +42,7 @@
                 ];
             }
         }
-        print_r(json_encode($aUsuarios));
+        print_r(json_encode($aUsuarios,JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     }else{
         echo $aErrores['descripcionUsuariosBuscada'];
     }
