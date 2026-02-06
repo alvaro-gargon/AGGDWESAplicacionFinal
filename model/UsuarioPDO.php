@@ -163,6 +163,48 @@ class UsuarioPDO {
         }
         return $aUsuarios;
     }
+     /**
+     * Funcion que usara un codigo de usuario dado para buscar un usuario unico
+     * @param  string $codUsuario , codigo que usaremos para buscar el usuario
+     * @return Usuario $oUsuario, devuelve un objeto usuario, ya sea con informacion o con valor null si ha habido algun error
+     */
+    public static function buscaUsuarioPorCod($codUsuario){
+        //consulta sql para seleccionar todos los datos del usuario
+        $consultaCodigo = <<<CONSULTA
+                select * from T01_Usuario
+                where T01_CodUsuario='{$codUsuario}'
+                
+                CONSULTA;
+        $resultado= DBPDO::ejecutaConsulta($consultaCodigo);
+        
+        $oUsuario=null;
+        //si hay registro, crea el objeto departamento
+        while ($registro = $resultado->fetchObject()){
+            $oUsuario= new Usuario(
+                $registro->T01_CodUsuario,
+                $registro->T01_Password,
+                $registro->T01_DescUsuario,
+                $registro->T01_NumConexiones,
+                $registro->T01_FechaHoraUltimaConexion,
+                null,
+                $registro->T01_Perfil
+            ); 
+        }
+        return $oUsuario;
+    }
+    /**
+     * Funcion que se usara para borrar a un usuario con el codigo proporcionado
+     * @param String $codUsuario , que se usará para borrar a este
+     * @return true|false true si la consulta se ha ejecutado correctamente, false en caso contrario
+     */
+    public static function bajaFisicaDepartamento($codUsuario) {
+        $consultaBorrar = <<<CONSULTA
+            DELETE FROM T01_Usuario WHERE T01_CodUsuario ='{$codUsuario}'
+            CONSULTA;
+        $resultado= DBPDO::ejecutaConsulta($consultaBorrar);
+        if($resultado->rowCount()>0){return true;} else{return false;}
+    }
+
 }
 
 ?>

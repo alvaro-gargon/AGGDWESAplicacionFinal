@@ -34,7 +34,6 @@
             foreach ($aUsuariosRecibidos as $oUsuario){
                 $aUsuarios[]=[
                     'codUsuario'=>$oUsuario->getCodUsuario(),
-                    'password'=>$oUsuario->getPassword(),
                     'descUsuario'=>$oUsuario->getDescUsuario(),
                     'numConexiones'=>$oUsuario->getNumAccesos(),
                     'fechaHoraUltimaConexion'=>$oUsuario->getFechaHoraUltimaConexion(),
