@@ -2,12 +2,11 @@
 /**  
 *   
 *   Clase DBPDO
-*  Uso:  clase DBPDO con su metodos que usaremos para manejar la base de datos
+*   Uso:  clase DBPDO con su metodos que usaremos para manejar la base de datos
 *   @author Alvaro Garcia Gonzalez
 *   @since: 18/12/2025
- * @package model
+*   @package model
 */
-require_once 'config/confDBPDO.php';
 
 class DBPDO {
 
