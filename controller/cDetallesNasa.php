@@ -11,12 +11,14 @@
     }
     //recojo el objeto de la foto de la sesion
     $oFotoNasa=$_SESSION['ofotoNasaEnCurso'];
+    //formateo el objeto fecha
+    $fechaFoto=new DateTime($oFotoNasa->getfecha());
     //cargo un array con la informacion necesaria para la vista
     $avDetallesNasa=[
         'informacion'=>$oFotoNasa->getInformacion(),
         'titulo'=>$oFotoNasa->getTitulo(),
         'hdurl'=>$oFotoNasa->getHdurl(),
-        'fechaFoto'=>$_SESSION['fechaNasa']
+        'fechaFoto'=>$fechaFoto->format('d-m-Y')
     ];
     
     require_once $view['layout'];

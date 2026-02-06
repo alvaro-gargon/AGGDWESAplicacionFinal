@@ -3,7 +3,7 @@
     <p id="arribaDerecha"><button class="login" name="LOGOFF">LOGOFF</button></p>
 </form>
 <p class="textoApi"><?php echo $avDetallesNasa['titulo']; ?></p>
-<p class="textoApi">Fecha: <?php echo $avDetallesNasa['fechaFoto']->format('d-m-Y'); ?></p>
+<p class="textoApi">Fecha: <?php echo $avDetallesNasa['fechaFoto']; ?></p>
 <div class="fotoDetalleApi">
     <img src="<?php echo $avDetallesNasa['hdurl'];?>" alt="Foto">
 </div>
