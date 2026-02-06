@@ -4,7 +4,7 @@
 </form>
 
 <form method="post" id="buscar">
-    <input type="text" placeholder="Descripcion usada..." name="descripcionUsuariosBuscada" value="<?php echo $_SESSION['descUsuariosBuscadaEnUso']??'' ?>">
+    <input id="busqueda" type="text" placeholder="Descripcion usada..." name="descripcionUsuariosBuscada" value="<?php echo $_SESSION['descUsuariosBuscadaEnUso']??'' ?>">
 </form>
 
 <form method="post">
@@ -20,14 +20,52 @@
 
 <script>
     //declaracion de variables de HTML sobre las que vamos a trabajar
-    var inputBuscar=document.getElementsByTagName("input")[0];
+    var inputBuscar=document.getElementById("busqueda");
     var tabla=document.getElementsByTagName("table")[0];
     //evento que se ejecuta cuando los usuarios escriben los eventos
     inputBuscar.addEventListener("input",(event)=>{
-        fetch('api/wsBuscaUsuariosPorDescripcion.php?descripcionUsuariosBuscada=<?php echo $_REQUEST['descripcionUsuariosBuscada'];?>');
-        then((response)=>responde.json())
+        tabla.innerHTML=`
+        <tr>
+                <th>Código</th>
+                <th>Descripcion</th>
+                <th>Conexiones</th>
+                <th>Fecha ultima conexion</th>
+                <th>Perfil</th>
+                <th>Opciones</th>
+            </tr>`;
+        fetch('http://daw203.local.ieslossauces.es/AGGDWESAplicacionFinal/api/wsBuscaUsuariosPorDescripcion.php?descripcionUsuariosBuscada='+inputBuscar.value)
+        .then((response)=>response.json())
         .then((data)=>{
-            console.log(data);
+            mostrarUsuarios(data);
         })
     })
+    
+    //primera llamada para que se muestren los usuarios nada más abrir la página
+    fetch('http://daw203.local.ieslossauces.es/AGGDWESAplicacionFinal/api/wsBuscaUsuariosPorDescripcion.php')
+        .then((response)=>response.json())
+        .then((data)=>{
+            mostrarUsuarios(data);
+        })
+    //funcion que nos muestra los usuarios
+    function mostrarUsuarios(usuarios){
+        for(i=0;i<usuarios.length;i++){
+            let fila=document.createElement("tr");
+            let celdaCodigo=document.createElement("td");
+            celdaCodigo.textContent=usuarios[i].codUsuario;
+            fila.appendChild(celdaCodigo);
+            let celdaDesc=document.createElement("td");
+            celdaDesc.textContent=usuarios[i].descUsuario;
+            fila.appendChild(celdaDesc);
+            let celdaConexiones=document.createElement("td");
+            celdaConexiones.textContent=usuarios[i].numConexiones;
+            fila.appendChild(celdaConexiones);
+            let celdaFechaUltimaConexion=document.createElement("td");
+            celdaFechaUltimaConexion.textContent=usuarios[i].fechaHoraUltimaConexion;
+            fila.appendChild(celdaFechaUltimaConexion);
+            let celdaPerfil=document.createElement("td");
+            celdaPerfil.textContent=usuarios[i].perfil;
+            fila.appendChild(celdaPerfil);
+            tabla.appendChild(fila);
+        }
+    }
 </script>
