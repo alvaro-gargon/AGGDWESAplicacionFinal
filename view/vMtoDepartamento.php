@@ -26,10 +26,13 @@
                         echo '<td>'. $aDepartamento['fechaBajaDepartamento'] .'</td>';
                         echo '<td>'
                             . '<button  class="icono" name="EDITAR" value="'.$aDepartamento['codDepartamento'].'">&#9998;</button>'
-                            . '<button class="icono" name="BORRAR" value="'.$aDepartamento['codDepartamento'].'">&#128465;</button>'
-                            . '<button class="icono" name="BAJA" value="'.$aDepartamento['codDepartamento'].'"><i class="fas fa-calendar-times"></i></button>'
-                            . '<button class="icono" name="REHABILITAR" value="'.$aDepartamento['codDepartamento'].'"><i class="fa-solid fa-calendar-check"></i></button>'
-                        . '</td>';
+                            . '<button class="icono" name="BORRAR" value="'.$aDepartamento['codDepartamento'].'">&#128465;</button>';
+                                if($aDepartamento['fechaBajaDepartamento']==null){
+                                    echo '<button class="icono rojo" name="BAJA" value="'.$aDepartamento['codDepartamento'].'"><i class="fas fa-calendar-times"></i></button>';
+                                }else{
+                                    echo '<button class="icono verde" name="REHABILITAR" value="'.$aDepartamento['codDepartamento'].'"><i class="fa-solid fa-calendar-check"></i></button>';
+                                }
+                        echo '</td>';
                     echo '</tr>';
                 }
             ?>

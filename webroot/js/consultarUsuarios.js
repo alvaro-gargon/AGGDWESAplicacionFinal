@@ -38,7 +38,7 @@
             celdaConexiones.textContent=usuarios[i].numConexiones;
             fila.appendChild(celdaConexiones);
             let celdaFechaUltimaConexion=document.createElement("td");
-            celdaFechaUltimaConexion.textContent=usuarios[i].fechaHoraUltimaConexion;
+            celdaFechaUltimaConexion.textContent=formatearFecha(usuarios[i].fechaHoraUltimaConexion);
             fila.appendChild(celdaFechaUltimaConexion);
             let celdaPerfil=document.createElement("td");
             celdaPerfil.textContent=usuarios[i].perfil;
@@ -53,5 +53,15 @@
             celdaBotones.appendChild(botonBorrar)
             fila.appendChild(celdaBotones);
             registros.appendChild(fila);
+        }
+    }
+    
+    //funcion para formatear las fechas al formato español
+    function formatearFecha(fecha){
+        if(fecha!==null){
+            let fechaFormateada=new Date(fecha);
+            //el metodo getMonth devuelve un numero del 0 al 11, por eso el +1
+            return fechaFormateada.getDate()+'-'+(fechaFormateada.getMonth()+1)+'-'+fechaFormateada.getFullYear()+' '+
+                    fechaFormateada.getHours()+':'+fechaFormateada.getMinutes()+':'+fechaFormateada.getSeconds();
         }
     }

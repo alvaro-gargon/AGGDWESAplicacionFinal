@@ -30,7 +30,7 @@ export function vistaEliminarUsuario(codUsuario) {
             fetch('http://daw203.local.ieslossauces.es/AGGDWESAplicacionFinal/api/wsBorrarUsuario.php?codigoUsuarioBuscado='+codUsuario)
             .then((response)=>response.json())
             .then((data)=>{
-                if (data=== true){
+                if (data.usuarioEliminado=== true){
                     alert("Borrao");
                     location.reload();
                 }else{

@@ -190,5 +190,28 @@ class DepartamentoPDO{
             return null;
         }
     }
+    /**
+     * Funcion que se usara para dar de baja lógica a un departamento con el codigo proporcionado
+     * @param Departamento $oDepartamento , que se usará para borrar a este
+     * @return Departamento departamento con la informacion si existe o null en caso contrario
+     */
+    public static function rehabilitarDepartamento($oDepartamento) {
+        //consulta preparada para actualizar en la base de datos con los datos necesarios
+        $consultaModificar = <<<CONSULTA
+                UPDATE T02_Departamento SET 
+                T02_FechaBajaDepartamento =null
+                WHERE T02_CodDepartamento = '{$oDepartamento->getCodDepartamento()}'
+                
+                CONSULTA;
+        $resultado= DBPDO::ejecutaConsulta($consultaModificar);
+        //si la consulta se ha ejecutado correctamente
+        if($resultado){
+            //actualizamos el objeto departamento
+            $oDepartamento->setFechaBajaDepartamento(null);
+            return $oDepartamento;
+        }else{
+            return null;
+        }
+    }
 }
 ?>

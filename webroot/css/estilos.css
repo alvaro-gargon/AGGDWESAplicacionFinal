@@ -253,6 +253,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
             font-size: 1.5rem;
             padding: 5px;
         }
+        .verde{color:green}
+        .rojo{color:red}
         .editar{
             width: 70%;
         }

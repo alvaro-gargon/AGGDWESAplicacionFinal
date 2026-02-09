@@ -1,6 +1,6 @@
 <?php
 /*  Nombre: Alvaro Garcia Gonzalez
-*   Fecha: 05/02/2026
+*   Fecha: 09/02/2026
 *   Uso:  api para buscar usuarios por descripcion*/
     require_once '../config/confDBPDO.php';
     require_once '../model/UsuarioPDO.php';
@@ -27,11 +27,11 @@
     }
     //si la validacion ha ido bien, proseguimos
     if($entradaOK){
-        $oUsuarioRecibido= UsuarioPDO::borrarUsuario($_REQUEST['codigoUsuarioBuscado']);
-        if($oUsuarioRecibido==false){
+        $bUsuarioEliminado= UsuarioPDO::borrarUsuario($_REQUEST['codigoUsuarioBuscado']);
+        if($bUsuarioEliminado==false){
             $aErrores['codigoUsuarioBuscado']='No existe un usuario con el codigo enviado';
         }else{
-            echo json_encode(["ok" => $oUsuarioRecibido]);
+            echo json_encode(["usuarioEliminado" => $bUsuarioEliminado]);
         }
     }else{
         echo $aErrores['codigoUsuarioBuscado'];

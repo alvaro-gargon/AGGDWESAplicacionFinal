@@ -54,9 +54,13 @@
     }
     //boton para ir a la página de dar de alta lógica un departamento
     if(isset($_REQUEST['REHABILITAR'])){
-        $_SESSION['paginaEnCurso']='altaDepartamento';
-        header('Location: index.php');
-        exit;
+        $departamentoEnUso=DepartamentoPDO::buscaDepartamentoPorCod($_REQUEST['REHABILITAR']);
+        if($departamentoEnUso!=null){
+            $_SESSION['departamentoEnUso']=$departamentoEnUso;
+            $_SESSION['paginaEnCurso']='rehabilitarDepartamento';
+            header('Location: index.php');
+            exit;
+        }
     }
     
     $entradaOK=true;//variable para comprobar que todo va bien en el formulario
