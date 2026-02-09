@@ -27,21 +27,12 @@
     }
     //si la validacion ha ido bien, proseguimos
     if($entradaOK){
-        $oUsuarioRecibido= UsuarioPDO::buscaUsuarioPorCod($_REQUEST['codigoUsuarioBuscado']??'');
-        if($oUsuarioRecibido!=null){
-            $json=json_encode($oUsuarioRecibido,JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-            if ($json === false) {
-                echo 'json dio error: ';
-                echo json_last_error_msg();
-            } else {
-                echo 'json NO dio error';
-                echo $json;
-            }
-        }else{
-            echo 'usuarioSiEsNull';
+        $oUsuarioRecibido= UsuarioPDO::borrarUsuario($_REQUEST['codigoUsuarioBuscado']);
+        if($oUsuarioRecibido==false){
             $aErrores['codigoUsuarioBuscado']='No existe un usuario con el codigo enviado';
+        }else{
+            echo json_encode(["ok" => $oUsuarioRecibido]);
         }
-        
     }else{
         echo $aErrores['codigoUsuarioBuscado'];
     }

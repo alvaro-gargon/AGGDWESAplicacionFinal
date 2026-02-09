@@ -1,3 +1,5 @@
+//importacion de funciones
+    import {vistaEliminarUsuario} from "./eliminarUsuario.js"
 //declaracion de variables de HTML sobre las que vamos a trabajar
     var inputBuscar=document.getElementById("busqueda");
     var tabla=document.getElementsByTagName("table")[0];
@@ -42,7 +44,13 @@
             celdaPerfil.textContent=usuarios[i].perfil;
             fila.appendChild(celdaPerfil);
             let celdaBotones=document.createElement("td");
-            celdaBotones.innerHTML=`<button class="icono" value="usuarios[i].codUsuario">&#128065</button><button class="icono" value="usuarios[i].codUsuario">&#128465</button>`;
+            const botonBorrar=document.createElement("button");
+            botonBorrar.classList.add("icono","botonBorrar");
+            botonBorrar.innerHTML="&#128465";
+            botonBorrar.addEventListener("click", () => {
+                vistaEliminarUsuario(usuarios[i].codUsuario);
+            });
+            celdaBotones.appendChild(botonBorrar)
             fila.appendChild(celdaBotones);
             registros.appendChild(fila);
         }

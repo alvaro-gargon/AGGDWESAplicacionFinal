@@ -197,7 +197,7 @@ class UsuarioPDO {
      * @param String $codUsuario , que se usará para borrar a este
      * @return true|false true si la consulta se ha ejecutado correctamente, false en caso contrario
      */
-    public static function bajaFisicaDepartamento($codUsuario) {
+    public static function borrarUsuario($codUsuario) {
         $consultaBorrar = <<<CONSULTA
             DELETE FROM T01_Usuario WHERE T01_CodUsuario ='{$codUsuario}'
             CONSULTA;
