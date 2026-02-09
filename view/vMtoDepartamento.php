@@ -5,6 +5,12 @@
 </form>
 
 <form method="post" id="buscar">
+    <label for="estadoDepartamentos">Estado de departamento</label>
+    <select name="estadoDepartamentos">
+        <option value="todos" selected>TODOS</option>
+        <option value="baja">ALTA</option>
+        <option value="baja">BAJA</option>
+    </select>
     <input type="text" placeholder="Descripcion departamento..." name="descripcionBuscada" value="<?php echo $_SESSION['descBuscadaEnUso']??'' ?>">
     <button  name="BUSCAR">BUSCAR</button>
     <button  name="AÑADIR">AÑADIR</button>

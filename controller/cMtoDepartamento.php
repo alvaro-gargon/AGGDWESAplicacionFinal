@@ -97,7 +97,7 @@
         $_SESSION['descBuscadaEnUso']=$aRespuestas['descripcionBuscada'];
     }
     
-    $aDepartamentos= DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST['descripcionBuscada'] ?? '');
+    $aDepartamentos= DepartamentoPDO::buscaDepartamentoPorDescEstado($_REQUEST['descripcionBuscada'] ?? '');
     $avDepartamento=[];
     
     
