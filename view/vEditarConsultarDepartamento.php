@@ -24,12 +24,7 @@
         <label>Fecha de baja logica</label><br>
         <input disabled type="text" name="fechaCreacion" value="<?php echo $avEditarConsultar['fechaBajaLogica']?>">
     </p>
-    <?php if($_SESSION['vistaEditarConsultarDepartamento']=='editar'){ ?>
     <button class="botonGenericoFormulario" type="submit" name="ACEPTAR">ACEPTAR</button>
     <button class="botonGenericoFormulario" name="CANCELAR">CANCELAR</button>
-    <?php }else{
-        echo '<button class="botonGenericoFormulario" name="VOLVER">VOLVER</button>';
-    }
-    ?>
 </form>
 
