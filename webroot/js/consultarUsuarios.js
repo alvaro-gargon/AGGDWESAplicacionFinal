@@ -8,7 +8,7 @@
     inputBuscar.addEventListener("input",(event)=>{
         //guardo en una cookie el valor de la descripcion buscada en uso
         localStorage.setItem("busquedaUsuarioEnCurso",inputBuscar.value);
-        fetch('http://daw203.local.ieslossauces.es/AGGDWESAplicacionFinal/api/wsBuscaUsuariosPorDescripcion.php?descripcionUsuariosBuscada='+inputBuscar.value)
+        fetch('https://alvarogargon.ieslossauces.es/AGGDWESAplicacionFinal/api/wsBuscaUsuariosPorDescripcion.php?descripcionUsuariosBuscada='+inputBuscar.value)
         .then((response)=>response.json())
         .then((data)=>{
             registros.innerHTML="";
@@ -18,7 +18,7 @@
     //si la cookie existe, le da ese valor en el input
     inputBuscar.value=localStorage.getItem("busquedaUsuarioEnCurso");
     //primera llamada para que se muestren los usuarios nada más abrir la página
-    fetch('http://daw203.local.ieslossauces.es/AGGDWESAplicacionFinal/api/wsBuscaUsuariosPorDescripcion.php?descripcionUsuariosBuscada='+inputBuscar.value)
+    fetch('https://alvarogargon.ieslossauces.es/AGGDWESAplicacionFinal/api/wsBuscaUsuariosPorDescripcion.php?descripcionUsuariosBuscada='+inputBuscar.value)
         .then((response)=>response.json())
         .then((data)=>{
             mostrarUsuarios(data);
