@@ -53,7 +53,7 @@
             <p class="pPaginacion">
                 <button class="icono" name="paginaInicial"><i class="fa-solid fa-angles-left"></i></button>
                 <button class="icono" name="paginaAtras"><i class="fa-solid fa-angle-left"></i></button>
-                <?php echo $_SESSION['numPagina']; ?>|<?php echo $avMtoDepartamento['numPaginasTotal']; ?>
+                <?php echo $_SESSION['numPaginaDepartamentos']; ?>|<?php echo $avMtoDepartamento['numPaginasTotal']; ?>
                 <button class="icono" name="paginaSiguiente"><i class="fa-solid fa-angle-right"></i></button>
                 <button class="icono" name="paginaFinal"><i class="fa-solid fa-angles-right"></i></button>
             </p>
