@@ -5,11 +5,17 @@
 </form>
 
 <form method="post" id="buscar">
+    <label for="numResultados">Numero de registros mostrados</label>
+    <select class="selectsDepartamentos" name="numResultados">
+        <option value="5" <?php if(isset($_SESSION['numeroResultadosDepartamentos'])){echo $_SESSION['numeroResultadosDepartamentos']==5?'selected':''; } ?>>5</option>
+        <option value="10" <?php if(isset($_SESSION['numeroResultadosDepartamentos'])){echo $_SESSION['numeroResultadosDepartamentos']==10?'selected':''; } ?>>10</option>
+        <option value="15" <?php if(isset($_SESSION['numeroResultadosDepartamentos'])){echo $_SESSION['numeroResultadosDepartamentos']==15?'selected':''; } ?>>15</option>
+    </select>
     <label for="estadoDepartamentos">Estado de departamento</label>
-    <select name="estadoDepartamentos">
-        <option value="todos" selected>TODOS</option>
-        <option value="baja">ALTA</option>
-        <option value="baja">BAJA</option>
+    <select class="selectsDepartamentos" name="estadoDepartamentos">
+        <option value="todos" <?php if(isset($_SESSION['estadoDepartamentos'])){echo $_SESSION['estadoDepartamentos']=='todos'?'selected':''; } ?>>TODOS</option>
+        <option value="alta" <?php if(isset($_SESSION['estadoDepartamentos'])){ echo $_SESSION['estadoDepartamentos']=='alta'?'selected':'';} ?>>ALTA</option>
+        <option value="baja" <?php if(isset($_SESSION['estadoDepartamentos'])){ echo $_SESSION['estadoDepartamentos']=='baja'?'selected':'';} ?>>BAJA</option>
     </select>
     <input type="text" placeholder="Descripcion departamento..." name="descripcionBuscada" value="<?php echo $_SESSION['descBuscadaEnUso']??'' ?>">
     <button  name="BUSCAR">BUSCAR</button>
@@ -43,6 +49,14 @@
                 }
             ?>
         </table>
-        
+        <div class="paginacion">
+            <p class="pPaginacion">
+                <button class="icono" name="paginaInicial"><i class="fa-solid fa-angles-left"></i></button>
+                <button class="icono" name="paginaAtras"><i class="fa-solid fa-angle-left"></i></button>
+                <?php echo $_SESSION['numPagina']; ?>|<?php echo $avMtoDepartamento['numPaginasTotal']; ?>
+                <button class="icono" name="paginaSiguiente"><i class="fa-solid fa-angle-right"></i></button>
+                <button class="icono" name="paginaFinal"><i class="fa-solid fa-angles-right"></i></button>
+            </p>
+        </div>
     </div>
 </form>
