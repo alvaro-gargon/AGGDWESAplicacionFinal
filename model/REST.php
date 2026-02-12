@@ -63,7 +63,7 @@ class REST{
     
      // Si el JSON tiene los datos necesarios, crear el objeto FotoNasa. Si solo se pone if(isset($archivoApi)), devuelve siempre algo aunque no haya datos
      if(isset($archivoApi['title'])){
-         $fotoNasa = new FotoNasa(
+         $oFotoNasa = new FotoNasa(
              $archivoApi['title'],
              $archivoApi['url'], 
              $archivoApi['date'],
