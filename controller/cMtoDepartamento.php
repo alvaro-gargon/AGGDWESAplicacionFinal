@@ -54,18 +54,61 @@
     }
     //boton para ir a la página de dar de alta lógica un departamento
     if(isset($_REQUEST['REHABILITAR'])){
-        $_SESSION['paginaEnCurso']='altaDepartamento';
-        header('Location: index.php');
-        exit;
+        $departamentoEnUso=DepartamentoPDO::buscaDepartamentoPorCod($_REQUEST['REHABILITAR']);
+        if($departamentoEnUso!=null){
+            $_SESSION['departamentoEnUso']=$departamentoEnUso;
+            $_SESSION['paginaEnCurso']='rehabilitarDepartamento';
+            header('Location: index.php');
+            exit;
+        }
+    }
+    
+    //si es la primera vez que entra en esta sesion, el valor por defecto será 5
+    if(!isset($_SESSION['numeroResultadosDepartamentos'])){
+        $_SESSION['numeroResultadosDepartamentos']=5;
+    }
+    //si cambia el valor de el numero de resultados que quiere ver
+    if(isset($_REQUEST['numResultados'])){
+        $_SESSION['numeroResultadosDepartamentos']=$_REQUEST['numResultados'];
+    }
+    //calculamos el numero de paginas totales teniendo en cuenta el numero de resultados por página
+    $numDepartamentosDescEstado=DepartamentoPDO::contarDepartamentoPorDescEstado($_SESSION['descBuscadaEnUso'] ?? '',$_SESSION['estadoDepartamentos'] ?? 'todos');
+    $numPaginaFinal=(int) ($numDepartamentosDescEstado/$_SESSION['numeroResultadosDepartamentos'])+1;
+    
+    //si no existe el valor de la sesion numPagina (es decir, que es la primera vez que se mete), le damos valor 1 
+    if (!isset($_SESSION['numPaginaDepartamentos'])){
+        $_SESSION['numPaginaDepartamentos']=1;
+    }
+    //si le da al boton << vuelve a la primera página
+    if(isset($_REQUEST['paginaInicial'])){
+        $_SESSION['numPaginaDepartamentos']=1;
+    }
+    //si le da al boton < vuelve a la página anterior (sino esta en la primera)
+    if(isset($_REQUEST['paginaAtras'])){
+        if($_SESSION['numPaginaDepartamentos']!=1){
+            $_SESSION['numPaginaDepartamentos']=$_SESSION['numPaginaDepartamentos']-1;
+        }
+    }
+    //si le da al boton > va a la página siguiente (sino esta en la ultima)
+    if(isset($_REQUEST['paginaSiguiente'])){
+        if($_SESSION['numPaginaDepartamentos']!=$numPaginaFinal){
+            $_SESSION['numPaginaDepartamentos']=$_SESSION['numPaginaDepartamentos']+1;
+        }
+    }
+    //si le da al boton >> va a la página final
+    if(isset($_REQUEST['paginaFinal'])){
+        $_SESSION['numPaginaDepartamentos']=$numPaginaFinal;
     }
     
     $entradaOK=true;//variable para comprobar que todo va bien en el formulario
     //array para guardar los errores
     $aErrores=[
-        'descripcionBuscada'=>null
+        'descripcionBuscada'=>null,
+        'estadoBuscado'=>null
     ];
     $aRespuestas=[
-        'descripcionBuscada'=>null
+        'descripcionBuscada'=>null,
+        'estadoBuscado'=>null
     ];
     
     if(isset($_REQUEST['BUSCAR'])){
@@ -84,16 +127,23 @@
     }else{
         $entradaOK=false;
     }
-    
+    //si todo ha ido bien en el formulario
     if($entradaOK){
         //(Gracias a Gonzalo Junquera)
         //guardamos en el array de respuesta la respuesta del usuario
         $aRespuestas['descripcionBuscada'] = $_REQUEST['descripcionBuscada'] ?? ''; //el operador ?? sirve como or si lo primero no existe o esta vacio (Gracias a Gonzalo Junquera)
         //guardamos en la sesion la descripcion bucada para que recuerde
         $_SESSION['descBuscadaEnUso']=$aRespuestas['descripcionBuscada'];
+        //guardamos en el array de respuesta la respuesta del usuario
+        $aRespuestas['estadoDepartamentos'] = $_REQUEST['estadoDepartamentos'] ?? '';
+        //guardamos en la sesion el estado buscado para que recuerde
+        $_SESSION['estadoDepartamentos']=$aRespuestas['estadoDepartamentos'];
     }
     
-    $aDepartamentos= DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST['descripcionBuscada'] ?? '');
+    //busco los departamentos que cumplan con la descripcion o todos si es la primera vez que entra
+    //uso la sesion para recordar los buscado
+    $aDepartamentos= DepartamentoPDO::buscaDepartamentoPorDescEstadoPaginado($_SESSION['descBuscadaEnUso'] ?? '',$_SESSION['estadoDepartamentos'] ?? 'todos', 
+            $_SESSION['numeroResultadosDepartamentos'], $_SESSION['numPaginaDepartamentos']);
     $avDepartamento=[];
     
     
@@ -118,6 +168,8 @@
             ];
         }
     }
-    
+    $avMtoDepartamento=[
+        'numPaginasTotal'=>$numPaginaFinal
+    ];
     require_once $view['layout'];
     ?>
