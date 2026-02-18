@@ -35,11 +35,19 @@
      * acciones que pasaran si el usuario intenta registrarse
      */
     if(isset($_REQUEST['ACEPTAR'])){
+        //guardamos los errores
         $aErrores['descripcion']= validacionFormularios::comprobarAlfabetico($_REQUEST['descripcion'],60,4,obligatorio:1);//validacion alfabtica del campo descripcion
-        $aErrores['volumenNegocio']= validacionFormularios::comprobarFloat($_REQUEST['volumen']);
+        $aErrores['volumenNegocio']= validacionFormularios::comprobarFloat($_REQUEST['volumenNegocio'], min: 0);
+        
+        //guardamos las respuestas para volver a mostrarlas sin hay algun error
+        $aRespuestas['descripcion']=$_REQUEST['descripcion'];
+        $aRespuestas['volumenNegocio']=$_REQUEST['volumenNegocio'];
+        //buscamos si ha habido algún error
         foreach ($aErrores as $clave => $valor){
             if($valor!=null){
                 $entradaOK=false;
+            }else{
+                $aRespuestas[$clave]=$_REQUEST["$clave"];
             }
         }
     }else{
@@ -48,7 +56,7 @@
     
     if($entradaOK){
         //modificamos el departamento
-        $oDepartamentoModificado= DepartamentoPDO::modificarDepartamento($_SESSION['departamentoEnUso'], $_REQUEST['descripcion'], $_REQUEST['volumen']);
+        $oDepartamentoModificado= DepartamentoPDO::modificarDepartamento($_SESSION['departamentoEnUso'], $_REQUEST['descripcion'], $_REQUEST['volumenNegocio']);
         if($oDepartamentoModificado!=null){
             $_SESSION['departamentoEnUso']=$oDepartamentoModificado;
             $_SESSION['paginaEnCurso']='departamento';
@@ -63,11 +71,11 @@
     //variables fecha que uso para darle formato
     $fechaCreacion= new DateTime($_SESSION['departamentoEnUso']->getFechaCreacionDepartamento());
     if($_SESSION['departamentoEnUso']->getFechaBajaDepartamento()!=null){
-                $fechaBaja=new DateTime($_SESSION['departamentoEnUso']->getFechaBajaDepartamento());
-                $fechaBajaFormateada=$fechaBaja->format('d/m/Y');
-            }else{
-                $fechaBajaFormateada='';
-            }
+        $fechaBaja=new DateTime($_SESSION['departamentoEnUso']->getFechaBajaDepartamento());
+        $fechaBajaFormateada=$fechaBaja->format('d/m/Y');
+    }else{
+        $fechaBajaFormateada='';
+    }
     //array donde guardo los valores del objeto departamento para mostrarlos en la vista
     $avEditarConsultar=[
         'codigo'=>$_SESSION['departamentoEnUso']->getCodDepartamento(),

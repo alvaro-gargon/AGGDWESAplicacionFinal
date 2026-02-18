@@ -9,7 +9,7 @@
         exit;
     }
     if(isset($_REQUEST['LOGOFF'])){
-        $_SESSION['paginaEnCurso']='login';
+        $_SESSION['paginaEnCurso']='inicioPublico';
         header('Location: index.php');
         exit;
     }

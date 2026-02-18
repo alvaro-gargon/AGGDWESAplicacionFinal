@@ -268,9 +268,29 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
         .editar{
             width: 70%;
         }
+        .apis{
+            display: flex;
+            flex-direction: row;
+        }
         #formNasa{
             position: relative;
             width: 33%;
+            border: 3px solid #403f6f;
+            border-radius: 5px;
+            padding: 5px
+        }
+        #formApiPropia{
+            text-align: center;
+            position: relative;
+            width: 33%;height: fit-content;
+            border: 3px solid #403f6f;
+            border-radius: 5px;
+            padding: 5px
+        }
+        #formApiFrutas{
+            text-align: center;
+            position: relative;
+            width: 33%;height: fit-content;
             border: 3px solid #403f6f;
             border-radius: 5px;
             padding: 5px
