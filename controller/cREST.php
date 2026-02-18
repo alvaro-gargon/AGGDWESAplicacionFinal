@@ -82,7 +82,30 @@
     }
     }else{
         $entradaOK=false;
-        
+    }
+    
+    //llamamiento a una api propia
+    //gracias a Gonzalo Junquera por la idea general
+    //recojo todos los departamentos
+    $aDepartamentos= DepartamentoPDO::buscaDepartamentoPorDesc("");
+    $avDepartamentosREST=[];
+    foreach ($aDepartamentos as $oDepartamento){
+        $avDepartamentosREST[]=$oDepartamento->getCodDepartamento();
+       
+    }
+    //si el usuario le da al boton enviar en la seccion de la api propia
+    if(isset($_REQUEST['ENVIARPROPIA'])){
+        // Comprobamos que el servidor de la api este bien, que responda, etc.
+        $volumenDepartamento = REST::ApiPropiaVolumen($_REQUEST['codDepartamento']);
+
+        // guardamos en la sesion el volumen del departamento y el codigo buscado.
+        $_SESSION['volumenDepartamentoApiEnUso'] = $volumenDepartamento;
+        $_SESSION['codigoDepartamentoBuscadoApi']=$_REQUEST['codDepartamento'];
+        // lo guardamos en el array de vista
+        //$avREST['volumenDepartamento']=$volumenDepartamento;
+        $avREST['volumenDepartamento']=$_REQUEST['codDepartamento'];
+    }else{
+        $entradaOK=false;
     }
     //si todo ha ido bien... recargamos la página con los la foto
     if ($entradaOK) {
@@ -95,12 +118,14 @@
     $fechaActualFormateada=$fechaActual->format('Y-m-d');
     
     
+    
 
     //cargamos el array que usara la vista para mostrar la inforamcion
     $avREST=[
         'tituloFotoNasa'=>$oFotoNasa->getTitulo(),
         'urlNasa'=>$oFotoNasa->getUrl(),
-        'fechaNasa'=>$oFechaNasa->format('Y-m-d')
+        'fechaNasa'=>$oFechaNasa->format('Y-m-d'),
+        'volumenDepartamento'=>''
     ];
     
     //cargamos el layout

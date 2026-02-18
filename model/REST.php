@@ -78,5 +78,47 @@ class REST{
      return null;
     }
     
+    /**
+     * Funcion para llamar una api propia que, recibiendo un codigo de departamento, dara un volumen de negocio
+     * @param string $codDepartamento
+     * @return float $volumen volumen del departamento buscado
+     */
+    public static function ApiPropiaVolumen($codDepartamento){
+        $volumen = 0;
+        $url = "https://alvarogargon.ieslossauces.es/AGGDWESAplicacionFinal/api/wsVolumenDepartamentoPorCodigo.php?codigoDepartamentoBuscado=".$codDepartamento;
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+        $resultado = curl_exec($ch);
+        
+        if (curl_errno($ch)) {
+            echo 'Error de cURL: ' . curl_error($ch); 
+            die();
+        }
+
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($httpCode !== 200) {
+            return 0;
+        }
+
+        $archivoApi = json_decode($resultado, true);
+
+        if (isset($archivoApi) && isset($archivoApi['volumenDepartamento'])) {
+            $volumen = $archivoApi['volumenDepartamento'];
+        }
+
+        return $volumen;
+    }
+    
+    
 }
 ?>
