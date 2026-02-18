@@ -112,8 +112,8 @@ class REST{
 
         $archivoApi = json_decode($resultado, true);
 
-        if (isset($archivoApi) && isset($archivoApi['volumenDepartamento'])) {
-            $volumen = $archivoApi['volumenDepartamento'];
+        if (isset($archivoApi) && isset($archivoApi[0]['volumenDepartamento'])) {
+            $volumen = $archivoApi[0]['volumenDepartamento'];
         }
 
         return $volumen;
