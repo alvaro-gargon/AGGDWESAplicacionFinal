@@ -101,12 +101,22 @@
         // guardamos en la sesion el volumen del departamento y el codigo buscado.
         $_SESSION['volumenDepartamentoApiEnUso'] = $volumenDepartamento;
         $_SESSION['codigoDepartamentoBuscadoApi']=$_REQUEST['codDepartamento'];
-        // lo guardamos en el array de vista
-        //$avREST['volumenDepartamento']=$volumenDepartamento;
-        $avREST['volumenDepartamento']=$_REQUEST['codDepartamento'];
     }else{
         $entradaOK=false;
     }
+    //llamamiento a una api ajena
+    //si el usuario le da al boton enviar en la seccion de la api de las frutas
+    if(isset($_REQUEST['ENVIARFRUTA'])){
+        // Comprobamos que el servidor de la api este bien, que responda, etc.
+        $aDatosFruta = REST::ApiAjenaFrutas($_REQUEST['frutas']);
+
+        // guardamos en la sesion el volumen del departamento y el codigo buscado.
+        $_SESSION['nombreFrutaBuscada']=$_REQUEST['frutas'];
+        $_SESSION['datosFrutaBuscada'] = $aDatosFruta;
+    }else{
+        $entradaOK=false;
+    }
+    
     //si todo ha ido bien... recargamos la página con los la foto
     if ($entradaOK) {
         $_SESSION['paginaEnCurso'] = 'REST';
@@ -124,8 +134,7 @@
     $avREST=[
         'tituloFotoNasa'=>$oFotoNasa->getTitulo(),
         'urlNasa'=>$oFotoNasa->getUrl(),
-        'fechaNasa'=>$oFechaNasa->format('Y-m-d'),
-        'volumenDepartamento'=>''
+        'fechaNasa'=>$oFechaNasa->format('Y-m-d')
     ];
     
     //cargamos el layout

@@ -19,6 +19,22 @@
             </div>
         </p>
     </form>
+    <form method="post" id="formApiFrutas">
+        <div>
+            <label>Frutas</label>
+            <button name="ENVIARFRUTA">Enviar</button>
+            <select name="frutas">
+                <option value="Apple" <?php if(isset($_SESSION['nombreFrutaBuscada'])&& $_SESSION['nombreFrutaBuscada']=='Apple'){echo 'selected';} ?>>Manzana</option>
+                <option value="Strawberry" <?php if(isset($_SESSION['nombreFrutaBuscada'])&& $_SESSION['nombreFrutaBuscada']=='Strawberry'){echo 'selected';} ?>>Fresa</option>
+                <option value="Banana" <?php if(isset($_SESSION['nombreFrutaBuscada'])&& $_SESSION['nombreFrutaBuscada']=='Banana'){echo 'selected';} ?>v>Platano</option>
+                <option value="Pear" <?php if(isset($_SESSION['nombreFrutaBuscada'])&& $_SESSION['nombreFrutaBuscada']=='Pear'){echo 'selected';} ?>>Pera</option>
+            </select>
+            <p>Nombre en ingles:<?php echo $_SESSION['datosFrutaBuscada']['nombre'] ?? 'Aqui se mostrata el nombre de la fruta' ?></p>
+            <p>Familia:<?php echo $_SESSION['datosFrutaBuscada']['familia'] ?? 'Aqui se mostrata la familia de la fruta' ?></p>
+            <p>Calorias:<?php echo $_SESSION['datosFrutaBuscada']['calorias'] ?? 'Aqui se mostrata las calorias de la fruta' ?></p>
+            <p>Azucares:<?php echo $_SESSION['datosFrutaBuscada']['azucares'] ?? 'Aqui se mostrata los azucares de la fruta' ?></p>
+        </div>
+    </form>
     <form method="post" id="formApiPropia">
         <div>
             <label>Codigo de Departamento</label><br>

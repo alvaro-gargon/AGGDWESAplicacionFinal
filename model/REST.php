@@ -118,7 +118,50 @@ class REST{
 
         return $volumen;
     }
-    
-    
+    /**
+     * Funcion para llamar una api ajena que, recibiendo un nombre de fruta, dara ciertas propiedades de esta
+     * @param string $fruta , nombre de la fruta a buscar
+     * @return float $volumen volumen del departamento buscado
+     */
+    public static function ApiAjenaFrutas($fruta){
+        $url = "https://www.fruityvice.com/api/fruit/".$fruta;
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+        $resultado = curl_exec($ch);
+        
+        if (curl_errno($ch)) {
+            echo 'Error de cURL: ' . curl_error($ch); 
+            die();
+        }
+
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($httpCode !== 200) {
+            return 0;
+        }
+
+        $archivoApi = json_decode($resultado, true);
+
+        if (isset($archivoApi)) {
+            $aDatosFruta=[
+                'nombre'=>$archivoApi['name'],
+                'familia'=>$archivoApi['family'],
+                'calorias'=>$archivoApi['nutritions']['calories'],
+                'azucares'=>$archivoApi['nutritions']['sugar']
+            ];
+            return $aDatosFruta;
+        }else{
+            return null;
+        }
+    }
 }
 ?>
