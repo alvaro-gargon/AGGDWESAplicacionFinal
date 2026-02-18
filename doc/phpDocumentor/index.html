@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-            <title>AGGDWESLoginLogoffTema6</title>
+            <title>AGGDWESAplicacionFinal</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="./">
@@ -25,7 +25,7 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">AGGDWESLoginLogoffTema6</a></h1>
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">AGGDWESAplicacionFinal</a></h1>
     <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
@@ -64,6 +64,10 @@
     <a href="packages/Validacion.html" class="">Validacion</a>
 </h4>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="packages/model.html" class="">model</a>
+</h4>
+
                         </section>
             
     <section class="phpdocumentor-sidebar__category -reports">
@@ -99,6 +103,7 @@
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -package"><a href="packages/Application.html"><abbr title="\Application">Application</abbr></a></dt>
             <dt class="phpdocumentor-table-of-contents__entry -package"><a href="packages/Validacion.html"><abbr title="\Validacion">Validacion</abbr></a></dt>
+            <dt class="phpdocumentor-table-of-contents__entry -package"><a href="packages/model.html"><abbr title="\model">model</abbr></a></dt>
     </dl>
 
 
@@ -109,7 +114,13 @@
 
     </h4>
     <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/validacionFormularios.html"><abbr title="\validacionFormularios">validacionFormularios</abbr></a></dt><dd>Clase de validacion de formularios</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AppError.html"><abbr title="\AppError">AppError</abbr></a></dt>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DBPDO.html"><abbr title="\DBPDO">DBPDO</abbr></a></dt>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Usuario.html"><abbr title="\Usuario">Usuario</abbr></a></dt>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/UsuarioPDO.html"><abbr title="\UsuarioPDO">UsuarioPDO</abbr></a></dt>    </dl>
+                    <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/validacionFormularios.html"><abbr title="\validacionFormularios">validacionFormularios</abbr></a></dt><dd>Clase de validacion de formularios</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AppError.html"><abbr title="\AppError">AppError</abbr></a></dt><dd>Clase AppError
+  Uso:  clase AppError con sus metodos que usaremos para manejar los errores.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DBPDO.html"><abbr title="\DBPDO">DBPDO</abbr></a></dt><dd>Clase DBPDO
+  Uso:  clase DBPDO con su metodos que usaremos para manejar la base de datos</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Departamento.html"><abbr title="\Departamento">Departamento</abbr></a></dt><dd>Clase Deapartamento
+  Uso:  clase Departamento con su constructor y sus atributos. Usada para la construcción de los objetos departamentos</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DepartamentoPDO.html"><abbr title="\DepartamentoPDO">DepartamentoPDO</abbr></a></dt>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/FotoNasa.html"><abbr title="\FotoNasa">FotoNasa</abbr></a></dt><dd>Clase FotoNasa
+Uso:  clase para gestionar el uso de la api de la nasa y la foto que usaremos y para crear los objetos de las fotos de la nasa</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/REST.html"><abbr title="\REST">REST</abbr></a></dt><dd>Clase REST
+Uso: clase que usaremos para gestionar el uso de las apis desde el controlador</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Usuario.html"><abbr title="\Usuario">Usuario</abbr></a></dt><dd>Clase Usuario que usaremos para la creacion de usuarios y gestionar estos objetos
+Uso: clase Usuario con su constructor y sus atributos</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/UsuarioPDO.html"><abbr title="\UsuarioPDO">UsuarioPDO</abbr></a></dt>    </dl>
 
 
 
@@ -122,7 +133,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a class="" href="namespaces/default.html#constant_DNS">DNS</a>
     <span>
-        &nbsp;= &#039;mysql:host=10.199.11.252;dbname=DBAGGDWESProyectoLoginLogoff&#039;                            </span>
+        &nbsp;= &#039;mysql:host=10.199.11.252;dbname=DBAGGDWESAplicacionFinal&#039;                            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
@@ -132,9 +143,15 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a class="" href="namespaces/default.html#constant_SEGURIDAD">SEGURIDAD</a>
+    <span>
+        &nbsp;= &#039;pimentel&#039;                            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a class="" href="namespaces/default.html#constant_USERNAME">USERNAME</a>
     <span>
-        &nbsp;= &#039;userAGGDWESProyectoLoginLogoff&#039;                            </span>
+        &nbsp;= &#039;userAGGDWESAplicacionFinal&#039;                            </span>
 </dt>
 
     </dl>
@@ -170,7 +187,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">DNS</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;mysql:host=10.199.11.252;dbname=DBAGGDWESProyectoLoginLogoff&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;mysql:host=10.199.11.252;dbname=DBAGGDWESAplicacionFinal&#039;</span>
 </code>
 
 
@@ -211,6 +228,36 @@
         
     </article>
                     <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_SEGURIDAD">
+        SEGURIDAD
+        <a href="namespaces/default.html#constant_SEGURIDAD" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="config/confAPP.php"><a href="files/config-confapp.html"><abbr title="config/confAPP.php">confAPP.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">20</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">SEGURIDAD</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;pimentel&#039;</span>
+</code>
+
+
+    
+    
+    
+
+        
+    </article>
+                    <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_USERNAME">
         USERNAME
         <a href="namespaces/default.html#constant_USERNAME" class="headerlink"><i class="fas fa-link"></i></a>
@@ -230,7 +277,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">USERNAME</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;userAGGDWESProyectoLoginLogoff&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;userAGGDWESAplicacionFinal&#039;</span>
 </code>
 
 

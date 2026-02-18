@@ -1,6 +1,11 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\SEGURIDAD",
+            "name": "SEGURIDAD",
+            "summary": "",
+            "url": "namespaces/default.html#constant_SEGURIDAD"
+        },                {
             "fqsen": "\\DNS",
             "name": "DNS",
             "summary": "",
@@ -103,7 +108,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\AppError",
             "name": "AppError",
-            "summary": "",
+            "summary": "Clase\u0020AppError\n\u0020\u0020Uso\u003A\u0020\u0020clase\u0020AppError\u0020con\u0020sus\u0020metodos\u0020que\u0020usaremos\u0020para\u0020manejar\u0020los\u0020errores.",
             "url": "classes/AppError.html"
         },                {
             "fqsen": "\\AppError\u003A\u003A__construct\u0028\u0029",
@@ -173,17 +178,237 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DBPDO",
             "name": "DBPDO",
-            "summary": "",
+            "summary": "Clase\u0020DBPDO\n\u0020\u0020Uso\u003A\u0020\u0020clase\u0020DBPDO\u0020con\u0020su\u0020metodos\u0020que\u0020usaremos\u0020para\u0020manejar\u0020la\u0020base\u0020de\u0020datos",
             "url": "classes/DBPDO.html"
         },                {
             "fqsen": "\\DBPDO\u003A\u003AejecutaConsulta\u0028\u0029",
             "name": "ejecutaConsulta",
-            "summary": "",
+            "summary": "Esta\u0020funcion\u0020sirve\u0020para\u0020ejecutar\u0020una\u0020consulta\u0020dada.",
             "url": "classes/DBPDO.html#method_ejecutaConsulta"
+        },                {
+            "fqsen": "\\Departamento",
+            "name": "Departamento",
+            "summary": "Clase\u0020Deapartamento\n\u0020\u0020Uso\u003A\u0020\u0020clase\u0020Departamento\u0020con\u0020su\u0020constructor\u0020y\u0020sus\u0020atributos.\u0020Usada\u0020para\u0020la\u0020construcci\u00F3n\u0020de\u0020los\u0020objetos\u0020departamentos",
+            "url": "classes/Departamento.html"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Departamento.html#method___construct"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AgetCodDepartamento\u0028\u0029",
+            "name": "getCodDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_getCodDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AgetDescDepartamento\u0028\u0029",
+            "name": "getDescDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_getDescDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AgetFechaCreacionDepartamento\u0028\u0029",
+            "name": "getFechaCreacionDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_getFechaCreacionDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AgetVolumenDeNegocio\u0028\u0029",
+            "name": "getVolumenDeNegocio",
+            "summary": "",
+            "url": "classes/Departamento.html#method_getVolumenDeNegocio"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AgetFechaBajaDepartamento\u0028\u0029",
+            "name": "getFechaBajaDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_getFechaBajaDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetCodDepartamento\u0028\u0029",
+            "name": "setCodDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setCodDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetDesDepartamento\u0028\u0029",
+            "name": "setDesDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setDesDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetFechaCreacionDepartamento\u0028\u0029",
+            "name": "setFechaCreacionDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setFechaCreacionDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetVolumenDeNegocio\u0028\u0029",
+            "name": "setVolumenDeNegocio",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setVolumenDeNegocio"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetFechaBajaDepartamento\u0028\u0029",
+            "name": "setFechaBajaDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setFechaBajaDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003A\u0024codDepartamento",
+            "name": "codDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#property_codDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003A\u0024descDepartamento",
+            "name": "descDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#property_descDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003A\u0024fechaCreacionDepartamento",
+            "name": "fechaCreacionDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#property_fechaCreacionDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003A\u0024volumenDeNegocio",
+            "name": "volumenDeNegocio",
+            "summary": "",
+            "url": "classes/Departamento.html#property_volumenDeNegocio"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003A\u0024fechaBajaDepartamento",
+            "name": "fechaBajaDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#property_fechaBajaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO",
+            "name": "DepartamentoPDO",
+            "summary": "",
+            "url": "classes/DepartamentoPDO.html"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentoPorCod\u0028\u0029",
+            "name": "buscaDepartamentoPorCod",
+            "summary": "Funcion\u0020que\u0020usara\u0020un\u0020codigo\u0020de\u0020departamento\u0020dado\u0020para\u0020busacar\u0020un\u0020departamento\u0020unico",
+            "url": "classes/DepartamentoPDO.html#method_buscaDepartamentoPorCod"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentoPorDesc\u0028\u0029",
+            "name": "buscaDepartamentoPorDesc",
+            "summary": "Funcion\u0020que\u0020dada\u0020la\u0020descripcion\u0020busca\u0020uno\u0020o\u0020varios\u0020departamentos\u0020que",
+            "url": "classes/DepartamentoPDO.html#method_buscaDepartamentoPorDesc"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AmodificarDepartamento\u0028\u0029",
+            "name": "modificarDepartamento",
+            "summary": "Funcion\u0020usada\u0020para\u0020modificar\u0020los\u0020campos\u0020descripcion\u0020y\u0020volumen\u0020de\u0020negocio\u0020de\u0020un\u0020departamento\u0020dado",
+            "url": "classes/DepartamentoPDO.html#method_modificarDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AaltaDepartamento\u0028\u0029",
+            "name": "altaDepartamento",
+            "summary": "Funcion\u0020dise\u00F1ada\u0020para\u0020dar\u0020de\u0020alta\u0020un\u0020nuevo\u0020departamento",
+            "url": "classes/DepartamentoPDO.html#method_altaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AvalidarCodigo\u0028\u0029",
+            "name": "validarCodigo",
+            "summary": "funcion\u0020que\u0020comprueba\u0020si\u0020el\u0020departamento\u0020existe\u0020mediante\u0020una\u0020consulta\u0020sql",
+            "url": "classes/DepartamentoPDO.html#method_validarCodigo"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbajaFisicaDepartamento\u0028\u0029",
+            "name": "bajaFisicaDepartamento",
+            "summary": "Funcion\u0020que\u0020se\u0020usara\u0020para\u0020borrar\u0020a\u0020un\u0020departamento\u0020con\u0020el\u0020codigo\u0020proporcionado",
+            "url": "classes/DepartamentoPDO.html#method_bajaFisicaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbajaLogicaDepartamento\u0028\u0029",
+            "name": "bajaLogicaDepartamento",
+            "summary": "Funcion\u0020que\u0020se\u0020usara\u0020para\u0020dar\u0020de\u0020baja\u0020l\u00F3gica\u0020a\u0020un\u0020departamento\u0020con\u0020el\u0020codigo\u0020proporcionado",
+            "url": "classes/DepartamentoPDO.html#method_bajaLogicaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003ArehabilitarDepartamento\u0028\u0029",
+            "name": "rehabilitarDepartamento",
+            "summary": "Funcion\u0020que\u0020se\u0020usara\u0020para\u0020dar\u0020de\u0020baja\u0020l\u00F3gica\u0020a\u0020un\u0020departamento\u0020con\u0020el\u0020codigo\u0020proporcionado",
+            "url": "classes/DepartamentoPDO.html#method_rehabilitarDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentoPorDescEstado\u0028\u0029",
+            "name": "buscaDepartamentoPorDescEstado",
+            "summary": "Funcion\u0020que\u0020dada\u0020la\u0020descripcion\u0020busca\u0020uno\u0020o\u0020varios\u0020departamentos",
+            "url": "classes/DepartamentoPDO.html#method_buscaDepartamentoPorDescEstado"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentoPorDescEstadoPaginado\u0028\u0029",
+            "name": "buscaDepartamentoPorDescEstadoPaginado",
+            "summary": "Funcion\u0020que\u0020dada\u0020la\u0020descripcion\u0020busca\u0020uno\u0020o\u0020varios\u0020departamentos\u0020en\u0020p\u00E1ginas\u0020diferentes",
+            "url": "classes/DepartamentoPDO.html#method_buscaDepartamentoPorDescEstadoPaginado"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AcontarDepartamentoPorDescEstado\u0028\u0029",
+            "name": "contarDepartamentoPorDescEstado",
+            "summary": "Funcion\u0020que\u0020dada\u0020la\u0020descripcion\u0020y\u0020estado\u0020te\u0020devuelve\u0020el\u0020numero\u0020de\u0020departamentos\u0020que\u0020cumplen\u0020las\u0020condiciones",
+            "url": "classes/DepartamentoPDO.html#method_contarDepartamentoPorDescEstado"
+        },                {
+            "fqsen": "\\FotoNasa",
+            "name": "FotoNasa",
+            "summary": "Clase\u0020FotoNasa\nUso\u003A\u0020\u0020clase\u0020para\u0020gestionar\u0020el\u0020uso\u0020de\u0020la\u0020api\u0020de\u0020la\u0020nasa\u0020y\u0020la\u0020foto\u0020que\u0020usaremos\u0020y\u0020para\u0020crear\u0020los\u0020objetos\u0020de\u0020las\u0020fotos\u0020de\u0020la\u0020nasa",
+            "url": "classes/FotoNasa.html"
+        },                {
+            "fqsen": "\\FotoNasa\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/FotoNasa.html#method___construct"
+        },                {
+            "fqsen": "\\FotoNasa\u003A\u003AgetTitulo\u0028\u0029",
+            "name": "getTitulo",
+            "summary": "",
+            "url": "classes/FotoNasa.html#method_getTitulo"
+        },                {
+            "fqsen": "\\FotoNasa\u003A\u003AgetUrl\u0028\u0029",
+            "name": "getUrl",
+            "summary": "",
+            "url": "classes/FotoNasa.html#method_getUrl"
+        },                {
+            "fqsen": "\\FotoNasa\u003A\u003Agetfecha\u0028\u0029",
+            "name": "getfecha",
+            "summary": "",
+            "url": "classes/FotoNasa.html#method_getfecha"
+        },                {
+            "fqsen": "\\FotoNasa\u003A\u003AgetInformacion\u0028\u0029",
+            "name": "getInformacion",
+            "summary": "",
+            "url": "classes/FotoNasa.html#method_getInformacion"
+        },                {
+            "fqsen": "\\FotoNasa\u003A\u003AgetHdurl\u0028\u0029",
+            "name": "getHdurl",
+            "summary": "",
+            "url": "classes/FotoNasa.html#method_getHdurl"
+        },                {
+            "fqsen": "\\FotoNasa\u003A\u003A\u0024titulo",
+            "name": "titulo",
+            "summary": "",
+            "url": "classes/FotoNasa.html#property_titulo"
+        },                {
+            "fqsen": "\\FotoNasa\u003A\u003A\u0024url",
+            "name": "url",
+            "summary": "",
+            "url": "classes/FotoNasa.html#property_url"
+        },                {
+            "fqsen": "\\FotoNasa\u003A\u003A\u0024fecha",
+            "name": "fecha",
+            "summary": "",
+            "url": "classes/FotoNasa.html#property_fecha"
+        },                {
+            "fqsen": "\\FotoNasa\u003A\u003A\u0024informacion",
+            "name": "informacion",
+            "summary": "",
+            "url": "classes/FotoNasa.html#property_informacion"
+        },                {
+            "fqsen": "\\FotoNasa\u003A\u003A\u0024hdurl",
+            "name": "hdurl",
+            "summary": "",
+            "url": "classes/FotoNasa.html#property_hdurl"
+        },                {
+            "fqsen": "\\REST",
+            "name": "REST",
+            "summary": "Clase\u0020REST\nUso\u003A\u0020clase\u0020que\u0020usaremos\u0020para\u0020gestionar\u0020el\u0020uso\u0020de\u0020las\u0020apis\u0020desde\u0020el\u0020controlador",
+            "url": "classes/REST.html"
+        },                {
+            "fqsen": "\\REST\u003A\u003AapiNasa\u0028\u0029",
+            "name": "apiNasa",
+            "summary": "",
+            "url": "classes/REST.html#method_apiNasa"
+        },                {
+            "fqsen": "\\REST\u003A\u003AAPI_KEY_NASA",
+            "name": "API_KEY_NASA",
+            "summary": "",
+            "url": "classes/REST.html#constant_API_KEY_NASA"
         },                {
             "fqsen": "\\Usuario",
             "name": "Usuario",
-            "summary": "",
+            "summary": "Clase\u0020Usuario\u0020que\u0020usaremos\u0020para\u0020la\u0020creacion\u0020de\u0020usuarios\u0020y\u0020gestionar\u0020estos\u0020objetos\nUso\u003A\u0020clase\u0020Usuario\u0020con\u0020su\u0020constructor\u0020y\u0020sus\u0020atributos",
             "url": "classes/Usuario.html"
         },                {
             "fqsen": "\\Usuario\u003A\u003A__construct\u0028\u0029",
@@ -308,13 +533,38 @@ Search.appendIndex(
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AactualizarUltimaConexion\u0028\u0029",
             "name": "actualizarUltimaConexion",
-            "summary": "funcion\u0020que\u0020actualiza\u0020las\u0020fechas\u0020de\u0020las\u0020conexiones\u0020del\u0020usuario\u0020activo",
+            "summary": "funcion\u0020que\u0020actualiza\u0020las\u0020fechas\u0020de\u0020las\u0020conexiones\u0020del\u0020usuario\u0020activo.\u0020Modifica\u0020el\u0020usuario\u0020recibido,\u0020no\u0020tiene\u0020return",
             "url": "classes/UsuarioPDO.html#method_actualizarUltimaConexion"
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AaltaUsuario\u0028\u0029",
             "name": "altaUsuario",
             "summary": "funcion\u0020para\u0020dar\u0020de\u0020alta\u0020un\u0020usuario",
             "url": "classes/UsuarioPDO.html#method_altaUsuario"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AmodificarUsuario\u0028\u0029",
+            "name": "modificarUsuario",
+            "summary": "Funcion\u0020dado\u0020un\u0020usuario\u0020actualizamos\u0020su\u0020descripcion",
+            "url": "classes/UsuarioPDO.html#method_modificarUsuario"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AcambiarPassword\u0028\u0029",
+            "name": "cambiarPassword",
+            "summary": "Funcion\u0020que\u0020sirve\u0020para\u0020cambiar\u0020una\u0020contrase\u00F1a\u0020dado\u0020por\u0020el\u0020usuario",
+            "url": "classes/UsuarioPDO.html#method_cambiarPassword"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AbuscaUsuariosPorDesc\u0028\u0029",
+            "name": "buscaUsuariosPorDesc",
+            "summary": "Funcion\u0020que\u0020dada\u0020la\u0020descripcion\u0020busca\u0020uno\u0020o\u0020varios\u0020usuarios",
+            "url": "classes/UsuarioPDO.html#method_buscaUsuariosPorDesc"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AbuscaUsuarioPorCod\u0028\u0029",
+            "name": "buscaUsuarioPorCod",
+            "summary": "Funcion\u0020que\u0020usara\u0020un\u0020codigo\u0020de\u0020usuario\u0020dado\u0020para\u0020buscar\u0020un\u0020usuario\u0020unico",
+            "url": "classes/UsuarioPDO.html#method_buscaUsuarioPorCod"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AborrarUsuario\u0028\u0029",
+            "name": "borrarUsuario",
+            "summary": "Funcion\u0020que\u0020se\u0020usara\u0020para\u0020borrar\u0020a\u0020un\u0020usuario\u0020con\u0020el\u0020codigo\u0020proporcionado",
+            "url": "classes/UsuarioPDO.html#method_borrarUsuario"
         },                {
             "fqsen": "\\",
             "name": "\\",

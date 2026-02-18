@@ -1,30 +1,24 @@
 var indexSectionsWithContent =
 {
-  0: "$2_acdegilpsuv",
-  1: "aduv",
-  2: "v",
-  3: "2acdiluv",
-  4: "_acegsv",
-  5: "$deipu"
+  0: "air",
+  1: "ir",
+  2: "i",
+  3: "a"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "classes",
-  2: "namespaces",
-  3: "files",
-  4: "functions",
-  5: "variables"
+  1: "files",
+  2: "variables",
+  3: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Data Structures",
-  2: "Namespaces",
-  3: "Files",
-  4: "Functions",
-  5: "Variables"
+  1: "Files",
+  2: "Variables",
+  3: "Pages"
 };
 

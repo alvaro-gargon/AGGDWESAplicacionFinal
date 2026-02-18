@@ -18,3 +18,15 @@
         </div>
     </p>
 </form>
+<form method="post" id="formApiPropia">
+    <p>
+        <label>Codigo de Departamento</label><br>
+        <button name="ENVIARPROPIA">Enviar</button>
+        <input type="date" name="fechaNasa"  value="<?php echo $avREST['fechaNasa'] ?>">
+        <p><?php echo ($avREST['tituloFotoNasa']); ?></p>
+        <p class="error"><?php echo($aErrores['fechaNasa'])?></p>
+        <div class="fotoNasa">
+            <img src="<?php echo ($avREST['urlNasa']); ?>" alt="Foto de la Nasa"
+        </div>
+    </p>
+</form>

@@ -26,7 +26,7 @@ class REST{
     //código proporcionado por Véronique Grué. Muchas gracias a esta
     //La funcion file_get_contents no funciona en el entorno de explotación, usamos una alternativa
     
-         public static function apiNasa($fecha) {
+    public static function apiNasa($fecha) {
      // URL de la API de NASA con la clave y la fecha
      $url = "https://api.nasa.gov/planetary/apod?api_key=". self::API_KEY_NASA ."&date=$fecha";
     
@@ -76,7 +76,7 @@ class REST{
     
      // Si no se pudo obtener la foto, retornar null
      return null;
- }
+    }
     
 }
 ?>
