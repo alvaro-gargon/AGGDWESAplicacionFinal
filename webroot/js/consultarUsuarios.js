@@ -44,7 +44,6 @@
             celdaPerfil.textContent=usuarios[i].perfil;
             fila.appendChild(celdaPerfil);
             let celdaBotones=document.createElement("td");
-            celdaBotones.appendChild(botonBorrar)
             fila.appendChild(celdaBotones);
             registros.appendChild(fila);
         }
