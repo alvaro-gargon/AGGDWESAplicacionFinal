@@ -97,9 +97,9 @@
     if(isset($_REQUEST['ENVIARPROPIA'])){
         // Comprobamos que el servidor de la api este bien, que responda, etc.
         $volumenDepartamento = REST::ApiPropiaVolumen($_REQUEST['codDepartamento']);
-
+        $volumenDepartamentoFormateado= number_format($volumenDepartamento, 2,',','.');
         // guardamos en la sesion el volumen del departamento y el codigo buscado.
-        $_SESSION['volumenDepartamentoApiEnUso'] = $volumenDepartamento;
+        $_SESSION['volumenDepartamentoApiEnUso'] = $volumenDepartamentoFormateado;
         $_SESSION['codigoDepartamentoBuscadoApi']=$_REQUEST['codDepartamento'];
     }else{
         $entradaOK=false;
