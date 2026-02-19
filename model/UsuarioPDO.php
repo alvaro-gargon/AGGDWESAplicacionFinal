@@ -2,7 +2,7 @@
 
 /**  
  * Clase UsuarioPDO 
- *   Uso:  clase que usaremos para hacer opeeaciones con los usuarios
+ * Uso:  clase que usaremos para hacer opeeaciones con los usuarios
  * @author Alvaro Garcia Gonzalez
  * @since 18/12/2025
  * @package model
