@@ -26,7 +26,7 @@
             <select name="frutas">
                 <option value="Apple" <?php if(isset($_SESSION['nombreFrutaBuscada'])&& $_SESSION['nombreFrutaBuscada']=='Apple'){echo 'selected';} ?>>Manzana</option>
                 <option value="Strawberry" <?php if(isset($_SESSION['nombreFrutaBuscada'])&& $_SESSION['nombreFrutaBuscada']=='Strawberry'){echo 'selected';} ?>>Fresa</option>
-                <option value="Banana" <?php if(isset($_SESSION['nombreFrutaBuscada'])&& $_SESSION['nombreFrutaBuscada']=='Banana'){echo 'selected';} ?>v>Platano</option>
+                <option value="Banana" <?php if(isset($_SESSION['nombreFrutaBuscada'])&& $_SESSION['nombreFrutaBuscada']=='Banana'){echo 'selected';} ?>>Platano</option>
                 <option value="Pear" <?php if(isset($_SESSION['nombreFrutaBuscada'])&& $_SESSION['nombreFrutaBuscada']=='Pear'){echo 'selected';} ?>>Pera</option>
             </select>
             <p>Nombre en ingles:<?php echo $_SESSION['datosFrutaBuscada']['nombre'] ?? 'Aqui se mostrata el nombre de la fruta' ?></p>
