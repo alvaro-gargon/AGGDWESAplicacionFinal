@@ -401,6 +401,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/REST.html#method_apiNasa"
         },                {
+            "fqsen": "\\REST\u003A\u003AApiPropiaVolumen\u0028\u0029",
+            "name": "ApiPropiaVolumen",
+            "summary": "Funcion\u0020para\u0020llamar\u0020una\u0020api\u0020propia\u0020que,\u0020recibiendo\u0020un\u0020codigo\u0020de\u0020departamento,\u0020dara\u0020un\u0020volumen\u0020de\u0020negocio",
+            "url": "classes/REST.html#method_ApiPropiaVolumen"
+        },                {
+            "fqsen": "\\REST\u003A\u003AApiAjenaFrutas\u0028\u0029",
+            "name": "ApiAjenaFrutas",
+            "summary": "Funcion\u0020para\u0020llamar\u0020una\u0020api\u0020ajena\u0020que,\u0020recibiendo\u0020un\u0020nombre\u0020de\u0020fruta,\u0020dara\u0020ciertas\u0020propiedades\u0020de\u0020esta",
+            "url": "classes/REST.html#method_ApiAjenaFrutas"
+        },                {
             "fqsen": "\\REST\u003A\u003AAPI_KEY_NASA",
             "name": "API_KEY_NASA",
             "summary": "",
