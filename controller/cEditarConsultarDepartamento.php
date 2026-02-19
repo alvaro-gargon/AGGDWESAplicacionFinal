@@ -37,7 +37,9 @@
     if(isset($_REQUEST['ACEPTAR'])){
         //guardamos los errores
         $aErrores['descripcion']= validacionFormularios::comprobarAlfabetico($_REQUEST['descripcion'],60,4,obligatorio:1);//validacion alfabtica del campo descripcion
-        $aErrores['volumenNegocio']= validacionFormularios::comprobarFloatMonetarioES($_REQUEST['volumenNegocio'], min: 0);
+        //creamos una variable del volumen de negocio sin punto
+        $volumenNegocioSinPunto= str_replace('.','',$_REQUEST['volumenNegocio']);
+        $aErrores['volumenNegocio']= validacionFormularios::comprobarFloatMonetarioES($volumenNegocioSinPunto, min: 0);
         
         //guardamos las respuestas para volver a mostrarlas sin hay algun error
         $aRespuestas['descripcion']=$_REQUEST['descripcion'];
@@ -55,8 +57,11 @@
     }
     
     if($entradaOK){
+        //modificamos el valor de para que tenga un formato correcto en la base de datos
+        $volumenNegocioSinPunto= str_replace('.','',$_REQUEST['volumenNegocio']);
+        $volumenNegocioPunto=str_replace(',','.',$volumenNegocioSinPunto);
         //modificamos el departamento
-        $oDepartamentoModificado= DepartamentoPDO::modificarDepartamento($_SESSION['departamentoEnUso'], $_REQUEST['descripcion'], str_replace(',','.',$_REQUEST['volumenNegocio']));
+        $oDepartamentoModificado= DepartamentoPDO::modificarDepartamento($_SESSION['departamentoEnUso'], $_REQUEST['descripcion'],$volumenNegocioPunto );
         if($oDepartamentoModificado!=null){
             $_SESSION['departamentoEnUso']=$oDepartamentoModificado;
             $_SESSION['paginaEnCurso']='departamento';
