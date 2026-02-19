@@ -1,7 +1,7 @@
 <?php
 
 /*  Nombre: Alvaro Garcia Gonzalez
-*   Fecha: 19/01/2026
+*   Fecha: 19/02/2026
 *   Uso:  controlador de la vista del REST*/ 
 //muchas gracias a Gonzalo Junquera por parte del código
     //este if se usa para que los usuarios no se salten el control de acceso

@@ -16,6 +16,11 @@
         header('Location: index.php');
         exit;
     }
+    if(isset($_REQUEST['BORRAR'])){
+        $_SESSION['paginaEnCurso']='borrarCuenta';
+        header('Location: index.php');
+        exit;
+    }
 
     $entradaOK=true; //boolean para comprobar si el formulario esta correcto o no
     //array donde recojo los errores si los hubiera

@@ -1,6 +1,6 @@
 <?php
     /*  Nombre: Alvaro Garcia Gonzalez
-    *   Fecha: 03/02/2026
+    *   Fecha: 19/02/2026
     *   Uso:  controlador para el alta de departamento*/
     //este if se usa para que los usuarios no se salten el control de acceso
     if(empty($_SESSION['usuarioMiAplicacion'])){
@@ -37,7 +37,7 @@
         //validamos los campos
         $aErrores['codigo']= validacionFormularios::comprobarAlfabetico($_REQUEST['codigo'],3,3,obligatorio:1);//validacion sintactica del campo codigo
         $aErrores['descripcion']= validacionFormularios::comprobarAlfabetico($_REQUEST['descripcion'],60,4,obligatorio:1);//validacion alfabtica del campo descripcion
-        $aErrores['volumen']= validacionFormularios::comprobarFloat($_REQUEST['volumen'], min:0,obligatorio:1);//validacion del campo volumen
+        $aErrores['volumen']= validacionFormularios::comprobarFloatMonetarioES($_REQUEST['volumen'], min:0,obligatorio:1);//validacion del campo volumen
         //guardamos las respuestas correctas
         $aRespuestas['codigo']=$_REQUEST['codigo'];
         $aRespuestas['descripcion']=$_REQUEST['descripcion'];
@@ -60,7 +60,7 @@
     
     
     if($entradaOK){
-        $oDepartamenNuevo= DepartamentoPDO::altaDepartamento($_REQUEST['codigo'], $_REQUEST['descripcion'], $_REQUEST['volumen']);
+        $oDepartamenNuevo= DepartamentoPDO::altaDepartamento($_REQUEST['codigo'], $_REQUEST['descripcion'], str_replace(',', '.',$_REQUEST['volumen']));
         $_SESSION['paginaEnCurso']='departamento';
         header('Location: index.php');
         exit;

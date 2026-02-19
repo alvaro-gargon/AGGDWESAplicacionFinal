@@ -29,4 +29,8 @@
     </p>
     <button class="botonGenericoFormulario" type="submit" name="ACEPTAR">ACEPTAR</button>
     <button class="botonGenericoFormulario" name="CANCELAR">CANCELAR</button>
+    <div>
+        <h4 style="margin-top: 2%">BORRAR CUENTA</h4>
+        <button class="botonGenericoFormulario" name="BORRAR">BORRAR</button>
+    </div>
 </form>

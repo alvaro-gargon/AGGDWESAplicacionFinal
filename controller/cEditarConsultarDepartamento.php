@@ -1,6 +1,6 @@
 <?php
 /*  Nombre: Alvaro Garcia Gonzalez
-*   Fecha: 02/02/2026
+*   Fecha: 19/02/2026
 *   Uso:  controlador para editar o consultar un departamento*/
     //este if se usa para que los usuarios no se salten el control de acceso
     if(empty($_SESSION['usuarioMiAplicacion'])){
@@ -37,7 +37,7 @@
     if(isset($_REQUEST['ACEPTAR'])){
         //guardamos los errores
         $aErrores['descripcion']= validacionFormularios::comprobarAlfabetico($_REQUEST['descripcion'],60,4,obligatorio:1);//validacion alfabtica del campo descripcion
-        $aErrores['volumenNegocio']= validacionFormularios::comprobarFloat($_REQUEST['volumenNegocio'], min: 0);
+        $aErrores['volumenNegocio']= validacionFormularios::comprobarFloatMonetarioES($_REQUEST['volumenNegocio'], min: 0);
         
         //guardamos las respuestas para volver a mostrarlas sin hay algun error
         $aRespuestas['descripcion']=$_REQUEST['descripcion'];
@@ -56,7 +56,7 @@
     
     if($entradaOK){
         //modificamos el departamento
-        $oDepartamentoModificado= DepartamentoPDO::modificarDepartamento($_SESSION['departamentoEnUso'], $_REQUEST['descripcion'], $_REQUEST['volumenNegocio']);
+        $oDepartamentoModificado= DepartamentoPDO::modificarDepartamento($_SESSION['departamentoEnUso'], $_REQUEST['descripcion'], str_replace(',','.',$_REQUEST['volumenNegocio']));
         if($oDepartamentoModificado!=null){
             $_SESSION['departamentoEnUso']=$oDepartamentoModificado;
             $_SESSION['paginaEnCurso']='departamento';
@@ -80,7 +80,7 @@
     $avEditarConsultar=[
         'codigo'=>$_SESSION['departamentoEnUso']->getCodDepartamento(),
         'descripcion'=>$_SESSION['departamentoEnUso']->getDescDepartamento(),
-        'volumenNegocio'=>$_SESSION['departamentoEnUso']->getVolumenDeNegocio(),
+        'volumenNegocio'=> number_format($_SESSION['departamentoEnUso']->getVolumenDeNegocio(),2,',','.'),
         'fechaCreacion'=>$fechaCreacion->format('d-m-Y'),
         'fechaBajaLogica'=>$fechaBajaFormateada
         
