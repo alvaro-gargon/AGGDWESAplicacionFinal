@@ -184,10 +184,24 @@ Uso: clase que usaremos para gestionar el uso de las apis desde el controlador</
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/REST.html#method_ApiAjenaFrutas">ApiAjenaFrutas()</a>
+    <span>
+                                &nbsp;: float    </span>
+</dt>
+<dd>Funcion para llamar una api ajena que, recibiendo un nombre de fruta, dara ciertas propiedades de esta</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/REST.html#method_apiNasa">apiNasa()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/REST.html#method_ApiPropiaVolumen">ApiPropiaVolumen()</a>
+    <span>
+                                &nbsp;: float    </span>
+</dt>
+<dd>Funcion para llamar una api propia que, recibiendo un codigo de departamento, dara un volumen de negocio</dd>
 
     </dl>
 
@@ -246,6 +260,61 @@ Uso: clase que usaremos para gestionar el uso de las apis desde el controlador</
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_ApiAjenaFrutas">
+        ApiAjenaFrutas()
+        <a href="classes/REST.html#method_ApiAjenaFrutas" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="model/REST.php"><a href="files/model-rest.html"><abbr title="model/REST.php">REST.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">126</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Funcion para llamar una api ajena que, recibiendo un nombre de fruta, dara ciertas propiedades de esta</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">ApiAjenaFrutas</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fruta</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$fruta</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>, nombre de la fruta a buscar</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">float</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>$volumen volumen del departamento buscado</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_apiNasa">
         apiNasa()
         <a href="classes/REST.html#method_apiNasa" class="headerlink"><i class="fas fa-link"></i></a>
@@ -283,6 +352,59 @@ Uso: clase que usaremos para gestionar el uso de las apis desde el controlador</
         
     
     
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_ApiPropiaVolumen">
+        ApiPropiaVolumen()
+        <a href="classes/REST.html#method_ApiPropiaVolumen" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="model/REST.php"><a href="files/model-rest.html"><abbr title="model/REST.php">REST.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">86</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Funcion para llamar una api propia que, recibiendo un codigo de departamento, dara un volumen de negocio</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">ApiPropiaVolumen</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$codDepartamento</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$codDepartamento</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">float</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>$volumen volumen del departamento buscado</p>
+</section>
+
+            </section>
+
 </article>
             </section>
 
@@ -406,7 +528,9 @@ Uso: clase que usaremos para gestionar el uso de las apis desde el controlador</
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
+                                            <li class=""><a href="classes/REST.html#method_ApiAjenaFrutas">ApiAjenaFrutas()</a></li>
                                             <li class=""><a href="classes/REST.html#method_apiNasa">apiNasa()</a></li>
+                                            <li class=""><a href="classes/REST.html#method_ApiPropiaVolumen">ApiPropiaVolumen()</a></li>
                                     </ul>
             </li>
                     </ul>
