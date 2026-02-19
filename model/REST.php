@@ -26,7 +26,7 @@ class REST{
     //código proporcionado por Véronique Grué. Muchas gracias a esta
     //La funcion file_get_contents no funciona en el entorno de explotación, usamos una alternativa
     
-         public static function apiNasa($fecha) {
+    public static function apiNasa($fecha) {
      // URL de la API de NASA con la clave y la fecha
      $url = "https://api.nasa.gov/planetary/apod?api_key=". self::API_KEY_NASA ."&date=$fecha";
     
@@ -63,7 +63,7 @@ class REST{
     
      // Si el JSON tiene los datos necesarios, crear el objeto FotoNasa. Si solo se pone if(isset($archivoApi)), devuelve siempre algo aunque no haya datos
      if(isset($archivoApi['title'])){
-         $fotoNasa = new FotoNasa(
+         $oFotoNasa = new FotoNasa(
              $archivoApi['title'],
              $archivoApi['url'], 
              $archivoApi['date'],
@@ -76,7 +76,92 @@ class REST{
     
      // Si no se pudo obtener la foto, retornar null
      return null;
- }
+    }
     
+    /**
+     * Funcion para llamar una api propia que, recibiendo un codigo de departamento, dara un volumen de negocio
+     * @param string $codDepartamento
+     * @return float $volumen volumen del departamento buscado
+     */
+    public static function ApiPropiaVolumen($codDepartamento){
+        $volumen = 0;
+        $url = "https://alvarogargon.ieslossauces.es/AGGDWESAplicacionFinal/api/wsVolumenDepartamentoPorCodigo.php?codigoDepartamentoBuscado=".$codDepartamento;
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+        $resultado = curl_exec($ch);
+        
+        if (curl_errno($ch)) {
+            echo 'Error de cURL: ' . curl_error($ch); 
+            die();
+        }
+
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($httpCode !== 200) {
+            return 0;
+        }
+
+        $archivoApi = json_decode($resultado, true);
+
+        if (isset($archivoApi) && isset($archivoApi[0]['volumenDepartamento'])) {
+            $volumen = $archivoApi[0]['volumenDepartamento'];
+        }
+
+        return $volumen;
+    }
+    /**
+     * Funcion para llamar una api ajena que, recibiendo un nombre de fruta, dara ciertas propiedades de esta
+     * @param string $fruta , nombre de la fruta a buscar
+     * @return float $volumen volumen del departamento buscado
+     */
+    public static function ApiAjenaFrutas($fruta){
+        $url = "https://www.fruityvice.com/api/fruit/".$fruta;
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+        $resultado = curl_exec($ch);
+        
+        if (curl_errno($ch)) {
+            echo 'Error de cURL: ' . curl_error($ch); 
+            die();
+        }
+
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($httpCode !== 200) {
+            return 0;
+        }
+
+        $archivoApi = json_decode($resultado, true);
+
+        if (isset($archivoApi)) {
+            $aDatosFruta=[
+                'nombre'=>$archivoApi['name'],
+                'familia'=>$archivoApi['family'],
+                'calorias'=>$archivoApi['nutritions']['calories'],
+                'azucares'=>$archivoApi['nutritions']['sugar']
+            ];
+            return $aDatosFruta;
+        }else{
+            return null;
+        }
+    }
 }
 ?>

@@ -44,12 +44,6 @@
             celdaPerfil.textContent=usuarios[i].perfil;
             fila.appendChild(celdaPerfil);
             let celdaBotones=document.createElement("td");
-            const botonBorrar=document.createElement("button");
-            botonBorrar.classList.add("icono","botonBorrar");
-            botonBorrar.innerHTML="&#128465";
-            botonBorrar.addEventListener("click", () => {
-                vistaEliminarUsuario(usuarios[i].codUsuario);
-            });
             celdaBotones.appendChild(botonBorrar)
             fila.appendChild(celdaBotones);
             registros.appendChild(fila);

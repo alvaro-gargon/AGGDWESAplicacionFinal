@@ -82,8 +82,41 @@
     }
     }else{
         $entradaOK=false;
-        
     }
+    
+    //llamamiento a una api propia
+    //gracias a Gonzalo Junquera por la idea general
+    //recojo todos los departamentos
+    $aDepartamentos= DepartamentoPDO::buscaDepartamentoPorDesc("");
+    $avDepartamentosREST=[];
+    foreach ($aDepartamentos as $oDepartamento){
+        $avDepartamentosREST[]=$oDepartamento->getCodDepartamento();
+       
+    }
+    //si el usuario le da al boton enviar en la seccion de la api propia
+    if(isset($_REQUEST['ENVIARPROPIA'])){
+        // Comprobamos que el servidor de la api este bien, que responda, etc.
+        $volumenDepartamento = REST::ApiPropiaVolumen($_REQUEST['codDepartamento']);
+
+        // guardamos en la sesion el volumen del departamento y el codigo buscado.
+        $_SESSION['volumenDepartamentoApiEnUso'] = $volumenDepartamento;
+        $_SESSION['codigoDepartamentoBuscadoApi']=$_REQUEST['codDepartamento'];
+    }else{
+        $entradaOK=false;
+    }
+    //llamamiento a una api ajena
+    //si el usuario le da al boton enviar en la seccion de la api de las frutas
+    if(isset($_REQUEST['ENVIARFRUTA'])){
+        // Comprobamos que el servidor de la api este bien, que responda, etc.
+        $aDatosFruta = REST::ApiAjenaFrutas($_REQUEST['frutas']);
+
+        // guardamos en la sesion el volumen del departamento y el codigo buscado.
+        $_SESSION['nombreFrutaBuscada']=$_REQUEST['frutas'];
+        $_SESSION['datosFrutaBuscada'] = $aDatosFruta;
+    }else{
+        $entradaOK=false;
+    }
+    
     //si todo ha ido bien... recargamos la página con los la foto
     if ($entradaOK) {
         $_SESSION['paginaEnCurso'] = 'REST';
@@ -93,6 +126,7 @@
     }
     $fechaActual= new DateTime();
     $fechaActualFormateada=$fechaActual->format('Y-m-d');
+    
     
     
 

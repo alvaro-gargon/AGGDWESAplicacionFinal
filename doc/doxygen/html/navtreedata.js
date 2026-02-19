@@ -24,18 +24,8 @@
 */
 var NAVTREE =
 [
-  [ "LoginLogoff", "index.html", [
-    [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
-    ] ],
-    [ "Data Structures", "annotated.html", [
-      [ "Data Structures", "annotated.html", "annotated_dup" ],
-      [ "Data Structure Index", "classes.html", null ],
-      [ "Data Fields", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
-      ] ]
-    ] ],
+  [ "AplicacionFinal", "index.html", [
+    [ "AGGDWESAplicacionFinal", "md__r_e_a_d_m_e.html", null ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
@@ -48,7 +38,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"231018libreria_validacion_8php.html"
+"files.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

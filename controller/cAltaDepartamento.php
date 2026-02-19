@@ -34,14 +34,21 @@
      * acciones que pasaran si el usuario intenta registrarse
      */
     if(isset($_REQUEST['ACEPTAR'])){
+        //validamos los campos
         $aErrores['codigo']= validacionFormularios::comprobarAlfabetico($_REQUEST['codigo'],3,3,obligatorio:1);//validacion sintactica del campo codigo
         $aErrores['descripcion']= validacionFormularios::comprobarAlfabetico($_REQUEST['descripcion'],60,4,obligatorio:1);//validacion alfabtica del campo descripcion
-        $aErrores['volumen']= validacionFormularios::comprobarFloat($_REQUEST['volumen'],obligatorio:1);//validacion del campo volumen
+        $aErrores['volumen']= validacionFormularios::comprobarFloat($_REQUEST['volumen'], min:0,obligatorio:1);//validacion del campo volumen
+        //guardamos las respuestas correctas
+        $aRespuestas['codigo']=$_REQUEST['codigo'];
+        $aRespuestas['descripcion']=$_REQUEST['descripcion'];
+        $aRespuestas['volumen']=$_REQUEST['volumen'];
+        //si hay errores generamos los mensajes de error
         foreach ($aErrores as $clave => $valor){
             if($valor!=null){
                 $entradaOK=false;
             }
         }
+        //comprobamos si ya hay un departamento con ese codigo
         $oDepartamenNuevo= DepartamentoPDO::validarCodigo($_REQUEST['codigo']);
         if($oDepartamenNuevo!=null){
             $entradaOK=false;
